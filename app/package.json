@@ -6,12 +6,13 @@
     "dev": "npm run data:build && vite",
     "data:build": "tsx tools/build-data.ts",
     "typecheck": "tsc --noEmit",
-    "build": "npm run data:build && npm run typecheck && npm run test:smoke && npm run check:contrast && vite build && npm run check:budget",
+    "build": "npm run data:build && npm run typecheck && npm run check:selectors && npm run test:smoke && npm run check:contrast && vite build && npm run check:budget",
     "preview": "vite preview",
-    "verify": "npm run data:build && npm run typecheck && npm run test:smoke && npm run check:contrast",
+    "verify": "npm run data:build && npm run typecheck && npm run check:selectors && npm run test:smoke && npm run check:contrast",
     "check:budget": "tsx tools/check-budget.ts",
     "test:smoke": "tsx tools/smoke.ts",
-    "check:contrast": "tsx tools/check-contrast.ts"
+    "check:contrast": "tsx tools/check-contrast.ts",
+    "check:selectors": "tsx tools/check-selectors.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.7.0",

@@ -82,7 +82,6 @@ interface AtlasState {
   selectedCity: () => City | null;
   /** Canonical coordinates for an entity, if it has any. */
   locate: (id: string) => { lat: number; lon: number } | null;
-  results: (limit?: number) => IndexEntry[];
 }
 
 export const useAtlas = create<AtlasState>((set, get) => ({
@@ -192,26 +191,6 @@ export const useAtlas = create<AtlasState>((set, get) => ({
     return null;
   },
 
-  results: (limit = 12) => {
-    const { load, query } = get();
-    if (load.status !== "ready") return [];
-    const needle = query.trim().toLowerCase();
-    if (needle.length < 2) return [];
-
-    const scored: { entry: IndexEntry; score: number }[] = [];
-    for (const entry of load.canon.index) {
-      const name = entry.name.toLowerCase();
-      let score = -1;
-      if (name === needle) score = 0;
-      else if (name.startsWith(needle)) score = 1;
-      else if (name.includes(needle)) score = 2;
-      else if (entry.id.includes(needle)) score = 3;
-      else if (entry.tags?.some((tag) => tag.toLowerCase().includes(needle))) score = 4;
-      if (score >= 0) scored.push({ entry, score });
-    }
-    scored.sort((a, b) => a.score - b.score || a.entry.name.localeCompare(b.entry.name));
-    return scored.slice(0, limit).map((hit) => hit.entry);
-  },
 }));
 
 export const prefersReducedMotion =
