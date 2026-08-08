@@ -5,15 +5,43 @@
  * a listbox with full keyboard support: arrows move, Enter selects, Escape
  * clears.
  */
-import { useId, useRef, useState } from "react";
+import { useId, useMemo, useRef, useState } from "react";
 import { useAtlas } from "../state/store.js";
 
 export function Search() {
   const query = useAtlas((s) => s.query);
   const setQuery = useAtlas((s) => s.setQuery);
   const select = useAtlas((s) => s.select);
-  const results = useAtlas((s) => s.results());
-  const total = useAtlas((s) => (s.load.status === "ready" ? s.load.canon.index.length : 0));
+  const load = useAtlas((s) => s.load);
+  const total = load.status === "ready" ? load.canon.index.length : 0;
+
+  /**
+   * Results are computed here rather than in a store selector.
+   *
+   * A zustand selector that builds a new array returns a new reference every
+   * time the store is read, which React sees as a change, which reads the store
+   * again — an infinite render loop. Selectors must return values that already
+   * exist; derived collections belong in useMemo.
+   */
+  const results = useMemo(() => {
+    if (load.status !== "ready") return [];
+    const needle = query.trim().toLowerCase();
+    if (needle.length < 2) return [];
+
+    const scored: { entry: (typeof load.canon.index)[number]; score: number }[] = [];
+    for (const entry of load.canon.index) {
+      const name = entry.name.toLowerCase();
+      let score = -1;
+      if (name === needle) score = 0;
+      else if (name.startsWith(needle)) score = 1;
+      else if (name.includes(needle)) score = 2;
+      else if (entry.id.includes(needle)) score = 3;
+      else if (entry.tags?.some((tag) => tag.toLowerCase().includes(needle))) score = 4;
+      if (score >= 0) scored.push({ entry, score });
+    }
+    scored.sort((a, b) => a.score - b.score || a.entry.name.localeCompare(b.entry.name));
+    return scored.slice(0, 12).map((hit) => hit.entry);
+  }, [load, query]);
 
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
