@@ -1,0 +1,77 @@
+/*
+ * Design tokens for the Elysium Atlas.
+ *
+ * The palette is READ FROM CANON, not chosen: every colour below is the value
+ * held in data/biomes.json. Change a palette value in the Bible and the Atlas
+ * repaints. See eng.design-system section 2.
+ *
+ * The green rule: canon records green as the exotic pigment, signalling
+ * strangeness or sickness (cult.arts section 5). No interface element is green
+ * in its normal state; --anomaly is reserved exclusively for something wrong.
+ *
+ * The glare rule: Elysian cities glow rather than glare under dark-sky
+ * standards. No pure white, no bloom, no neon.
+ */
+
+:root {
+  --void: #070E10; /* Space. Near-black with a teal undertone, never pure black. */
+  --abyss: #0B2A45; /* biome.abyssal - deep ocean, the ground colour. */
+  --shelf: #2A7CA8; /* biome.shelf - shallow water, the primary interactive accent. */
+  --phyllocyanin: #0E5F5A; /* biome.equatorial-rainforest - the living surface. */
+  --xantholin: #C08A3E; /* biome.boreal-taiga - dormancy, the secondary accent. */
+  --sirocc: #D8B26A; /* biome.subtropical-desert - the light neutral, body text. */
+  --ice: #E4EDF0; /* biome.permanent-ice - highest contrast, used sparingly. */
+  --anomaly: #7FA24A; /* biome.tropical-seasonal - GREEN. Anomaly only. */
+
+  /*
+   * --shelf is the canonical biome.shelf colour and is correct as a fill. As an
+   * interface border on a raised surface it measures 2.86:1, below the 3:1 that
+   * eng.design-system section 7 requires, so borders and focus accents use this
+   * lifted derivative. The canon colour is unchanged; this is derived from it.
+   */
+  --shelf-edge: #3181AB;
+
+  --surface: color-mix(in srgb, var(--abyss) 72%, var(--void));
+  --surface-raised: color-mix(in srgb, var(--abyss) 86%, var(--ice) 4%);
+  --border: color-mix(in srgb, var(--ice) 16%, transparent);
+  --border-strong: color-mix(in srgb, var(--ice) 32%, transparent);
+
+  --text: var(--sirocc);
+  --text-strong: var(--ice);
+  --text-dim: color-mix(in srgb, var(--sirocc) 62%, var(--abyss));
+
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --step--1: 0.8125rem;
+  --step-0: 0.9375rem;
+  --step-1: 1.125rem;
+  --step-2: 1.5rem;
+  --step-3: 2.125rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.5rem;
+
+  --radius: 3px;
+  --motion-fly: 900ms;
+  --motion-panel: 180ms;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Reduced motion is honoured completely: the application stays fully
+   functional, it simply stops moving. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fly: 0ms;
+    --motion-panel: 0ms;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

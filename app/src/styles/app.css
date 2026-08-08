@@ -1,0 +1,977 @@
+/*
+ * Application styles.
+ *
+ * Every colour here is a token from tokens.css, which is generated from canon.
+ * Nothing glows: the glare rule (eng.design-system section 2) forbids pure
+ * white, bloom, and neon, so surfaces are matte and light is low and warm.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--void);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ice);
+  outline-offset: 2px;
+}
+
+.atlas {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) min(360px, 32vw);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas:
+    "masthead masthead"
+    "stage    side";
+}
+
+/* ------------------------------------------------------------- masthead */
+
+.masthead {
+  grid-area: masthead;
+  padding: var(--space-4) var(--space-5) var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.masthead__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-strong);
+}
+
+.masthead__sub {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-data);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+/* ---------------------------------------------------------------- stage */
+
+.stage {
+  grid-area: stage;
+  min-height: 0;
+  position: relative;
+}
+
+.stage canvas {
+  display: block;
+  touch-action: none;
+}
+
+/* ------------------------------------------------------- accessible tree */
+
+/*
+ * Visible and usable, not hidden. The parallel interface is half the product,
+ * so it occupies real estate rather than being tucked off-screen.
+ */
+.side {
+  grid-area: side;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.a11y {
+  padding: var(--space-4) var(--space-5);
+}
+
+.a11y h2 {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.a11y ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.a11y ul ul {
+  margin: 0 0 var(--space-3) var(--space-3);
+  border-left: 1px solid var(--border);
+  padding-left: var(--space-3);
+}
+
+.a11y button {
+  display: block;
+  width: 100%;
+  min-height: 44px; /* pointer target floor */
+  padding: var(--space-2) var(--space-2);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.a11y button:hover {
+  background: var(--surface-raised);
+  color: var(--text-strong);
+}
+
+.a11y button[aria-current="true"] {
+  background: var(--surface-raised);
+  color: var(--text-strong);
+  box-shadow: inset 2px 0 0 var(--shelf-edge);
+}
+
+.a11y ul ul button {
+  min-height: 36px;
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+/* ---------------------------------------------------------------- panel */
+
+.panel {
+  position: absolute;
+  left: var(--space-5);
+  bottom: var(--space-5);
+  width: min(420px, calc(100% - var(--space-6)));
+  padding: var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  animation: rise var(--motion-panel) var(--ease);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.panel__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.panel__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.panel__close,
+.panel__record {
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: var(--step--1);
+  cursor: pointer;
+}
+
+.panel__close:hover,
+.panel__record:hover {
+  color: var(--text-strong);
+  border-color: var(--border-strong);
+}
+
+.panel__summary {
+  margin: var(--space-3) 0;
+  color: var(--text);
+}
+
+.panel__record {
+  margin-top: var(--space-2);
+}
+
+.figures {
+  margin: var(--space-3) 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.figures div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.figures dt {
+  color: var(--text-dim);
+  font-size: var(--step--1);
+}
+
+.figures dd {
+  margin: 0;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-strong);
+}
+
+/* --------------------------------------------------------- record drawer */
+
+/*
+ * Deliberately plain. A Record Office terminal, not a syntax-highlighting
+ * showcase.
+ */
+.record {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  font-family: var(--font-data);
+  font-size: var(--step--1);
+}
+
+.record dl {
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.record div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.record dt {
+  color: var(--text-dim);
+}
+
+.record dd {
+  margin: 0;
+  color: var(--text-strong);
+  word-break: break-all;
+}
+
+.record__note {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-body);
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------- notice */
+
+.notice {
+  position: absolute;
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--anomaly); /* the one sanctioned use of green */
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  color: var(--text-strong);
+}
+
+.notice p {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------- narrow */
+
+@media (max-width: 820px) {
+  .atlas {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 55vh minmax(0, 1fr);
+    grid-template-areas:
+      "masthead"
+      "stage"
+      "side";
+  }
+
+  .side {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .layers__list {
+    gap: var(--space-1);
+  }
+
+  .panel {
+    left: var(--space-3);
+    right: var(--space-3);
+    width: auto;
+  }
+}
+
+/* Shown while the renderer streams in. Deliberately quiet: the accessible
+   interface is already usable, so this is not a blocking state. */
+.stage__pending {
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      color-mix(in srgb, var(--abyss) 70%, var(--void)) 0%,
+      var(--void) 62%
+    );
+}
+
+/* --------------------------------------------------------------- search */
+
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.search {
+  position: relative;
+  flex: 0 1 320px;
+  min-width: 200px;
+}
+
+.search__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.search__input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text-strong);
+  font: inherit;
+  font-size: var(--step-0);
+}
+
+.search__input::placeholder {
+  color: var(--text-dim);
+}
+
+.search__input:focus-visible {
+  border-color: var(--border-strong);
+}
+
+.search__results {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  right: 0;
+  max-height: 46vh;
+  overflow-y: auto;
+  margin: 0;
+  padding: var(--space-1);
+  list-style: none;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+
+.search__results button {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.search__results .is-active button,
+.search__results button:hover {
+  background: var(--surface);
+  color: var(--text-strong);
+}
+
+.search__name {
+  font-size: var(--step-0);
+}
+
+.search__id {
+  font-family: var(--font-data);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.search__empty {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+
+/* --------------------------------------------------------------- layers */
+
+.layers {
+  padding: var(--space-4) var(--space-5) var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.layers__heading,
+.legend__title {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.layers__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.layers__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--step--1);
+  cursor: pointer;
+}
+
+.layers__button:hover {
+  border-color: var(--border-strong);
+  color: var(--text-strong);
+}
+
+.layers__button[aria-pressed="true"] {
+  border-color: var(--shelf-edge);
+  background: color-mix(in srgb, var(--shelf) 18%, transparent);
+  color: var(--text-strong);
+}
+
+.layers__key {
+  font-family: var(--font-data);
+  font-size: 0.6875rem;
+  color: var(--text-dim);
+}
+
+.layers__button[aria-pressed="true"] .layers__key {
+  color: var(--text-strong);
+}
+
+.layers__state {
+  font-size: 0.6875rem;
+  color: var(--text-dim);
+}
+
+.layers__hint {
+  margin: var(--space-3) 0 0;
+  font-size: 0.6875rem;
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------- legend */
+
+.legend {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.legend__summary {
+  margin: 0 0 var(--space-4);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.legend__pending,
+.legend__note {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.legend__error {
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--anomaly); /* the sanctioned use of green */
+  border-radius: var(--radius);
+  font-size: var(--step--1);
+  color: var(--text-strong);
+}
+
+.legend__indicators {
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* An indicator and its counterweight are one card. They cannot be separated,
+   because metric.system section 2 forbids publishing one without the other. */
+.indicator {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.indicator__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.indicator__name {
+  font-size: var(--step--1);
+  color: var(--text);
+}
+
+.indicator__value {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-strong);
+  white-space: nowrap;
+}
+
+.indicator__trend {
+  font-size: 0.6875rem;
+  color: var(--text-dim);
+}
+
+.indicator__pair {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border);
+}
+
+.indicator__pairLabel {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ---------------------------------------------------------- hover label */
+
+/*
+ * Real DOM text over the canvas, so it honours the user's font size and never
+ * blurs. Positioned by the scene each frame; it is decoration for assistive
+ * technology, like the canvas itself.
+ */
+.hoverLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface-raised) 92%, transparent);
+  color: var(--text-strong);
+  font-size: var(--step--1);
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform;
+  margin: -2.25rem 0 0 0.5rem;
+}
+
+.hoverLabel[data-visible="false"] {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------- swatches */
+
+.swatches {
+  margin-top: var(--space-4);
+}
+
+.swatches__heading {
+  margin: 0 0 var(--space-2);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.swatches__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 2px;
+}
+
+.swatch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 36px;
+  padding: var(--space-1) var(--space-2);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--step--1);
+  text-align: left;
+  cursor: pointer;
+}
+
+.swatch:hover,
+.swatch[aria-current="true"] {
+  background: var(--surface);
+  color: var(--text-strong);
+}
+
+.swatch__chip {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+}
+
+.swatch__name {
+  flex: 1 1 auto;
+}
+
+.swatch__detail {
+  flex: 0 0 auto;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.6875rem;
+  color: var(--text-dim);
+}
+
+/* ---------------------------------------------------------------- clock */
+
+.clock {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.clock__date {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--text-strong);
+}
+
+.clock__meta {
+  margin: var(--space-1) 0 var(--space-3);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.clock__time {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.clock__hhmm {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--step-3);
+  color: var(--text-strong);
+  line-height: 1;
+}
+
+.clock__of {
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+.clock__control {
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.clock__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.clock input[type="range"] {
+  width: 100%;
+  min-height: 24px;
+  accent-color: var(--shelf-edge);
+}
+
+.clock__buttons {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.clock__buttons button {
+  flex: 1 1 auto;
+  min-height: 44px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--step--1);
+  cursor: pointer;
+}
+
+.clock__buttons button:hover {
+  border-color: var(--border-strong);
+  color: var(--text-strong);
+}
+
+.clock__buttons button[aria-pressed="true"] {
+  border-color: var(--shelf-edge);
+  background: color-mix(in srgb, var(--shelf) 18%, transparent);
+  color: var(--text-strong);
+}
+
+.clock__figures {
+  margin: 0;
+  display: grid;
+  gap: var(--space-1);
+}
+
+.clock__figures div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--step--1);
+}
+
+.clock__figures dt {
+  color: var(--text-dim);
+}
+
+.clock__figures dd {
+  margin: 0;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-strong);
+}
+
+/* -------------------------------------------------------------- offworld */
+
+.offworld {
+  margin-top: var(--space-4);
+}
+
+.offworld__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 2px;
+}
+
+.offworld__note {
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------- record drawer, raw */
+
+.record__raw {
+  max-height: 22vh;
+  overflow: auto;
+  margin: var(--space-3) 0 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-data);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.record__error {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--anomaly);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  color: var(--text-strong);
+}
+
+.panel {
+  max-height: calc(100% - var(--space-6));
+  overflow-y: auto;
+}
+
+/* ------------------------------------------------------------ a11y shell */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hidden until focused, then unmissable. */
+.skip {
+  position: absolute;
+  z-index: 10;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  color: var(--text-strong);
+  transform: translateY(-200%);
+}
+
+.skip:focus-visible {
+  transform: none;
+}
+
+.shortcuts__open {
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: var(--step--1);
+  cursor: pointer;
+}
+
+.shortcuts__open:hover {
+  border-color: var(--border-strong);
+  color: var(--text-strong);
+}
+
+.shortcuts {
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(460px, calc(100vw - var(--space-6)));
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: var(--space-5);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+
+.shortcuts__title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.shortcuts__list {
+  margin: 0 0 var(--space-4);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.shortcuts__list div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.shortcuts__list dt {
+  flex: 0 0 auto;
+}
+
+.shortcuts__list kbd {
+  font-family: var(--font-data);
+  font-size: var(--step--1);
+  color: var(--text-strong);
+}
+
+.shortcuts__list dd {
+  margin: 0;
+  text-align: right;
+  font-size: var(--step--1);
+  color: var(--text);
+}
+
+.shortcuts__note {
+  margin: 0 0 var(--space-4);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}

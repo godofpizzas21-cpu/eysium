@@ -1,0 +1,38 @@
+{
+  "name": "elysium-atlas",
+  "version": "0.1.0",
+  "description": "Interactive 3D atlas of the Elysian Concord, rendered from the Civilization Bible.",
+  "scripts": {
+    "dev": "npm run data:build && vite",
+    "data:build": "tsx tools/build-data.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run data:build && npm run typecheck && npm run test:smoke && npm run check:contrast && vite build && npm run check:budget",
+    "preview": "vite preview",
+    "verify": "npm run data:build && npm run typecheck && npm run test:smoke && npm run check:contrast",
+    "check:budget": "tsx tools/check-budget.ts",
+    "test:smoke": "tsx tools/smoke.ts",
+    "check:contrast": "tsx tools/check-contrast.ts"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.7.0",
+    "earcut": "^3.2.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "three": "^0.185.1",
+    "tsx": "^4.23.11",
+    "typescript": "^7.0.2",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.14"
+  },
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@types/earcut": "^3.0.0",
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@types/three": "^0.185.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "vite": "^8.2.1"
+  }
+}
