@@ -1,0 +1,192 @@
+import json
+
+POP = 7_250_000_000
+MINOR_SHARE = 0.182
+minors = POP * MINOR_SHARE
+cohort = minors / 16   # one Elysian-year cohort, ages 0-15
+
+stages = [
+    ("early-support", "Early support", 0, 3, None,
+     "Home-based, with health visiting and paid leave."),
+    ("early-years", "Commune Early Years", 3, 6, round(cohort * 3),
+     "Universal, free, play-based, delivered in the Commune."),
+    ("foundation", "Foundation School", 6, 12, round(cohort * 6),
+     "General education with no selection by ability."),
+    ("upper", "Upper School", 12, 16, round(cohort * 4),
+     "Broad curriculum running to legal majority at 16 EY."),
+    ("post-secondary", "Post-secondary and lifelong", 16, None, 390_000_000,
+     "Universities, technical institutes, apprenticeship, and adult learning, drawn from the Entitlement Account at any age."),
+]
+
+doc = {
+  "schemaVersion": "1.0.0", "dataVersion": "1.0.0",
+  "id": "edu.education-data",
+  "name": "Education in the Elysian Concord",
+  "summary": "Schooling stages, the school day, the curriculum floor, assessment, teachers, inspection, the Education Entitlement Account, institutions, libraries, and AI tutor constraints.",
+  "sources": ["edu.schooling", "edu.lifelong"],
+  "asOf": "EY-0412-M08-D16",
+  "units": {"age": "Elysian years", "enrolment": "individuals"},
+  "stages": [
+    {"id": f"edu.stage-{s}", "name": n, "summary": d, "sources": ["edu.schooling"],
+     "minAgeEY": lo, **({"maxAgeEY": hi} if hi else {}),
+     **({"enrolment": e} if e else {})}
+    for s, n, lo, hi, e, d in stages
+  ],
+  "schooling": {
+    "totalInSchool": round(cohort * 13),
+    "shareOfPopulationPct": 14.8,
+    "deliveredBy": "gov.tier-district",
+    "selectionByAbilityBefore16Permitted": False,
+    "selectionRuleIsConcordFloor": True,
+    "privateSchoolingSharePct": 2.1,
+    "privateBoundBySameRules": True,
+    "pupilTeacherRatioFoundation": 14,
+    "daysPerEightDayWeek": 5,
+    "weeksPerYear": 32,
+    "schoolDay": {
+      "firstWakingCivilHours": 4.0,
+      "stillnessIsRest": True,
+      "instructionDuringStillnessPermitted": False,
+      "secondWakingCivilHours": 2.5,
+      "secondWakingWeighting": "practical work, craft, music, sport, and projects"
+    }
+  },
+  "curriculumFloor": [
+    {"id": "edu.floor-language", "name": "Literacy in own language and Concordial", "summary": "Neither may substitute for the other, and no pupil may be taught only Concordial.", "sources": ["edu.schooling"], "relatedTo": "lang.right-to-be-governed"},
+    {"id": "edu.floor-numeracy", "name": "Numeracy in decimal and duodecimal", "summary": "Both bases, because duodecimal survives in the calendar, traditional measures, music, and ordinary speech.", "sources": ["edu.schooling"]},
+    {"id": "edu.floor-science", "name": "Science including ecological literacy", "summary": "Enough to read the Ecological Commission's published account and understand what it says.", "sources": ["edu.schooling"], "relatedTo": "gov.ecological-commission"},
+    {"id": "edu.floor-civics", "name": "Civics: the five virtues and their conflicts", "summary": "Not instruction in loyalty but the study of cases where candour wounds, restraint paralyses, and redundancy competes with stewardship. Assessed on the quality of argument, not the conclusion.", "sources": ["edu.schooling"]},
+    {"id": "edu.floor-history", "name": "History including the Concord's failures", "summary": "Four events appear in every regional curriculum without exception; a curriculum omitting any of them fails inspection.", "sources": ["edu.schooling"],
+     "mandatoryEvents": ["hist.event-cassian-incident", "hist.event-corran-scandal", "hist.event-emergency-233", "hist.event-serrance-failure"]},
+    {"id": "edu.floor-repair", "name": "Practical craft and repair", "summary": "Not vocational preparation but the civic virtue of repair taught with hands.", "sources": ["edu.schooling"]}
+  ],
+  "assessment": {
+    "highStakesTerminalExamPermitted": False,
+    "prohibitionIsConcordFloor": True,
+    "method": "continuous portfolio assessed by the pupil's own teachers",
+    "externallyModerated": True,
+    "moderatorsFromOtherDistricts": True,
+    "moderatorsMeetPupil": False,
+    "moderationSamplesPublishedAnonymised": True,
+    "rationale": "A single examination is a single point of failure in a young person's life, and a system that concentrates a decision at one moment will eventually put a catastrophe there."
+  },
+  "teachers": {
+    "total": 94000000,
+    "formationYears": 5,
+    "salariedFromYear": 2,
+    "supervisedPracticeYears": 2,
+    "payRelativeToMedian": 1.3,
+    "applicantsPerTrainingPlace": 3.4,
+    "eighthTerm": {
+      "id": "edu.eighth-term",
+      "name": "The eighth term",
+      "summary": "Every teacher spends one term in eight outside the classroom on full pay with a funded substitute; compulsory, not a privilege.",
+      "sources": ["edu.schooling"],
+      "compulsory": True,
+      "compliancePct": 78,
+      "purpose": "To prevent a profession that teaches about the world from losing contact with it."
+    },
+    "dismissalForPupilAttainmentPermitted": False,
+    "teacherLevelOutcomeDataPublished": False,
+    "disaggregationRationale": "A measure attached to a person becomes a target for that person."
+  },
+  "inspection": {
+    "inspectorateIndependentOfOperatingDistrict": True,
+    "reportsPublishedInFull": True,
+    "dissentWithinTeamPublished": True,
+    "mayReplaceLeadership": True,
+    "mayCloseWithoutCommuneConsent": False,
+    "communeVetoesLastDecade": 41,
+    "note": "The one place Elysian education law gives a local body an absolute veto over a regional authority."
+  },
+  "entitlementAccount": {
+    "id": "edu.entitlement-account",
+    "name": "The Education Entitlement Account",
+    "summary": "Twelve Elysian years of fully funded full-time study granted at 16 EY, drawable at any age in any increment for any subject, never expiring.",
+    "sources": ["edu.lifelong"],
+    "tags": ["right", "lifelong"],
+    "deliversRight": "gov.right-education",
+    "grantedAtAgeEY": 16,
+    "yearsGranted": 12,
+    "fees": 0,
+    "expires": False,
+    "maintenancePaid": True,
+    "medianAgeAtFirstDrawEY": 24,
+    "firstDrawsBefore20Pct": 31,
+    "enrolledOver50Pct": 31,
+    "totalPostSecondaryEnrolment": 390000000,
+    "topUpFromTransitionRight": "ind.transition-right",
+    "timeProvidedBy": "econ.fallow-entitlement",
+    "takeUpHighEarnersYears": 9.1,
+    "takeUpLowEarnersYears": 5.4,
+    "canonNote": "Nobody goes straight from school to university as a matter of course. The median Elysian works or travels for eight years first and returns at 24 EY with an idea of what they want it for."
+  },
+  "institutions": [
+    {"id": "edu.universities", "name": "Universities", "summary": "Degree-granting and research-active.", "sources": ["edu.lifelong"], "count": 4100, "answeredBy": ["phase-08b"]},
+    {"id": "edu.technical-institutes", "name": "Technical institutes", "summary": "Applied, credential-granting, workshop-based; credentials of equal legal standing to degrees and staff on the same pay scale.", "sources": ["edu.lifelong"], "count": 6800, "legalParityWithDegrees": True},
+    {"id": "edu.research-academies", "name": "Research academies", "summary": "Postgraduate and specialist, attached to major facilities.", "sources": ["edu.lifelong"], "count": 340, "answeredBy": ["phase-08b"]},
+    {"id": "edu.commune-learning-centres", "name": "Commune learning centres", "summary": "One per Commune for adult, part-time, and community learning.", "sources": ["edu.lifelong"], "count": 47900}
+  ],
+  "vocational": {
+    "dualQualificationSharePct": 40,
+    "apprenticeshipYears": [3, 4],
+    "apprenticesAreEmployees": True,
+    "entryShareOf16to24Pct": 22,
+    "regulatedBy": "sectoral agreements",
+    "position": "A civilization whose central project is maintenance cannot afford a status hierarchy that ranks knowing above doing.",
+    "positionAchieved": False
+  },
+  "adultLearning": {
+    "adultsEnrolledPct": 19,
+    "inSubstantialRetraining": 148000000,
+    "retrainingChoiceMayBeRefused": False,
+    "commonestSubjects": ["languages", "craft", "music", "ecology", "local history"]
+  },
+  "libraries": {
+    "total": 51200,
+    "recordAccessPoints": True,
+    "accessRequestsFiledByLibraryStaffPct": 14,
+    "custodian": "gov.record-office",
+    "archiveCopiesPerRecord": 4,
+    "geographicallySeparated": True,
+    "purpose": "Publishing everything is worthless if nobody can find it. The library network is the institution charged with making the record navigable, and canon does not claim this has worked, only that it is the attempt."
+  },
+  "aiTutors": {
+    "universalAndFree": True,
+    "governedBy": ["phase-13"],
+    "may": ["explain", "question", "generate practice", "translate between the 41 registered languages", "adapt pace", "be available at any hour"],
+    "constraints": [
+      {"id": "edu.ai-no-assessment", "name": "May not assess", "summary": "No AI-generated judgement contributes to any portfolio, credential, or moderation decision. Assessment is human, and this is a Concord floor.", "sources": ["edu.lifelong"]},
+      {"id": "edu.ai-no-completion", "name": "May not complete work", "summary": "A tutor asked to produce the work must decline and offer to help the learner produce it; compliance is audited by sampling and failing vendors lose accreditation.", "sources": ["edu.lifelong"]},
+      {"id": "edu.ai-no-replacement", "name": "May not replace a teacher relationship", "summary": "Every learner under 16 EY has a named human teacher, and tutor availability may not justify raising pupil-teacher ratios. Three Regions attempted this in the EY 370s and were stopped by the Constitutional Court.", "sources": ["edu.lifelong"]},
+      {"id": "edu.ai-no-concealed-uncertainty", "name": "May not conceal uncertainty", "summary": "A tutor must be able to say it does not know and its confidence must be legible. Descends explicitly from the Cassian Incident: a system whose correct operation is indistinguishable from its failure is not safe to rely on.", "sources": ["edu.lifelong"], "relatedEvent": "hist.event-cassian-incident"}
+    ],
+    "interactionsLogged": True,
+    "logCustodian": "gov.record-office",
+    "logsAccessibleToLearnerAndGuardian": True,
+    "logsAccessibleToSchoolsForAssessment": False
+  },
+  "spending": {"shareOfGcpPct": 8.4},
+  "knownWeaknesses": [
+    {"id": "edu.weakness-portfolio-comparability", "name": "Portfolio comparability", "summary": "Assessment without examinations is hard to compare across 34 Regions, so employers and universities lean on institutional reputation — reintroducing the signalling the system was built to avoid.", "sources": ["edu.schooling"]},
+    {"id": "edu.weakness-moderation-integrity", "name": "Moderation integrity", "summary": "The system rests on external moderators; moderation drift found in nine Regions and described as structural rather than incidental.", "sources": ["edu.schooling"]},
+    {"id": "edu.weakness-regional-divergence", "name": "Regional divergence", "summary": "Attainment between strongest and weakest Regions differs by roughly two years of schooling; equalization narrows funding without closing outcomes.", "sources": ["edu.schooling"]},
+    {"id": "edu.weakness-teacher-supply", "name": "Teacher supply in small Regions", "summary": "Persistent vacancies in Northreach, Austral Shore, and Highmarch; shared services are the mitigation and are criticised as centralization.", "sources": ["edu.schooling"], "regions": ["polity.northreach", "polity.austral-shore", "polity.highmarch"]},
+    {"id": "edu.weakness-eighth-term-compliance", "name": "The eighth term is unevenly honoured", "summary": "78% compliance; small schools cannot easily release staff and quietly do not.", "sources": ["edu.schooling"]},
+    {"id": "edu.weakness-private-schooling", "name": "Private schooling", "summary": "Only 2.1% of pupils and heavily constrained, but concentrated among high-wealth households and over-represented in some professions by a margin nobody has explained convincingly.", "sources": ["edu.schooling"]},
+    {"id": "edu.weakness-entitlement-skew", "name": "Entitlement take-up skews", "summary": "High earners draw 9.1 of 12 years, low earners 5.4. A universal right used most by those already advantaged.", "sources": ["edu.lifelong"]},
+    {"id": "edu.weakness-status-hierarchy", "name": "Status hierarchy persists", "summary": "Technical institutes are legally equal and socially not; their graduates are under-represented in senior institutions and the gap has narrowed only slightly in two centuries.", "sources": ["edu.lifelong"]},
+    {"id": "edu.weakness-late-entry", "name": "Late entry has costs", "summary": "Mathematics, music performance, and some languages show measurably better outcomes with early intensive study, and the Concord has never resolved how to offer that without reintroducing selection.", "sources": ["edu.lifelong"]},
+    {"id": "edu.weakness-institution-concentration", "name": "Institution concentration", "summary": "Prestige clusters in about forty institutions whose graduates are over-represented everywhere; no mechanism has reduced this.", "sources": ["edu.lifelong"]},
+    {"id": "edu.weakness-ai-dependence", "name": "AI tutor dependence", "summary": "11% of upper-school learners use tutors in ways that would fail the completion rule if the tutor were more compliant; enforcement is against vendors and the boundary is genuinely blurry.", "sources": ["edu.lifelong"], "answeredBy": ["phase-13"]},
+    {"id": "edu.weakness-library-attention", "name": "Library attention gap", "summary": "14% of access requests are library-assisted — a real contribution and nowhere near enough for the problem it addresses.", "sources": ["edu.lifelong"]}
+  ]
+}
+
+with open('data/education.json', 'w') as f:
+    json.dump(doc, f, indent=2)
+
+sched = [s for s in doc['stages'] if 'enrolment' in s and s['id'] != 'edu.stage-post-secondary']
+print("schooling enrolment sum:", f"{sum(s['enrolment'] for s in sched):,}",
+      "vs declared", f"{doc['schooling']['totalInSchool']:,}")
+print("share of population:", round(doc['schooling']['totalInSchool']/POP*100, 2))
