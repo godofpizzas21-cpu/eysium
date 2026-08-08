@@ -17,7 +17,7 @@ import {
   Vector3,
 } from "three";
 
-import type { Continent, ContinentsData } from "../data/loader.js";
+import type { Continent } from "../data/loader.js";
 import { densifyRing, toVector3, unwrapRing } from "../lib/geo.js";
 import { prefersReducedMotion, useAtlas } from "../state/store.js";
 
@@ -57,7 +57,7 @@ function ringGeometry(ring: readonly [number, number][], altitude: number): Buff
 }
 
 interface LandmassProps {
-  continent: Continent;
+  continent: Continent & { derivedPalette?: string };
   colour: string;
 }
 
@@ -80,7 +80,12 @@ function Landmass({ continent, colour }: LandmassProps) {
 
   const active = selectedId === continent.id;
   const warm = hoveredId === continent.id;
-  const base = useMemo(() => new Color(colour), [colour]);
+  // Each continent is coloured from the biomes canon places on it, derived at
+  // build time. The shared token is only a fallback.
+  const base = useMemo(
+    () => new Color(continent.derivedPalette ?? colour),
+    [continent.derivedPalette, colour],
+  );
   const shade = useMemo(() => {
     const c = base.clone();
     if (active) c.lerp(new Color(token("--ice")), 0.28);
@@ -105,10 +110,16 @@ function Landmass({ continent, colour }: LandmassProps) {
       }}
     >
       {rings.map(({ key, geometry }) => (
-        <mesh key={key} geometry={geometry}>
-          {/* Matte. The glare rule forbids bloom and specular highlights. */}
-          <meshStandardMaterial color={shade} roughness={0.95} metalness={0} />
-        </mesh>
+        <group key={key}>
+          <mesh geometry={geometry}>
+            {/* Matte. The glare rule forbids bloom and specular highlights. */}
+            <meshStandardMaterial color={shade} roughness={0.95} metalness={0} />
+          </mesh>
+          {/* Coastline, so landmasses read as shapes rather than blobs. */}
+          <lineSegments geometry={geometry}>
+            <lineBasicMaterial color={shade} transparent opacity={0.55} />
+          </lineSegments>
+        </group>
       ))}
     </group>
   );
@@ -128,6 +139,8 @@ export function Globe() {
     [],
   );
 
+  const continentsData = load.status === "ready" ? load.canon.continents.continents : [];
+
   useFrame((_, delta) => {
     if (!group.current || !autoRotate || prefersReducedMotion) return;
     // Ambient orientation only, and slower than before: since Phase 22 the
@@ -135,9 +148,6 @@ export function Globe() {
     // suggest it.
     group.current.rotation.y += delta * 0.02;
   });
-
-  const continents: ContinentsData["continents"] =
-    load.status === "ready" ? load.canon.continents.continents : [];
 
   return (
     <group ref={group}>
@@ -153,7 +163,7 @@ export function Globe() {
         <meshBasicMaterial color={palette.halo} transparent opacity={0.08} side={BackSide} />
       </mesh>
 
-      {continents.map((continent) => (
+      {continentsData.map((continent) => (
         <Landmass key={continent.id} continent={continent} colour={palette.land} />
       ))}
     </group>

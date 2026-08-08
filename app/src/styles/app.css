@@ -975,3 +975,58 @@ body {
   font-size: var(--step--1);
   color: var(--text-dim);
 }
+
+/* ------------------------------------------------------------- sections */
+
+.section {
+  border-bottom: 1px solid var(--border);
+}
+
+.section__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 48px;
+  padding: 0 var(--space-5);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--text-strong);
+}
+
+.section__summary::-webkit-details-marker {
+  display: none;
+}
+
+.section__summary::after {
+  content: "+";
+  font-family: var(--font-data);
+  font-size: var(--step-1);
+  color: var(--text-dim);
+}
+
+.section[open] > .section__summary::after {
+  content: "−";
+}
+
+.section__summary:hover {
+  background: var(--surface-raised);
+}
+
+.section__hint {
+  margin-left: auto;
+  margin-right: var(--space-3);
+  font-family: var(--font-data);
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
+/* Sections supply the outer padding, so their contents drop theirs. */
+.section .layers,
+.section .legend,
+.section .clock {
+  padding-top: 0;
+  border-bottom: 0;
+}

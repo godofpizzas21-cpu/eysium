@@ -196,6 +196,60 @@ function emit(datasets: Map<string, Json>, entities: Map<string, Json>) {
   rmSync(OUT, { recursive: true, force: true });
   mkdirSync(OUT, { recursive: true });
 
+  /*
+   * Continent colours, derived at build time from the biomes canon says occupy
+   * them. Each biome in biomes.json names the regions it covers, so a
+   * continent's colour is the area-weighted blend of its own biomes, lifted
+   * until it reads clearly against the ocean.
+   *
+   * This is derived data on the emitted artifact, never on canon itself.
+   */
+  const biomes = datasets.get("biomes.json");
+  if (biomes) {
+    const parse = (hex: string): [number, number, number] => [
+      parseInt(hex.slice(1, 3), 16),
+      parseInt(hex.slice(3, 5), 16),
+      parseInt(hex.slice(5, 7), 16),
+    ];
+    const toHex = (c: [number, number, number]) =>
+      `#${c.map((v) => Math.round(Math.min(255, Math.max(0, v))).toString(16).padStart(2, "0")).join("")}`;
+
+    const terrestrial = biomes.terrestrialBiomes as Json[];
+    const continents = datasets.get("continents.json")?.continents as Json[] | undefined;
+
+    for (const continent of continents ?? []) {
+      const own = terrestrial.filter((biome) => {
+        const regions = (biome.regions as string[] | undefined) ?? [];
+        if (regions.includes(continent.id as string)) return true;
+        // A biome may name a feature of the continent rather than the continent.
+        const features = ((continent.features as Json[] | undefined) ?? []).map((f) => f.id);
+        return regions.some((region) => features.includes(region));
+      });
+
+      const source = own.length ? own : terrestrial;
+      let weight = 0;
+      const blend: [number, number, number] = [0, 0, 0];
+      for (const biome of source) {
+        const area = Number(biome.areaMkm2 ?? 1);
+        const rgb = parse(String(biome.palette));
+        blend[0] += rgb[0] * area;
+        blend[1] += rgb[1] * area;
+        blend[2] += rgb[2] * area;
+        weight += area;
+      }
+      const mean: [number, number, number] = [blend[0] / weight, blend[1] / weight, blend[2] / weight];
+      // Lift toward light so land separates from the ocean beneath it.
+      const lifted: [number, number, number] = [
+        mean[0] * 0.78 + 228 * 0.22,
+        mean[1] * 0.78 + 237 * 0.22,
+        mean[2] * 0.78 + 240 * 0.22,
+      ];
+      continent.derivedPalette = toHex(lifted);
+      continent.derivedFromBiomes = source.map((biome) => biome.id);
+    }
+  }
+
+
   for (const [file, data] of datasets) {
     writeFileSync(join(OUT, file), JSON.stringify(data));
   }

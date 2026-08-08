@@ -10,6 +10,7 @@ import { Search } from "./panels/Search.js";
 import { LayerSwitcher, activateLayer } from "./panels/LayerSwitcher.js";
 import { Legend } from "./panels/Legend.js";
 import { ClockPanel } from "./panels/ClockPanel.js";
+import { Section } from "./panels/Section.js";
 import { loadCanon } from "./data/loader.js";
 import { loadManifests } from "./data/layers.js";
 import { entityFromUrl, onUrlChange, writeEntityToUrl } from "./lib/url.js";
@@ -100,9 +101,13 @@ export default function App() {
       <Announcer />
 
       <div className="side">
-        <ClockPanel />
-        <LayerSwitcher />
-        <Legend />
+        <Section title="Layers" open>
+          <LayerSwitcher />
+          <Legend />
+        </Section>
+        <Section title="Date and time" hint="EY 412">
+          <ClockPanel />
+        </Section>
         <AccessibleAtlas />
       </div>
       <EntityPanel />

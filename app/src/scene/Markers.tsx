@@ -39,7 +39,7 @@ function Marker({ city }: { city: City }) {
     return active ? base : base.multiplyScalar(warm ? 0.95 : 0.8);
   }, [seat, active, warm]);
 
-  const radius = (seat ? 0.011 : 0.007) * (active ? 1.5 : warm ? 1.2 : 1);
+  const radius = (seat ? 0.017 : 0.011) * (active ? 1.6 : warm ? 1.25 : 1);
 
   return (
     <group position={position}>
@@ -47,6 +47,15 @@ function Marker({ city }: { city: City }) {
         <sphereGeometry args={[radius, 12, 12]} />
         <meshBasicMaterial color={colour} />
       </mesh>
+      {/* Seats of the distributed capital carry a ring, so the five cities
+          that hold the Concord's institutions are findable without hovering. */}
+      {seat && (
+        <mesh rotation={[Math.PI / 2, 0, 0]}>
+          <ringGeometry args={[radius * 2.1, radius * 2.6, 24]} />
+          <meshBasicMaterial color={colour} transparent opacity={0.7} side={2} />
+        </mesh>
+      )}
+
       {/* Hit target, invisible and deliberately generous. */}
       <mesh
         onPointerOver={(event) => {

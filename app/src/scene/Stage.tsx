@@ -22,6 +22,7 @@ const Scene = lazy(async () => {
     { Atmosphere, Clock },
     { Clouds },
     { OrbitalSystem },
+    { Starfield },
   ] = await Promise.all([
     import("@react-three/fiber"),
     import("./Globe.js"),
@@ -33,12 +34,14 @@ const Scene = lazy(async () => {
     import("./Atmosphere.js"),
     import("./Clouds.js"),
     import("./OrbitalSystem.js"),
+    import("./Starfield.js"),
   ]);
 
   return {
     default: function Scene({ onInteract }: { onInteract: () => void }) {
       return (
         <Canvas camera={{ position: [0, 0.6, 2.9], fov: 42 }} dpr={[1, 2]}>
+          <Starfield />
           <Atmosphere />
           <Clock />
           <Globe />

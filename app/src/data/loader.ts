@@ -72,6 +72,8 @@ export interface Continent {
   name: string;
   summary: string;
   areaMkm2: number;
+  /** Derived at build time from the biomes canon places on this continent. */
+  derivedPalette?: string;
   outline?: [number, number][];
   islandOutlines?: { featureId: string; outline: [number, number][] }[];
   features: ContinentFeature[];

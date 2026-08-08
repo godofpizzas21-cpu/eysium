@@ -104,7 +104,7 @@ export const useAtlas = create<AtlasState>((set, get) => ({
   setAutoRotate: (autoRotate) => set({ autoRotate }),
 
   cameraTarget: null,
-  flyTo: (point, distance = 2.1) =>
+  flyTo: (point, distance = 1.75) =>
     set({
       cameraTarget: { lat: point.lat, lon: point.lon, distance, issued: Date.now() },
       autoRotate: false,
