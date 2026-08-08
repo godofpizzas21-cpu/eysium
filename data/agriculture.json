@@ -1,0 +1,460 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "agri.agriculture-data",
+  "name": "Agriculture and Food Security",
+  "summary": "Calorie sources and land use, field practice and crop diversity, controlled-environment agriculture, fisheries under the Thalassar Accord, livestock and welfare grading, fermentation, nutrient loops, reserves, and food security outcomes.",
+  "sources": [
+    "agri.production",
+    "agri.security"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "area": "million km^2",
+    "mass": "Mt per Elysian year",
+    "power": "TW"
+  },
+  "calorieSources": [
+    {
+      "id": "agri.source-field",
+      "name": "Field agriculture",
+      "summary": "Grains, pulses, oil crops, and tree crops, where field production is genuinely superior.",
+      "sources": [
+        "agri.production"
+      ],
+      "caloriesSharePct": 41,
+      "landMkm2": 16.1
+    },
+    {
+      "id": "agri.source-cea",
+      "name": "Controlled-environment agriculture",
+      "summary": "1.1 million facilities producing nearly all leafy vegetables, berries, fruiting vegetables, and out-of-season produce on 1/400th of the land field agriculture uses.",
+      "sources": [
+        "agri.production"
+      ],
+      "caloriesSharePct": 24,
+      "landMkm2": 0.04
+    },
+    {
+      "id": "agri.source-marine",
+      "name": "Marine capture and aquaculture",
+      "summary": "210 Mt annually under the Thalassar Accord framework.",
+      "sources": [
+        "agri.production"
+      ],
+      "caloriesSharePct": 14,
+      "landMkm2": 0
+    },
+    {
+      "id": "agri.source-fermentation",
+      "name": "Fermentation and cultured protein",
+      "summary": "Precision fermentation and cultured tissue; the fastest-growing category for two centuries.",
+      "sources": [
+        "agri.production"
+      ],
+      "caloriesSharePct": 13,
+      "landMkm2": 0.02
+    },
+    {
+      "id": "agri.source-livestock",
+      "name": "Livestock on pasture and rangeland",
+      "summary": "Down from 34% of calories before the founding, by economics rather than prohibition.",
+      "sources": [
+        "agri.production"
+      ],
+      "caloriesSharePct": 8,
+      "landMkm2": 0
+    }
+  ],
+  "landUseNote": "Livestock shares the 26.4 M km^2 of managed forestry and rangeland recorded in planet.biosphere and is not counted again here.",
+  "fieldAgriculture": {
+    "employment": 144800000,
+    "employmentShareOfLabourForcePct": 4,
+    "primeArableRegions": [
+      "region.meridian-plain",
+      "region.elandric-terraces",
+      "region.river-alcyon",
+      "region.auroria"
+    ],
+    "predominantOwnershipForm": "econ.form-consumer-cooperative",
+    "governedBy": "the stewardship obligation on land",
+    "bareWinterSoilRequiresJustification": true,
+    "soilFormationTPerHaPerYear": 0.6,
+    "netSoilAccumulating": true,
+    "fieldMarginObligation": true,
+    "cropDiversity": {
+      "stapleSpeciesInCommercialProduction": 41,
+      "maxCultivarShareOfSpeciesPct": 15,
+      "seedStockHeldBy": "econ.form-stewardship-foundation",
+      "seedCollections": 4,
+      "geographicallySeparated": true,
+      "rationale": "Nobody can sell a seed bank held by a purpose-bound trust."
+    }
+  },
+  "controlledEnvironment": {
+    "facilities": 1100000,
+    "caloriesSharePct": 24,
+    "landMkm2": 0.04,
+    "waterUseVsFieldPct": 4,
+    "closedLoopWater": true,
+    "pesticideUse": "essentially zero",
+    "energyTW": 0.31,
+    "shareOfGenerationPct": 0.7,
+    "criticalForRegions": [
+      "polity.northreach",
+      "polity.austral-shore"
+    ],
+    "note": "Growing food outdoors at 68 degrees north in Auroria is possible and pointless."
+  },
+  "fisheries": {
+    "totalHarvestMt": 210,
+    "wildCaptureMt": 84,
+    "aquacultureMt": 126,
+    "governingFramework": {
+      "id": "agri.thalassar-framework",
+      "name": "The Thalassar Accord framework",
+      "summary": "Modern Concord fisheries law descends directly from the first binding planetary treaty, agreed on fisheries only in 14 BE by people who could not agree on anything else.",
+      "sources": [
+        "agri.production"
+      ],
+      "originEvent": "hist.event-thalassar-accord"
+    },
+    "quotaSetBy": "gov.ecological-commission",
+    "quotaAllocatedAs": "regional catch shares",
+    "quotaSetBelowMSY": true,
+    "marginPublished": true,
+    "vesselMonitoringUniversal": true,
+    "monitoringDataPublic": true,
+    "principalFisheries": [
+      {
+        "id": "agri.fishery-mistral",
+        "name": "Mistral Shelf fishery",
+        "summary": "Richest fishery on Elysium, built on Silverdrift shoals.",
+        "sources": [
+          "agri.production"
+        ],
+        "regions": [
+          "region.mistral-shelf"
+        ],
+        "keySpecies": "species.silverdrift"
+      },
+      {
+        "id": "agri.fishery-amarant",
+        "name": "Amarant Upwelling fishery",
+        "summary": "Second largest; productivity falls sharply in warm Amarant phases, so quota is set on multi-year averages.",
+        "sources": [
+          "agri.production"
+        ],
+        "regions": [
+          "polity.halvane"
+        ],
+        "vulnerableTo": "climate.amarant-oscillation"
+      }
+    ],
+    "aquacultureClosedContainment": true,
+    "wildCaughtFeedEndedEY": 288,
+    "overExploitedStocks": 2,
+    "overExploitedNote": "Both in Elandric coastal waters, both under mandatory recovery plans, and both the subject of an unresolved dispute between the Region and the Commission about whether assessment or enforcement failed."
+  },
+  "livestock": {
+    "caloriesSharePct": 8,
+    "preFoundingCaloriesSharePct": 34,
+    "declineByProhibition": false,
+    "declineCauses": [
+      "cultured and fermented protein became cheaper",
+      "welfare law made husbandry more expensive"
+    ],
+    "domesticates": [
+      {
+        "id": "species.durn",
+        "name": "Durn",
+        "summary": "Large grazing Zoaea kept for meat and milk.",
+        "sources": [
+          "agri.production"
+        ],
+        "clade": "clade.zoaea"
+      },
+      {
+        "id": "species.pell",
+        "name": "Pell",
+        "summary": "Smaller flock animal kept for fibre and meat.",
+        "sources": [
+          "agri.production"
+        ],
+        "clade": "clade.zoaea"
+      },
+      {
+        "id": "species.corvet",
+        "name": "Corvet",
+        "summary": "Bird-analogue kept for eggs.",
+        "sources": [
+          "agri.production"
+        ],
+        "clade": "clade.zoaea"
+      }
+    ],
+    "welfare": {
+      "gradedBySentience": true,
+      "assessedByIndependentPanel": true,
+      "scalePublished": true,
+      "protectionsScaleWithAssessmentNotEconomicRole": true,
+      "closeConfinementPermitted": false,
+      "painfulProceduresWithoutAnaesthesiaPermitted": false,
+      "outdoorAccessRequired": true,
+      "stunningBeforeSlaughterRequired": true,
+      "maxTransportCivilHours": 6,
+      "rationale": "A civilization that intends to be wealthy without cruelty cannot exempt the part of its economy where cruelty is cheapest.",
+      "culturalDerogations": true,
+      "derogationCritique": "The Concord's own welfare panel describes the pastoral derogations as inconsistent with the regime's stated basis."
+    }
+  },
+  "fermentation": {
+    "caloriesSharePct": 13,
+    "pricePartyWithPasturedMeatEY": 231,
+    "currentPriceAdvantagePct": 40,
+    "culturalNote": "This food is ordinary. It is not marketed as a substitute for anything, most living Elysians have never eaten anything else in that category, and the historical debate about whether it counts as real food is studied in schools as a curiosity."
+  },
+  "nutrients": {
+    "phosphorus": {
+      "recoveryRatePct": 92,
+      "horizonYears": 380,
+      "horizonWithoutRecoveryYears": 41,
+      "recoveryIsMandatoryDistrictFunction": true,
+      "resource": "resource.phosphorus"
+    },
+    "nitrogen": {
+      "constrained": false,
+      "source": "fusion-powered fixation"
+    },
+    "potassium": {
+      "horizonYears": 1000,
+      "resource": "resource.potassium"
+    },
+    "leakagePct": 8,
+    "leakageIsLargestPollutionFlow": true,
+    "regionsWithSeasonalHypoxia": 4,
+    "solved": false
+  },
+  "reserves": {
+    "totalMonthsOfConsumption": 14,
+    "heldPhysicallyNotFinancially": true,
+    "financialReservesRejectedEY": 254,
+    "financialRejectionRationale": "A claim on food is not food, and the circumstances that would require the reserve are exactly the circumstances in which claims fail.",
+    "rotatedContinuously": true,
+    "floorMonths": 8,
+    "reportTriggerMonths": 12,
+    "timesBelowReportTriggerSinceEY200": 4,
+    "timesBelowFloorEver": 0,
+    "annualHoldingCostShareOfGcpPct": 0.6,
+    "tiers": [
+      {
+        "id": "agri.reserve-concord",
+        "name": "Concord strategic reserve",
+        "summary": "Grain, pulses, oils, and fermentation feedstock in 340 dispersed depots.",
+        "sources": [
+          "agri.security"
+        ],
+        "months": 8,
+        "depots": 340
+      },
+      {
+        "id": "agri.reserve-regional",
+        "name": "Regional reserves",
+        "summary": "Regional staples held to regional specification.",
+        "sources": [
+          "agri.security"
+        ],
+        "months": 4
+      },
+      {
+        "id": "agri.reserve-district",
+        "name": "District reserves",
+        "summary": "Ready-to-distribute food and infant nutrition.",
+        "sources": [
+          "agri.security"
+        ],
+        "months": 2
+      }
+    ],
+    "sizingScenario": "Three consecutive warm phases of the Amarant Oscillation causing delayed or failed Elandric monsoons in successive years, coinciding with a Sirocc drought.",
+    "sizingScenarioObserved": false
+  },
+  "foodAsRight": {
+    "isCharterRight": false,
+    "deliveredIndirectlyBy": [
+      "gov.right-subsistence",
+      "agri.reserve-concord"
+    ],
+    "foundersReasoning": "A right to food would be a right to a physical thing the state cannot guarantee in all circumstances, and a right that fails in a famine is worse than no right at all.",
+    "amendmentAttempts": [
+      191,
+      302,
+      377
+    ],
+    "amendmentsPassed": 0,
+    "lastAttemptNarrow": true,
+    "canonPosition": "An open constitutional question, not a settled design.",
+    "alsoDeliveredBy": "price stabilisation through the reserve"
+  },
+  "affordability": {
+    "medianHouseholdFoodShareOfIncomePct": 9.1,
+    "lowestDecileFoodShareOfIncomePct": 16.4,
+    "foodInsecurityLastYearPct": 0.04,
+    "foodInsecurePeople": 2900000,
+    "chronicUndernourishment": "effectively zero",
+    "canonNote": "No Elysian goes hungry because food is unavailable; some do because they are unwell.",
+    "priceStabilisation": {
+      "operatesThroughReserveNotSubsidy": true,
+      "bandPublishedAheadYears": 1,
+      "administeredBy": "gov.portfolio-treasury-materials"
+    }
+  },
+  "hazardResponse": [
+    {
+      "id": "agri.hazard-monsoon",
+      "name": "Elandric monsoon failure",
+      "summary": "Regional reserve draw and interregional transfer; no planetary action required.",
+      "sources": [
+        "agri.security"
+      ],
+      "hazard": "climate.hazard-monsoon-failure",
+      "returnPeriodYears": 7
+    },
+    {
+      "id": "agri.hazard-sirocc",
+      "name": "Sirocc drought",
+      "summary": "Aquifer ceilings, desalination transfer, and Alcyon flow-share reallocation.",
+      "sources": [
+        "agri.security"
+      ],
+      "hazard": "climate.hazard-sirocc-drought",
+      "returnPeriodYears": 12
+    },
+    {
+      "id": "agri.hazard-amarant",
+      "name": "Amarant warm phase",
+      "summary": "Fishery quota reduction set years ahead on the 14-month forecast.",
+      "sources": [
+        "agri.security"
+      ],
+      "returnPeriodYears": 4
+    },
+    {
+      "id": "agri.hazard-compound",
+      "name": "Compound scenario",
+      "summary": "Never observed; met by the Concord strategic reserve with emergency powers available.",
+      "sources": [
+        "agri.security"
+      ],
+      "observed": false
+    }
+  ],
+  "flowShare": {
+    "stillGovernsAlcyon": true,
+    "originEvent": "hist.event-flow-share",
+    "principle": "Allocation by turn, published in advance, with the shortfall shared rather than concentrated.",
+    "note": "Modified beyond recognition in its mechanics and unchanged in its principle. Constitutional lawyers cite it more than any other precedent; farmers simply use it."
+  },
+  "forecastLead": {
+    "amarantForecastMonths": 14,
+    "canonNote": "This capability, not the reserve itself, is what most distinguishes the modern Concord from the civilization that lost 210 million people to a supply failure it did not see coming."
+  },
+  "knownWeaknesses": [
+    {
+      "id": "agri.weakness-nutrient-leakage",
+      "name": "Nutrient leakage",
+      "summary": "8% loop escape and seasonal hypoxia in four Regions, with no agreed solution and an active political fight.",
+      "sources": [
+        "agri.production"
+      ]
+    },
+    {
+      "id": "agri.weakness-overexploited-stocks",
+      "name": "Two over-exploited stocks",
+      "summary": "Under recovery plans, with Region and Commission disputing whether assessment or enforcement failed.",
+      "sources": [
+        "agri.production"
+      ]
+    },
+    {
+      "id": "agri.weakness-cultivar-concentration",
+      "name": "Cultivar concentration despite the rule",
+      "summary": "The 15% cap applies per species; three staples are dominated by closely related cultivars satisfying the letter and not the purpose.",
+      "sources": [
+        "agri.production"
+      ]
+    },
+    {
+      "id": "agri.weakness-cea-energy",
+      "name": "CEA energy dependence",
+      "summary": "24% of calories depend on 0.31 TW; an extended grid failure is a food failure, and the 14-day islanding rule is what stands between them.",
+      "sources": [
+        "agri.production"
+      ]
+    },
+    {
+      "id": "agri.weakness-pastoral-derogations",
+      "name": "Pastoral derogations",
+      "summary": "Cultural exemptions from welfare law that the Concord's own welfare panel calls inconsistent with the regime's stated basis.",
+      "sources": [
+        "agri.production"
+      ]
+    },
+    {
+      "id": "agri.weakness-amarant-vulnerability",
+      "name": "Amarant vulnerability",
+      "summary": "The second-largest fishery loses productivity in every warm phase, roughly one year in seven, and no management change alters that.",
+      "sources": [
+        "agri.production"
+      ]
+    },
+    {
+      "id": "agri.weakness-no-food-right",
+      "name": "Food is not a Charter right",
+      "summary": "Three amendment attempts, the last narrow; an open constitutional question.",
+      "sources": [
+        "agri.security"
+      ]
+    },
+    {
+      "id": "agri.weakness-food-insecurity",
+      "name": "Food insecurity is not zero",
+      "summary": "2.9 million people, concentrated among the severely unwell; a health failure appearing as a food statistic.",
+      "sources": [
+        "agri.security"
+      ]
+    },
+    {
+      "id": "agri.weakness-reserve-erosion-risk",
+      "name": "Reserve cost is invisible until needed",
+      "summary": "0.6% of GCP annually against a scenario never observed; canon notes such holdings historically erode when a generation passes without using them.",
+      "sources": [
+        "agri.security"
+      ]
+    },
+    {
+      "id": "agri.weakness-bottom-decile",
+      "name": "Bottom-decile food share",
+      "summary": "16.4% against a 9.1% median; food is cheap for most and not for everyone.",
+      "sources": [
+        "agri.security"
+      ]
+    },
+    {
+      "id": "agri.weakness-untested-sizing",
+      "name": "Compound scenario untested",
+      "summary": "The reserve is sized against a combination that has never happened, so the sizing rests on modelling rather than experience.",
+      "sources": [
+        "agri.security"
+      ]
+    },
+    {
+      "id": "agri.weakness-specification-drift",
+      "name": "Regional reserve specification drift",
+      "summary": "Three Regions hold stocks poorly matched to a planetary distribution effort.",
+      "sources": [
+        "agri.security"
+      ]
+    }
+  ]
+}

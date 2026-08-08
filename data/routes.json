@@ -1,0 +1,1692 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "route.routes-data",
+  "name": "Transport Networks of the Elysian Concord",
+  "summary": "Passenger modal shares, urban mobility, continental maglev and rail corridors with path geometry, sea lanes, governance air corridors, ports, launch ranges, and freight.",
+  "sources": [
+    "route.transport",
+    "route.gateways"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "distance": "km",
+    "speed": "km/h",
+    "coordinates": "decimal degrees",
+    "time": "civil hours (1 civil hour = 3,586.15 SI seconds)"
+  },
+  "modalShares": {
+    "passengerTrips": [
+      {
+        "id": "route.mode-walking",
+        "name": "Walking",
+        "summary": "",
+        "sources": [
+          "route.transport"
+        ],
+        "sharePct": 41.0
+      },
+      {
+        "id": "route.mode-urban-transit",
+        "name": "Urban transit",
+        "summary": "Metro, tram, and bus.",
+        "sources": [
+          "route.transport"
+        ],
+        "sharePct": 24.0
+      },
+      {
+        "id": "route.mode-cycling",
+        "name": "Cycling",
+        "summary": "On 1.9 million km of protected cycleway.",
+        "sources": [
+          "route.transport"
+        ],
+        "sharePct": 22.0
+      },
+      {
+        "id": "route.mode-interurban-rail",
+        "name": "Interurban rail and maglev",
+        "summary": "",
+        "sources": [
+          "route.transport"
+        ],
+        "sharePct": 8.0
+      },
+      {
+        "id": "route.mode-road-vehicle",
+        "name": "Road vehicle",
+        "summary": "",
+        "sources": [
+          "route.transport"
+        ],
+        "sharePct": 4.4
+      },
+      {
+        "id": "route.mode-air",
+        "name": "Air",
+        "summary": "Priced deliberately to stay small.",
+        "sources": [
+          "route.transport"
+        ],
+        "sharePct": 0.6
+      }
+    ],
+    "freightTonneKm": {
+      "railAndMaglev": 61,
+      "sea": 27,
+      "road": 11,
+      "air": 1
+    }
+  },
+  "urbanMobility": {
+    "householdsOwningRoadVehiclePct": 11,
+    "protectedCyclewayKm": 1900000,
+    "cycleShareRangePct": [
+      9,
+      38
+    ],
+    "pedestrianPriorityLiabilityPresumed": true,
+    "cityCentresClosedToPrivateMotorTraffic": true,
+    "transitFareFreeRegions": 27,
+    "transitFareFreeOfRegions": 34,
+    "transitFundedFrom": "econ.tax-land-value",
+    "eveningServiceToHour": 23,
+    "fundingRationale": "Transit creates the land value it is paid from."
+  },
+  "networkPolicy": {
+    "trackIsPublicMonopoly": true,
+    "operationsMayBePrivate": true,
+    "maglevServiceSpeedKmh": 620,
+    "evacuatedTubeServiceSpeedKmh": 900,
+    "evacuatedTubeCorridors": 4,
+    "passageStandards": {
+      "wildlifeCrossingMaxIntervalKm": 4,
+      "continuousBarrierPermitted": false,
+      "darkSkyLightingRequired": true,
+      "railCorridorsQualifyingAsConnectivityLandPct": 61
+    }
+  },
+  "routes": [
+    {
+      "id": "route.alcyon-trunk",
+      "name": "The Alcyon Trunk",
+      "summary": "Follows the River Alcyon from the delta to the Meridian Plain, linking the oldest urban corridor on Elysium to the seat of the Assembly.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "maglev"
+      ],
+      "mode": "maglev",
+      "serviceSpeedKmh": 620,
+      "continent": "region.meridia",
+      "stops": [
+        "city.alcyon-mouth",
+        "city.ilvaret-new",
+        "city.kelvaran",
+        "city.sennary",
+        "city.meridian-plain-city"
+      ],
+      "lengthKm": 3247,
+      "path": [
+        {
+          "lat": 13.0,
+          "lon": 1.0
+        },
+        {
+          "lat": 15.5,
+          "lon": 3.5
+        },
+        {
+          "lat": 21.0,
+          "lon": 4.5
+        },
+        {
+          "lat": 28.0,
+          "lon": -10.0
+        },
+        {
+          "lat": 31.0,
+          "lon": -14.0
+        }
+      ]
+    },
+    {
+      "id": "route.cindral-line",
+      "name": "The Cindral Line",
+      "summary": "Crosses the Cindral Arc at its principal pass to reach the Amarant seaboard.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "maglev"
+      ],
+      "mode": "maglev",
+      "serviceSpeedKmh": 620,
+      "continent": "region.meridia",
+      "stops": [
+        "city.meridian-plain-city",
+        "city.cindral-gate",
+        "city.kethran-vale",
+        "city.amarath-port"
+      ],
+      "lengthKm": 8530,
+      "path": [
+        {
+          "lat": 31.0,
+          "lon": -14.0
+        },
+        {
+          "lat": 9.0,
+          "lon": 33.0
+        },
+        {
+          "lat": -4.5,
+          "lon": 27.5
+        },
+        {
+          "lat": -2.5,
+          "lon": 39.0
+        }
+      ]
+    },
+    {
+      "id": "route.sirocc-spur",
+      "name": "The Sirocc Spur",
+      "summary": "Serves the Sirocc solar arrays and lithium brine fields.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "rail"
+      ],
+      "mode": "rail",
+      "serviceSpeedKmh": 280,
+      "continent": "region.meridia",
+      "stops": [
+        "city.kelvaran",
+        "city.siroccar"
+      ],
+      "lengthKm": 574,
+      "path": [
+        {
+          "lat": 21.0,
+          "lon": 4.5
+        },
+        {
+          "lat": 25.5,
+          "lon": 7.0
+        }
+      ]
+    },
+    {
+      "id": "route.verdanne-branch",
+      "name": "The Verdanne Branch",
+      "summary": "Terminates at the margin of the inviolable Verdanne core; no line enters the core.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "rail"
+      ],
+      "mode": "rail",
+      "serviceSpeedKmh": 280,
+      "continent": "region.meridia",
+      "stops": [
+        "city.sudmark-crossing",
+        "city.verdanne-edge"
+      ],
+      "lengthKm": 1871,
+      "path": [
+        {
+          "lat": -20.5,
+          "lon": -5.0
+        },
+        {
+          "lat": -11.0,
+          "lon": 9.0
+        }
+      ]
+    },
+    {
+      "id": "route.meridia-south",
+      "name": "The Sudmark Line",
+      "summary": "Southern Meridian connector.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "maglev"
+      ],
+      "mode": "maglev",
+      "serviceSpeedKmh": 620,
+      "continent": "region.meridia",
+      "stops": [
+        "city.sennary",
+        "city.sudmark-crossing",
+        "city.kethran-vale"
+      ],
+      "lengthKm": 9561,
+      "path": [
+        {
+          "lat": 28.0,
+          "lon": -10.0
+        },
+        {
+          "lat": -20.5,
+          "lon": -5.0
+        },
+        {
+          "lat": -4.5,
+          "lon": 27.5
+        }
+      ]
+    },
+    {
+      "id": "route.terrace-trunk",
+      "name": "The Terrace Trunk",
+      "summary": "The busiest passenger corridor on Elysium, running the length of the Elandric Terraces at 900 km/h.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "evacuated-tube"
+      ],
+      "mode": "evacuated-tube",
+      "serviceSpeedKmh": 900,
+      "continent": "region.elandris",
+      "stops": [
+        "city.kessandra-reach",
+        "city.terrace-north-city",
+        "city.andrivar",
+        "city.terrace-south-city",
+        "city.oshaal-city"
+      ],
+      "lengthKm": 8196,
+      "path": [
+        {
+          "lat": 2.5,
+          "lon": 111.0
+        },
+        {
+          "lat": 6.5,
+          "lon": 131.0
+        },
+        {
+          "lat": -8.5,
+          "lon": 127.0
+        },
+        {
+          "lat": -12.5,
+          "lon": 139.5
+        },
+        {
+          "lat": -32.0,
+          "lon": 125.5
+        }
+      ]
+    },
+    {
+      "id": "route.serrance-line",
+      "name": "The Serrance Line",
+      "summary": "Storm-coast line, engineered to the 285 km/h cyclone design basis along its final section.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "maglev"
+      ],
+      "mode": "maglev",
+      "serviceSpeedKmh": 620,
+      "continent": "region.elandris",
+      "stops": [
+        "city.andrivar",
+        "city.mirran-city",
+        "city.serrance-city"
+      ],
+      "lengthKm": 3516,
+      "path": [
+        {
+          "lat": -8.5,
+          "lon": 127.0
+        },
+        {
+          "lat": -22.5,
+          "lon": 133.5
+        },
+        {
+          "lat": -28.5,
+          "lon": 149.5
+        }
+      ]
+    },
+    {
+      "id": "route.elandris-west",
+      "name": "The Halvane Line",
+      "summary": "Connects the Terraces to the Amarant Upwelling fishery ports.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "maglev"
+      ],
+      "mode": "maglev",
+      "serviceSpeedKmh": 620,
+      "continent": "region.elandris",
+      "stops": [
+        "city.terrace-south-city",
+        "city.halvane-bay"
+      ],
+      "lengthKm": 2291,
+      "path": [
+        {
+          "lat": -12.5,
+          "lon": 139.5
+        },
+        {
+          "lat": -18.5,
+          "lon": 119.5
+        }
+      ]
+    },
+    {
+      "id": "route.elandris-northeast",
+      "name": "The Delvane Line",
+      "summary": "Northeastern coastal line.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "rail"
+      ],
+      "mode": "rail",
+      "serviceSpeedKmh": 280,
+      "continent": "region.elandris",
+      "stops": [
+        "city.kessandra-reach",
+        "city.delvane-city"
+      ],
+      "lengthKm": 3558,
+      "path": [
+        {
+          "lat": 2.5,
+          "lon": 111.0
+        },
+        {
+          "lat": 10.5,
+          "lon": 141.5
+        }
+      ]
+    },
+    {
+      "id": "route.rim-line",
+      "name": "The Rim Line",
+      "summary": "Runs the Thalassari seaboard past the seat of the Constitutional Court.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "evacuated-tube"
+      ],
+      "mode": "evacuated-tube",
+      "serviceSpeedKmh": 900,
+      "continent": "region.thalassar",
+      "stops": [
+        "city.fjordmark-city",
+        "city.tessarene",
+        "city.mistral-harbour",
+        "city.sablewater-city"
+      ],
+      "lengthKm": 5234,
+      "path": [
+        {
+          "lat": 40.5,
+          "lon": -123.5
+        },
+        {
+          "lat": 18.5,
+          "lon": -115.5
+        },
+        {
+          "lat": 16.0,
+          "lon": -118.0
+        },
+        {
+          "lat": -3.5,
+          "lon": -119.5
+        }
+      ]
+    },
+    {
+      "id": "route.rimward-branch",
+      "name": "The Rimward Branch",
+      "summary": "Climbs behind the Thalassar Rim to the interior plateau.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "rail"
+      ],
+      "mode": "rail",
+      "serviceSpeedKmh": 280,
+      "continent": "region.thalassar",
+      "stops": [
+        "city.tessarene",
+        "city.rimward-city",
+        "city.coronal-city"
+      ],
+      "lengthKm": 4007,
+      "path": [
+        {
+          "lat": 18.5,
+          "lon": -115.5
+        },
+        {
+          "lat": 8.5,
+          "lon": -105.5
+        },
+        {
+          "lat": 29.5,
+          "lon": -109.5
+        }
+      ]
+    },
+    {
+      "id": "route.vail-trunk",
+      "name": "The Vail Trunk",
+      "summary": "Spine of the Aurorian industrial belt, linking the Council of Regions to the mineral province where Elysian industry began.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "evacuated-tube"
+      ],
+      "mode": "evacuated-tube",
+      "serviceSpeedKmh": 900,
+      "continent": "region.auroria",
+      "stops": [
+        "city.hollen-city",
+        "city.korrast",
+        "city.vail-forge",
+        "city.seraphine",
+        "city.korren-city"
+      ],
+      "lengthKm": 4034,
+      "path": [
+        {
+          "lat": 60.5,
+          "lon": 65.5
+        },
+        {
+          "lat": 51.5,
+          "lon": 77.5
+        },
+        {
+          "lat": 53.5,
+          "lon": 81.0
+        },
+        {
+          "lat": 57.5,
+          "lon": 95.5
+        },
+        {
+          "lat": 48.5,
+          "lon": 109.5
+        }
+      ]
+    },
+    {
+      "id": "route.northreach-line",
+      "name": "The Northreach Line",
+      "summary": "Subpolar line; the most weather-interrupted scheduled service in the Concord.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "rail"
+      ],
+      "mode": "rail",
+      "serviceSpeedKmh": 280,
+      "continent": "region.auroria",
+      "stops": [
+        "city.vail-forge",
+        "city.northreach-station"
+      ],
+      "lengthKm": 1630,
+      "path": [
+        {
+          "lat": 53.5,
+          "lon": 81.0
+        },
+        {
+          "lat": 67.5,
+          "lon": 87.5
+        }
+      ]
+    },
+    {
+      "id": "route.austral-link",
+      "name": "The Austral Link",
+      "summary": "The only railway on Veydra, serving the Veydran Commons research network.",
+      "sources": [
+        "route.transport"
+      ],
+      "tags": [
+        "land",
+        "rail"
+      ],
+      "mode": "rail",
+      "serviceSpeedKmh": 280,
+      "continent": "region.veydra",
+      "stops": [
+        "city.highmarch-station",
+        "city.austral-landing"
+      ],
+      "lengthKm": 1549,
+      "path": [
+        {
+          "lat": -51.5,
+          "lon": -44.0
+        },
+        {
+          "lat": -61.5,
+          "lon": -61.0
+        }
+      ]
+    },
+    {
+      "id": "route.sea-meridia-elandris",
+      "name": "Meridia\u2013Elandris sea lane",
+      "summary": "Principal bulk route between the Amarant seaboards.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "sea",
+        "sea"
+      ],
+      "mode": "sea",
+      "serviceSpeedKmh": 30,
+      "stops": [
+        "city.amarath-port",
+        "city.halvane-bay"
+      ],
+      "lengthKm": 9112,
+      "path": [
+        {
+          "lat": -2.5,
+          "lon": 39.0
+        },
+        {
+          "lat": -4.289,
+          "lon": 44.452
+        },
+        {
+          "lat": -6.04,
+          "lon": 49.929
+        },
+        {
+          "lat": -7.735,
+          "lon": 55.441
+        },
+        {
+          "lat": -9.359,
+          "lon": 60.996
+        },
+        {
+          "lat": -10.896,
+          "lon": 66.603
+        },
+        {
+          "lat": -12.33,
+          "lon": 72.265
+        },
+        {
+          "lat": -13.646,
+          "lon": 77.987
+        },
+        {
+          "lat": -14.83,
+          "lon": 83.77
+        },
+        {
+          "lat": -15.868,
+          "lon": 89.612
+        },
+        {
+          "lat": -16.748,
+          "lon": 95.51
+        },
+        {
+          "lat": -17.459,
+          "lon": 101.458
+        },
+        {
+          "lat": -17.992,
+          "lon": 107.446
+        },
+        {
+          "lat": -18.341,
+          "lon": 113.464
+        },
+        {
+          "lat": -18.5,
+          "lon": 119.5
+        }
+      ]
+    },
+    {
+      "id": "route.sea-thalassar-elandris",
+      "name": "Thalassar\u2013Elandris sea lane",
+      "summary": "Longest regular crossing; 4.7 Elysian days at service speed.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "sea",
+        "sea"
+      ],
+      "mode": "sea",
+      "serviceSpeedKmh": 30,
+      "stops": [
+        "city.mistral-harbour",
+        "city.kessandra-reach"
+      ],
+      "lengthKm": 14563,
+      "path": [
+        {
+          "lat": 16.0,
+          "lon": -118.0
+        },
+        {
+          "lat": 18.387,
+          "lon": -127.254
+        },
+        {
+          "lat": 20.315,
+          "lon": -136.741
+        },
+        {
+          "lat": 21.722,
+          "lon": -146.434
+        },
+        {
+          "lat": 22.556,
+          "lon": -156.279
+        },
+        {
+          "lat": 22.786,
+          "lon": -166.199
+        },
+        {
+          "lat": 22.404,
+          "lon": -176.109
+        },
+        {
+          "lat": 21.424,
+          "lon": 174.078
+        },
+        {
+          "lat": 19.882,
+          "lon": 164.432
+        },
+        {
+          "lat": 17.833,
+          "lon": 155.001
+        },
+        {
+          "lat": 15.344,
+          "lon": 145.807
+        },
+        {
+          "lat": 12.487,
+          "lon": 136.844
+        },
+        {
+          "lat": 9.342,
+          "lon": 128.086
+        },
+        {
+          "lat": 5.987,
+          "lon": 119.49
+        },
+        {
+          "lat": 2.5,
+          "lon": 111.0
+        }
+      ]
+    },
+    {
+      "id": "route.sea-meridia-thalassar",
+      "name": "Meridia\u2013Thalassar sea lane",
+      "summary": "Solward Current route, historically the fastest under sail.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "sea",
+        "sea"
+      ],
+      "mode": "sea",
+      "serviceSpeedKmh": 30,
+      "stops": [
+        "city.alcyon-mouth",
+        "city.sablewater-city"
+      ],
+      "lengthKm": 13690,
+      "path": [
+        {
+          "lat": 13.0,
+          "lon": 1.0
+        },
+        {
+          "lat": 13.393,
+          "lon": -7.831
+        },
+        {
+          "lat": 13.48,
+          "lon": -16.679
+        },
+        {
+          "lat": 13.257,
+          "lon": -25.523
+        },
+        {
+          "lat": 12.731,
+          "lon": -34.339
+        },
+        {
+          "lat": 11.915,
+          "lon": -43.109
+        },
+        {
+          "lat": 10.831,
+          "lon": -51.818
+        },
+        {
+          "lat": 9.504,
+          "lon": -60.458
+        },
+        {
+          "lat": 7.967,
+          "lon": -69.025
+        },
+        {
+          "lat": 6.257,
+          "lon": -77.526
+        },
+        {
+          "lat": 4.41,
+          "lon": -85.968
+        },
+        {
+          "lat": 2.469,
+          "lon": -94.368
+        },
+        {
+          "lat": 0.475,
+          "lon": -102.744
+        },
+        {
+          "lat": -1.529,
+          "lon": -111.114
+        },
+        {
+          "lat": -3.5,
+          "lon": -119.5
+        }
+      ]
+    },
+    {
+      "id": "route.sea-auroria-thalassar",
+      "name": "Auroria\u2013Thalassar sea lane",
+      "summary": "Boreal route carrying Vail Spine ore.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "sea",
+        "sea"
+      ],
+      "mode": "sea",
+      "serviceSpeedKmh": 30,
+      "stops": [
+        "city.vail-forge",
+        "city.fjordmark-city"
+      ],
+      "lengthKm": 9505,
+      "path": [
+        {
+          "lat": 53.5,
+          "lon": 81.0
+        },
+        {
+          "lat": 59.116,
+          "lon": 84.689
+        },
+        {
+          "lat": 64.588,
+          "lon": 89.807
+        },
+        {
+          "lat": 69.794,
+          "lon": 97.424
+        },
+        {
+          "lat": 74.466,
+          "lon": 109.686
+        },
+        {
+          "lat": 77.964,
+          "lon": 130.285
+        },
+        {
+          "lat": 79.093,
+          "lon": 160.15
+        },
+        {
+          "lat": 77.209,
+          "lon": -171.882
+        },
+        {
+          "lat": 73.302,
+          "lon": -153.893
+        },
+        {
+          "lat": 68.446,
+          "lon": -143.166
+        },
+        {
+          "lat": 63.152,
+          "lon": -136.365
+        },
+        {
+          "lat": 57.634,
+          "lon": -131.704
+        },
+        {
+          "lat": 51.99,
+          "lon": -128.287
+        },
+        {
+          "lat": 46.27,
+          "lon": -125.642
+        },
+        {
+          "lat": 40.5,
+          "lon": -123.5
+        }
+      ]
+    },
+    {
+      "id": "route.sea-isles-elandris",
+      "name": "Isles\u2013Elandris sea lane",
+      "summary": "Isle provisioning and launch-support route.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "sea",
+        "sea"
+      ],
+      "mode": "sea",
+      "serviceSpeedKmh": 30,
+      "stops": [
+        "city.kaelis-town",
+        "city.delvane-city"
+      ],
+      "lengthKm": 3687,
+      "path": [
+        {
+          "lat": -1.0,
+          "lon": 172.0
+        },
+        {
+          "lat": -0.149,
+          "lon": 169.844
+        },
+        {
+          "lat": 0.703,
+          "lon": 167.689
+        },
+        {
+          "lat": 1.554,
+          "lon": 165.533
+        },
+        {
+          "lat": 2.402,
+          "lon": 163.375
+        },
+        {
+          "lat": 3.247,
+          "lon": 161.214
+        },
+        {
+          "lat": 4.088,
+          "lon": 159.05
+        },
+        {
+          "lat": 4.923,
+          "lon": 156.881
+        },
+        {
+          "lat": 5.75,
+          "lon": 154.706
+        },
+        {
+          "lat": 6.569,
+          "lon": 152.526
+        },
+        {
+          "lat": 7.379,
+          "lon": 150.338
+        },
+        {
+          "lat": 8.179,
+          "lon": 148.142
+        },
+        {
+          "lat": 8.966,
+          "lon": 145.938
+        },
+        {
+          "lat": 9.74,
+          "lon": 143.724
+        },
+        {
+          "lat": 10.5,
+          "lon": 141.5
+        }
+      ]
+    },
+    {
+      "id": "route.sea-veydra-thalassar",
+      "name": "Veydra\u2013Thalassar sea lane",
+      "summary": "Austral supply route; interrupted by winter storms 20-30 times a season.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "sea",
+        "sea"
+      ],
+      "mode": "sea",
+      "serviceSpeedKmh": 30,
+      "stops": [
+        "city.austral-landing",
+        "city.sablewater-city"
+      ],
+      "lengthKm": 8225,
+      "path": [
+        {
+          "lat": -61.5,
+          "lon": -61.0
+        },
+        {
+          "lat": -58.857,
+          "lon": -69.951
+        },
+        {
+          "lat": -55.687,
+          "lon": -77.52
+        },
+        {
+          "lat": -52.124,
+          "lon": -83.889
+        },
+        {
+          "lat": -48.27,
+          "lon": -89.281
+        },
+        {
+          "lat": -44.199,
+          "lon": -93.896
+        },
+        {
+          "lat": -39.967,
+          "lon": -97.903
+        },
+        {
+          "lat": -35.614,
+          "lon": -101.437
+        },
+        {
+          "lat": -31.168,
+          "lon": -104.601
+        },
+        {
+          "lat": -26.652,
+          "lon": -107.479
+        },
+        {
+          "lat": -22.082,
+          "lon": -110.137
+        },
+        {
+          "lat": -17.472,
+          "lon": -112.626
+        },
+        {
+          "lat": -12.832,
+          "lon": -114.993
+        },
+        {
+          "lat": -8.172,
+          "lon": -117.273
+        },
+        {
+          "lat": -3.5,
+          "lon": -119.5
+        }
+      ]
+    },
+    {
+      "id": "route.air-sennary-andrivar",
+      "name": "Sennary\u2013Andrivar air corridor",
+      "summary": "Governance corridor between the Assembly and the Independent Offices; 15.5 civil hours.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "air",
+        "governance"
+      ],
+      "mode": "air",
+      "serviceSpeedKmh": 850,
+      "stops": [
+        "city.sennary",
+        "city.andrivar"
+      ],
+      "lengthKm": 15347,
+      "travelTimeCivilHours": 18.1,
+      "path": [
+        {
+          "lat": 28.0,
+          "lon": -10.0
+        },
+        {
+          "lat": 30.44,
+          "lon": 0.701
+        },
+        {
+          "lat": 31.97,
+          "lon": 11.844
+        },
+        {
+          "lat": 32.503,
+          "lon": 23.239
+        },
+        {
+          "lat": 32.005,
+          "lon": 34.638
+        },
+        {
+          "lat": 30.508,
+          "lon": 45.793
+        },
+        {
+          "lat": 28.097,
+          "lon": 56.511
+        },
+        {
+          "lat": 24.894,
+          "lon": 66.685
+        },
+        {
+          "lat": 21.04,
+          "lon": 76.296
+        },
+        {
+          "lat": 16.674,
+          "lon": 85.393
+        },
+        {
+          "lat": 11.931,
+          "lon": 94.066
+        },
+        {
+          "lat": 6.931,
+          "lon": 102.435
+        },
+        {
+          "lat": 1.789,
+          "lon": 110.625
+        },
+        {
+          "lat": -3.39,
+          "lon": 118.769
+        },
+        {
+          "lat": -8.5,
+          "lon": 127.0
+        }
+      ]
+    },
+    {
+      "id": "route.air-sennary-korrast",
+      "name": "Sennary\u2013Korrast air corridor",
+      "summary": "Assembly to Council of Regions.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "air",
+        "governance"
+      ],
+      "mode": "air",
+      "serviceSpeedKmh": 850,
+      "stops": [
+        "city.sennary",
+        "city.korrast"
+      ],
+      "lengthKm": 7608,
+      "travelTimeCivilHours": 9.0,
+      "path": [
+        {
+          "lat": 28.0,
+          "lon": -10.0
+        },
+        {
+          "lat": 31.473,
+          "lon": -6.212
+        },
+        {
+          "lat": 34.826,
+          "lon": -2.137
+        },
+        {
+          "lat": 38.032,
+          "lon": 2.277
+        },
+        {
+          "lat": 41.058,
+          "lon": 7.082
+        },
+        {
+          "lat": 43.866,
+          "lon": 12.333
+        },
+        {
+          "lat": 46.41,
+          "lon": 18.077
+        },
+        {
+          "lat": 48.64,
+          "lon": 24.347
+        },
+        {
+          "lat": 50.5,
+          "lon": 31.145
+        },
+        {
+          "lat": 51.934,
+          "lon": 38.434
+        },
+        {
+          "lat": 52.892,
+          "lon": 46.12
+        },
+        {
+          "lat": 53.335,
+          "lon": 54.058
+        },
+        {
+          "lat": 53.244,
+          "lon": 62.062
+        },
+        {
+          "lat": 52.624,
+          "lon": 69.934
+        },
+        {
+          "lat": 51.5,
+          "lon": 77.5
+        }
+      ]
+    },
+    {
+      "id": "route.air-sennary-tessarene",
+      "name": "Sennary\u2013Tessarene air corridor",
+      "summary": "Assembly to Constitutional Court.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "air",
+        "governance"
+      ],
+      "mode": "air",
+      "serviceSpeedKmh": 850,
+      "stops": [
+        "city.sennary",
+        "city.tessarene"
+      ],
+      "lengthKm": 10713,
+      "travelTimeCivilHours": 12.6,
+      "path": [
+        {
+          "lat": 28.0,
+          "lon": -10.0
+        },
+        {
+          "lat": 30.509,
+          "lon": -17.166
+        },
+        {
+          "lat": 32.607,
+          "lon": -24.679
+        },
+        {
+          "lat": 34.239,
+          "lon": -32.511
+        },
+        {
+          "lat": 35.355,
+          "lon": -40.601
+        },
+        {
+          "lat": 35.92,
+          "lon": -48.861
+        },
+        {
+          "lat": 35.914,
+          "lon": -57.18
+        },
+        {
+          "lat": 35.337,
+          "lon": -65.438
+        },
+        {
+          "lat": 34.21,
+          "lon": -73.524
+        },
+        {
+          "lat": 32.568,
+          "lon": -81.349
+        },
+        {
+          "lat": 30.461,
+          "lon": -88.855
+        },
+        {
+          "lat": 27.943,
+          "lon": -96.014
+        },
+        {
+          "lat": 25.074,
+          "lon": -102.825
+        },
+        {
+          "lat": 21.908,
+          "lon": -109.308
+        },
+        {
+          "lat": 18.5,
+          "lon": -115.5
+        }
+      ]
+    },
+    {
+      "id": "route.air-andrivar-orphir",
+      "name": "Andrivar\u2013Orphir Reach air corridor",
+      "summary": "Independent Offices to the Monetary Authority.",
+      "sources": [
+        "route.gateways"
+      ],
+      "tags": [
+        "air",
+        "governance"
+      ],
+      "mode": "air",
+      "serviceSpeedKmh": 850,
+      "stops": [
+        "city.andrivar",
+        "city.orphir-reach"
+      ],
+      "lengthKm": 5923,
+      "travelTimeCivilHours": 7.0,
+      "path": [
+        {
+          "lat": -8.5,
+          "lon": 127.0
+        },
+        {
+          "lat": -7.801,
+          "lon": 130.695
+        },
+        {
+          "lat": -7.069,
+          "lon": 134.377
+        },
+        {
+          "lat": -6.309,
+          "lon": 138.048
+        },
+        {
+          "lat": -5.524,
+          "lon": 141.707
+        },
+        {
+          "lat": -4.716,
+          "lon": 145.357
+        },
+        {
+          "lat": -3.889,
+          "lon": 148.998
+        },
+        {
+          "lat": -3.046,
+          "lon": 152.632
+        },
+        {
+          "lat": -2.191,
+          "lon": 156.26
+        },
+        {
+          "lat": -1.328,
+          "lon": 159.884
+        },
+        {
+          "lat": -0.459,
+          "lon": 163.506
+        },
+        {
+          "lat": 0.412,
+          "lon": 167.127
+        },
+        {
+          "lat": 1.281,
+          "lon": 170.748
+        },
+        {
+          "lat": 2.145,
+          "lon": 174.372
+        },
+        {
+          "lat": 3.0,
+          "lon": 178.0
+        }
+      ]
+    }
+  ],
+  "autonomousVehicles": {
+    "fatalitiesPerBillionVehicleKm": 0.11,
+    "manualDrivingLawful": true,
+    "manualShareOfVehicleKmPct": 3,
+    "manualShareOfRoadDeathsPct": 34,
+    "rules": [
+      {
+        "id": "route.av-accountable-operator",
+        "name": "An identified operator is accountable",
+        "summary": "No vehicle may operate without a named legal person answerable for its decisions.",
+        "sources": [
+          "route.transport"
+        ]
+      },
+      {
+        "id": "route.av-log-custody",
+        "name": "The decision log is not held by the manufacturer",
+        "summary": "Records go to the Record Office, which manufacturers may request but not edit \u2014 the same arrangement as custodial recordings, for the same reason.",
+        "sources": [
+          "route.transport"
+        ],
+        "custodian": "gov.record-office"
+      },
+      {
+        "id": "route.av-no-identity-target",
+        "name": "No optimisation target may include a person's identity",
+        "summary": "A vehicle may not weigh who is in its path. Settled by the Constitutional Court in EY 318 as an application of equality before the law.",
+        "sources": [
+          "route.transport"
+        ],
+        "settledEY": 318,
+        "relatedTo": "gov.right-equality"
+      }
+    ]
+  },
+  "ruralAccess": {
+    "scheduledServiceThresholdResidents": 400,
+    "demandResponsiveBelowThreshold": true,
+    "maxBookingLeadDays": 1,
+    "leastReliableRegions": [
+      "polity.northreach",
+      "polity.austral-shore",
+      "polity.sable-group"
+    ]
+  },
+  "freight": {
+    "intensityVsIntegrationFraction": 0.33,
+    "seaServiceSpeedKmhRange": [
+      26,
+      34
+    ],
+    "roadFreightMaxJourneyKm": 300,
+    "justInTimeRejected": true,
+    "strategicReserveYears": 2,
+    "rationale": "A logistics system that cannot absorb a two-year interruption is an unfinished logistics system."
+  },
+  "ports": {
+    "majorPorts": 340,
+    "publiclyOwned": true,
+    "operationsFranchised": true,
+    "largest": [
+      "city.kessandra-reach",
+      "city.halvane-bay",
+      "city.mistral-harbour",
+      "city.fjordmark-city",
+      "city.amarath-port",
+      "city.alcyon-mouth",
+      "city.vail-forge"
+    ],
+    "topSevenShareOfIntercontinentalTonnagePct": 41,
+    "disasterReceptionNoticeHours": 48,
+    "biosecurityControlPoint": true
+  },
+  "aviation": {
+    "airports": 210,
+    "cruiseSpeedKmh": 850,
+    "supersonicService": false,
+    "supersonicEvaluations": 2,
+    "fuel": "energy.synthetic-hydrocarbons",
+    "fossil": false,
+    "constraintIsCostNotEmissions": true
+  },
+  "intercontinental": {
+    "fixedLinksExist": false,
+    "longestRegularCrossingKm": 13485,
+    "longestCrossingSeaCivilHours": 123,
+    "longestCrossingSeaElysianDays": 4.7,
+    "longestCrossingAirCivilHours": 15.9,
+    "governanceConductedRemotelyByDefault": true,
+    "translationLanguages": 41,
+    "acknowledgedCost": "A legislature that mostly meets remotely is less collegial, forms fewer cross-regional relationships, and is worse at the informal negotiation that resolves disputes before they become positions. Identified by every Assembly review since EY 250; none has proposed a capital city."
+  },
+  "launchRanges": [
+    {
+      "id": "route.launch-kaelis",
+      "name": "Kaelis Range",
+      "summary": "Principal equatorial site and heavy lift; sits beside inviolable reef systems and its licence was contested for eleven years.",
+      "sources": [
+        "route.gateways"
+      ],
+      "polity": "polity.kaelis-group",
+      "coordinates": {
+        "lat": -1.0,
+        "lon": 172.0
+      },
+      "capacitySharePct": 47,
+      "answeredBy": [
+        "phase-15"
+      ]
+    },
+    {
+      "id": "route.launch-verdanne",
+      "name": "Verdanne Range",
+      "summary": "Secondary equatorial site; crewed launch.",
+      "sources": [
+        "route.gateways"
+      ],
+      "polity": "polity.verdanne",
+      "coordinates": {
+        "lat": -11.0,
+        "lon": 9.0
+      },
+      "capacitySharePct": 24,
+      "answeredBy": [
+        "phase-15"
+      ]
+    },
+    {
+      "id": "route.launch-sirocc",
+      "name": "Sirocc Range",
+      "summary": "High-inclination and polar orbits; dry, empty, and heavily instrumented.",
+      "sources": [
+        "route.gateways"
+      ],
+      "polity": "polity.sirocc",
+      "coordinates": {
+        "lat": 25.5,
+        "lon": 7.0
+      },
+      "capacitySharePct": 19,
+      "answeredBy": [
+        "phase-15"
+      ]
+    },
+    {
+      "id": "route.launch-austral",
+      "name": "Austral Range",
+      "summary": "Polar and retrograde launch supporting the observation constellations.",
+      "sources": [
+        "route.gateways"
+      ],
+      "polity": "polity.austral-shore",
+      "coordinates": {
+        "lat": -61.5,
+        "lon": -61.0
+      },
+      "capacitySharePct": 10,
+      "answeredBy": [
+        "phase-15"
+      ]
+    }
+  ],
+  "launchPolicy": {
+    "isEnumeratedConcordPower": true,
+    "maxSingleRangeCapacityPct": 60,
+    "escapeVelocityKmS": 11.42,
+    "propellant": "synthetic, manufactured on site with fusion electricity"
+  },
+  "knownWeaknesses": [
+    {
+      "id": "route.weakness-manual-driving",
+      "name": "Manual driving disproportion",
+      "summary": "3% of vehicle-km and 34% of road deaths, published annually with no proposal to prohibit; the reasons are cultural rather than analytical.",
+      "sources": [
+        "route.transport"
+      ]
+    },
+    {
+      "id": "route.weakness-terrain-cycling",
+      "name": "Cycle share varies with terrain",
+      "summary": "38% in delta cities and 9% in Cindral; topography defeats policy.",
+      "sources": [
+        "route.transport"
+      ]
+    },
+    {
+      "id": "route.weakness-rural-reliability",
+      "name": "Rural reliability",
+      "summary": "Weather-interrupted links in three Regions; the Charter guarantees access and cannot guarantee it on any given day.",
+      "sources": [
+        "route.transport"
+      ]
+    },
+    {
+      "id": "route.weakness-corridor-land-take",
+      "name": "Corridor land take",
+      "summary": "Passage standards make corridors wider and dearer, and Communes resist new corridors even when the Region needs them.",
+      "sources": [
+        "route.transport"
+      ]
+    },
+    {
+      "id": "route.weakness-tube-fragility",
+      "name": "Evacuated-tube corridors are fragile",
+      "summary": "Four corridors with a failure mode that closes the whole line for weeks; expansion has stalled twice.",
+      "sources": [
+        "route.transport"
+      ]
+    },
+    {
+      "id": "route.weakness-fare-inequity",
+      "name": "Fare-free is not planet-wide",
+      "summary": "The seven Regions still charging are disproportionately those with the weakest fiscal capacity, so the poorest Regions charge the most.",
+      "sources": [
+        "route.transport"
+      ]
+    },
+    {
+      "id": "route.weakness-remote-governance",
+      "name": "Remote governance costs collegiality",
+      "summary": "Identified by every Assembly review since EY 250, never solved, and the alternative is refused on principle.",
+      "sources": [
+        "route.gateways"
+      ]
+    },
+    {
+      "id": "route.weakness-ocean-crossing",
+      "name": "Ocean crossing is slow and dear",
+      "summary": "Most Elysians never leave their continent, and canon does not claim this is entirely healthy for a planetary polity.",
+      "sources": [
+        "route.gateways"
+      ]
+    },
+    {
+      "id": "route.weakness-aviation-cost",
+      "name": "Aviation cost has never fallen",
+      "summary": "Synthetic fuel keeps aviation clean and expensive; the Isles and Veydra bear the isolation.",
+      "sources": [
+        "route.gateways"
+      ]
+    },
+    {
+      "id": "route.weakness-port-concentration",
+      "name": "Port concentration",
+      "summary": "Seven ports handle 41% of intercontinental tonnage, sitting uneasily with the Concord's redundancy doctrine.",
+      "sources": [
+        "route.gateways"
+      ]
+    },
+    {
+      "id": "route.weakness-launch-concentration",
+      "name": "Launch concentration",
+      "summary": "Kaelis at 47% is within the cap and above where planners would like it; the alternatives are all worse-placed.",
+      "sources": [
+        "route.gateways"
+      ]
+    },
+    {
+      "id": "route.weakness-port-rail-capacity",
+      "name": "Freight rail capacity at ports",
+      "summary": "The landward side of major ports is the tightest capacity constraint in Elysian logistics and has been for forty years.",
+      "sources": [
+        "route.gateways"
+      ]
+    }
+  ]
+}

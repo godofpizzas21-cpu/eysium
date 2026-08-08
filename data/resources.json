@@ -1,0 +1,461 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.1.0",
+  "id": "planet.resources",
+  "name": "Natural Resource Endowment of Elysium",
+  "summary": "Physical resource stocks, recovery rates, reserve horizons, renewable potential, and the Constrained List.",
+  "sources": [
+    "planet.resources"
+  ],
+  "units": {
+    "mass": "tonnes unless field states Mt (million tonnes) or Gt (billion tonnes)",
+    "power": "TW",
+    "volume": "km^3",
+    "horizon": "Elysian years of supply at current net consumption after recovery"
+  },
+  "doctrine": {
+    "constrainedListThresholdYears": 150,
+    "note": "A reserve horizon below the threshold places a material on the Constrained List, triggering substitution research and consumption ceilings (Phases 6 and 7)."
+  },
+  "materials": [
+    {
+      "id": "resource.iron",
+      "name": "Iron",
+      "summary": "Abundant; Vail Spine and Cindral foothills.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal",
+        "structural"
+      ],
+      "deposits": [
+        "region.vail-spine",
+        "region.cindral-arc"
+      ],
+      "recoveryRate": 0.96,
+      "reserveHorizonYears": 2000,
+      "constrained": false
+    },
+    {
+      "id": "resource.aluminium",
+      "name": "Aluminium",
+      "summary": "Lateritic Verdanne margins and Elandric uplands.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal",
+        "structural"
+      ],
+      "deposits": [
+        "region.verdanne",
+        "region.elandris"
+      ],
+      "recoveryRate": 0.97,
+      "reserveHorizonYears": 2000,
+      "constrained": false
+    },
+    {
+      "id": "resource.copper",
+      "name": "Copper",
+      "summary": "Thalassar Rim porphyries and Vail Spine.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal",
+        "conductor"
+      ],
+      "deposits": [
+        "region.thalassar-rim",
+        "region.vail-spine"
+      ],
+      "recoveryRate": 0.94,
+      "reserveHorizonYears": 610,
+      "constrained": false
+    },
+    {
+      "id": "resource.nickel-cobalt",
+      "name": "Nickel & cobalt",
+      "summary": "Vail Spine ultramafic complexes.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal"
+      ],
+      "deposits": [
+        "region.vail-spine"
+      ],
+      "recoveryRate": 0.93,
+      "reserveHorizonYears": 480,
+      "constrained": false
+    },
+    {
+      "id": "resource.zinc-lead",
+      "name": "Zinc & lead",
+      "summary": "Cindral Arc massive sulphide deposits.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal"
+      ],
+      "deposits": [
+        "region.cindral-arc"
+      ],
+      "recoveryRate": 0.91,
+      "reserveHorizonYears": 390,
+      "constrained": false
+    },
+    {
+      "id": "resource.titanium",
+      "name": "Titanium",
+      "summary": "Thalassar coastal mineral sands.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal",
+        "structural"
+      ],
+      "deposits": [
+        "region.thalassar"
+      ],
+      "recoveryRate": 0.95,
+      "reserveHorizonYears": 1000,
+      "constrained": false
+    },
+    {
+      "id": "resource.rare-earths",
+      "name": "Rare earth elements",
+      "summary": "Vail Spine carbonatites and Sirocc placer deposits.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal",
+        "strategic"
+      ],
+      "deposits": [
+        "region.vail-spine",
+        "region.sirocc-basin"
+      ],
+      "recoveryRate": 0.88,
+      "reserveHorizonYears": 210,
+      "constrained": false
+    },
+    {
+      "id": "resource.silver",
+      "name": "Silver",
+      "summary": "Thalassar Rim epithermal systems.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal"
+      ],
+      "deposits": [
+        "region.thalassar-rim"
+      ],
+      "recoveryRate": 0.92,
+      "reserveHorizonYears": 165,
+      "constrained": false
+    },
+    {
+      "id": "resource.platinum-group",
+      "name": "Platinum group metals",
+      "summary": "Vail Spine; catalysis and electronics critical.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal",
+        "strategic"
+      ],
+      "deposits": [
+        "region.vail-spine"
+      ],
+      "recoveryRate": 0.9,
+      "reserveHorizonYears": 135,
+      "constrained": true
+    },
+    {
+      "id": "resource.indium-gallium-germanium",
+      "name": "Indium, gallium, germanium",
+      "summary": "By-product streams only; tightest metal constraint.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "metal",
+        "strategic",
+        "byproduct"
+      ],
+      "deposits": [
+        "region.vail-spine",
+        "region.thalassar-rim"
+      ],
+      "recoveryRate": 0.86,
+      "reserveHorizonYears": 95,
+      "constrained": true
+    },
+    {
+      "id": "resource.deuterium",
+      "name": "Deuterium",
+      "summary": "Seawater at 33 ppm of hydrogen; primary fusion fuel.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "fusion",
+        "energy"
+      ],
+      "deposits": [
+        "global-ocean"
+      ],
+      "stockTonnes": 1.16e+16,
+      "reserveHorizonYears": null,
+      "unlimited": true,
+      "constrained": false
+    },
+    {
+      "id": "resource.lithium",
+      "name": "Lithium",
+      "summary": "Sirocc Basin brines and Veydran pegmatites; tritium breeding.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "fusion",
+        "energy",
+        "strategic"
+      ],
+      "deposits": [
+        "region.sirocc-basin",
+        "region.veydran-highlands"
+      ],
+      "reserveMt": 41,
+      "reserveHorizonYears": 900,
+      "constrained": false
+    },
+    {
+      "id": "resource.beryllium",
+      "name": "Beryllium",
+      "summary": "Neutron multiplier and the tightest constraint in the Elysian energy system. Recovery at 75% turns a 30-year horizon into a 120-year one; it cannot easily go higher because neutron-activated beryllium is difficult to reprocess.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "fusion",
+        "energy",
+        "strategic"
+      ],
+      "deposits": [
+        "region.vail-spine",
+        "region.cindral-arc"
+      ],
+      "reserveMt": 0.9,
+      "reserveHorizonYears": 120,
+      "constrained": true,
+      "grossConsumptionTPerYear": 30000,
+      "recoveryRate": 0.75,
+      "netVirginDrawTPerYear": 7500,
+      "horizonWithoutRecoveryYears": 30
+    },
+    {
+      "id": "resource.tungsten",
+      "name": "Tungsten",
+      "summary": "Plasma-facing components; Cindral Arc.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "fusion",
+        "metal"
+      ],
+      "deposits": [
+        "region.cindral-arc"
+      ],
+      "reserveMt": 7.2,
+      "reserveHorizonYears": 340,
+      "constrained": false
+    },
+    {
+      "id": "resource.phosphorus",
+      "name": "Phosphorus",
+      "summary": "Binding agricultural nutrient; horizon depends almost entirely on recovery.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "nutrient",
+        "strategic"
+      ],
+      "deposits": [
+        "region.meridian-plain",
+        "region.elandris"
+      ],
+      "reserveGt": 3.4,
+      "recoveryRate": 0.92,
+      "reserveHorizonYears": 380,
+      "horizonWithoutRecoveryYears": 41,
+      "constrained": false
+    },
+    {
+      "id": "resource.potassium",
+      "name": "Potassium",
+      "summary": "Sirocc evaporite deposits.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "nutrient"
+      ],
+      "deposits": [
+        "region.sirocc-basin"
+      ],
+      "reserveHorizonYears": 1000,
+      "constrained": false
+    },
+    {
+      "id": "resource.retained-carbon",
+      "name": "Retained carbon (fossil hydrocarbons)",
+      "summary": "2.9 Tt of recoverable carbon deliberately left in place; feedstock extraction only, at 0.02% of pre-settlement rate.",
+      "sources": [
+        "planet.resources"
+      ],
+      "tags": [
+        "carbon",
+        "retained",
+        "policy"
+      ],
+      "deposits": [
+        "region.meridian-plain",
+        "ocean.amarant",
+        "region.auroria"
+      ],
+      "recoverableCarbonTt": 2.9,
+      "combustionPermitted": false,
+      "feedstockExtractionShareOfPreSettlement": 0.0002,
+      "constrained": false
+    }
+  ],
+  "renewablePotential": [
+    {
+      "id": "resource.solar",
+      "name": "Solar",
+      "summary": "Insolation 1,255 W/m^2; Sirocc Basin has the highest surface irradiance.",
+      "sources": [
+        "planet.resources"
+      ],
+      "technicalPotentialTW": 1900,
+      "bestRegions": [
+        "region.sirocc-basin"
+      ]
+    },
+    {
+      "id": "resource.wind",
+      "name": "Wind",
+      "summary": "Ferrel-belt westerlies and the austral storm belt.",
+      "sources": [
+        "planet.resources"
+      ],
+      "technicalPotentialTW": 310,
+      "bestRegions": [
+        "ocean.austral",
+        "region.veydra"
+      ]
+    },
+    {
+      "id": "resource.geothermal",
+      "name": "Geothermal",
+      "summary": "Plate-margin and hotspot heat.",
+      "sources": [
+        "planet.resources"
+      ],
+      "technicalPotentialTW": 62,
+      "bestRegions": [
+        "region.cindral-arc",
+        "region.thalassar-rim",
+        "region.myriad-isles"
+      ]
+    },
+    {
+      "id": "resource.hydro",
+      "name": "Hydro",
+      "summary": "Alcyon system and Thalassar Rim orographic runoff.",
+      "sources": [
+        "planet.resources"
+      ],
+      "technicalPotentialTW": 4.1,
+      "bestRegions": [
+        "region.river-alcyon",
+        "region.thalassar-rim"
+      ]
+    },
+    {
+      "id": "resource.tidal",
+      "name": "Tidal",
+      "summary": "Kalyra tides at 1.2x Earth lunar; spring range 2.9 m open coast, 9.4 m in Thalassar funnel bays; perfectly predictable centuries ahead.",
+      "sources": [
+        "planet.resources"
+      ],
+      "technicalPotentialTW": 2.8,
+      "springRangeOpenCoastM": 2.9,
+      "springRangeFunnelBaysM": 9.4,
+      "bestRegions": [
+        "region.thalassar"
+      ]
+    },
+    {
+      "id": "resource.marine-thermal",
+      "name": "Marine thermal & current",
+      "summary": "Solward Current thermal and kinetic extraction.",
+      "sources": [
+        "planet.resources"
+      ],
+      "technicalPotentialTW": 1.4,
+      "bestRegions": [
+        "ocean.solward"
+      ]
+    }
+  ],
+  "water": {
+    "oceanKm3": 1310000000.0,
+    "cryosphereKm3": 1900000.0,
+    "groundwaterKm3": 21000000.0,
+    "siroccFossilAquiferShareOfGroundwater": 0.08,
+    "surfaceFreshKm3": 140000.0,
+    "atmosphericKm3": 15000.0,
+    "stressedBasins": [
+      "region.sirocc-basin",
+      "region.river-alcyon"
+    ]
+  },
+  "soil": {
+    "primeArableMkm2": 21.4,
+    "primeArableSharePct": 11.8,
+    "soilFormationTPerHaPerYear": 0.6,
+    "netErosionNegative": true,
+    "regions": [
+      "region.meridian-plain",
+      "region.elandris",
+      "region.river-alcyon",
+      "region.auroria"
+    ]
+  },
+  "biologicalMaterials": {
+    "sustainableTimberYieldGtPerYear": 1.9,
+    "managedForestryMkm2": 26.4,
+    "maxClearFellHa": 4,
+    "marineHarvestMtPerYear": 210,
+    "biopolymerFeedstockMtPerYear": 340
+  },
+  "constrainedList": [
+    "resource.platinum-group",
+    "resource.indium-gallium-germanium",
+    "resource.beryllium"
+  ]
+}

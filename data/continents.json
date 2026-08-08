@@ -1,0 +1,749 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.1.2",
+  "id": "planet.continents",
+  "name": "Continents of Elysium",
+  "summary": "Continental entities with canonical areas and coarse cartographic outline polygons (CCW outer rings, decimal degrees).",
+  "sources": [
+    "planet.geography"
+  ],
+  "geometryNote": "Outlines are deliberately coarse (cartographic LOD 0) for the Atlas globe; later dataVersions add detail without altering canonical areas. Island outlines carry featureId, referencing the island entity defined in the parent continent's features array; they do not define new entities.",
+  "continents": [
+    {
+      "id": "region.meridia",
+      "name": "Meridia",
+      "summary": "Equatorial-temperate heartland continent; cradle of the Elysian Concord.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "continent",
+        "heartland",
+        "equatorial"
+      ],
+      "areaMkm2": 58.2,
+      "landShare": 0.32,
+      "labelPoint": {
+        "lat": 5,
+        "lon": 8
+      },
+      "features": [
+        {
+          "id": "region.cindral-arc",
+          "name": "Cindral Arc",
+          "type": "mountain-range",
+          "labelPoint": {
+            "lat": 8,
+            "lon": 40
+          },
+          "summary": "Great eastern mountain system of Meridia; seismically active, geothermal, and the rain-shadow wall that creates the Sirocc Basin.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.mount-cindral",
+          "name": "Mount Cindral",
+          "type": "peak",
+          "elevationM": 7940,
+          "labelPoint": {
+            "lat": 9.2,
+            "lon": 41.1
+          },
+          "summary": "Highest peak on Elysium, in the Cindral Arc.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.river-alcyon",
+          "name": "River Alcyon",
+          "type": "river",
+          "lengthKm": 5850,
+          "summary": "Longest river on Elysium, running from Cindral snowmelt across the Sirocc Basin to the Solward Ocean; cradle of Elysian agriculture and of the flow-share.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.meridian-plain",
+          "name": "Meridian Plain",
+          "type": "plain",
+          "labelPoint": {
+            "lat": 12,
+            "lon": 0
+          },
+          "summary": "Historic agricultural core of Meridia and its principal freight corridor.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.verdanne",
+          "name": "The Verdanne",
+          "type": "rainforest",
+          "labelPoint": {
+            "lat": -12,
+            "lon": 10
+          },
+          "summary": "Equatorial rainforest belt of southern Meridia; the planet's largest carbon sink, with an inviolable protected core.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.meridian-stone",
+          "name": "Meridian Stone",
+          "type": "landmark",
+          "labelPoint": {
+            "lat": 12.5,
+            "lon": 0.0
+          },
+          "summary": "Unadorned marker on the Alcyon estuary where the Meridian Convention sat; the prime meridian passes through it.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.sirocc-basin",
+          "name": "Sirocc Basin",
+          "type": "desert",
+          "summary": "Largest desert on Elysium; lithium brines beneath its salt pans; crossed by the exotic River Alcyon.",
+          "areaMkm2": 17.0,
+          "labelPoint": {
+            "lat": 24.0,
+            "lon": 6.0
+          },
+          "sources": [
+            "planet.geography"
+          ]
+        }
+      ],
+      "outline": [
+        [
+          -28,
+          -22
+        ],
+        [
+          -15,
+          -25
+        ],
+        [
+          0,
+          -20
+        ],
+        [
+          12,
+          -24
+        ],
+        [
+          25,
+          -18
+        ],
+        [
+          38,
+          -10
+        ],
+        [
+          45,
+          -2
+        ],
+        [
+          43,
+          8
+        ],
+        [
+          36,
+          14
+        ],
+        [
+          40,
+          22
+        ],
+        [
+          30,
+          28
+        ],
+        [
+          18,
+          26
+        ],
+        [
+          8,
+          30
+        ],
+        [
+          -4,
+          27
+        ],
+        [
+          -14,
+          20
+        ],
+        [
+          -22,
+          12
+        ],
+        [
+          -27,
+          2
+        ],
+        [
+          -30,
+          -8
+        ]
+      ]
+    },
+    {
+      "id": "region.auroria",
+      "name": "Auroria",
+      "summary": "Boreal northern continent of taiga, ore-rich old mountains, and long winters.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "continent",
+        "boreal"
+      ],
+      "areaMkm2": 41.5,
+      "landShare": 0.23,
+      "labelPoint": {
+        "lat": 56,
+        "lon": 105
+      },
+      "features": [
+        {
+          "id": "region.aurorian-taiga",
+          "name": "Aurorian Taiga",
+          "type": "forest",
+          "labelPoint": {
+            "lat": 60,
+            "lon": 95
+          },
+          "summary": "Largest biome on Elysium; xantholin-gold conifer-analogue forest across boreal Auroria.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.vail-spine",
+          "name": "Vail Spine",
+          "type": "mountain-range",
+          "labelPoint": {
+            "lat": 50,
+            "lon": 125
+          },
+          "summary": "Mountain range of Auroria and the most important mineral province on the planet; the cradle of Elysian industry.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.lake-serapht",
+          "name": "Lake Serapht",
+          "type": "lake",
+          "areaKm2": 96000,
+          "labelPoint": {
+            "lat": 63,
+            "lon": 112
+          },
+          "summary": "Largest freshwater body on Elysium at 96,000 km\u00b2; drives a substantial lake-effect snow belt on its eastern shore.",
+          "sources": [
+            "planet.geography"
+          ]
+        }
+      ],
+      "outline": [
+        [
+          62,
+          38
+        ],
+        [
+          80,
+          35
+        ],
+        [
+          100,
+          37
+        ],
+        [
+          118,
+          40
+        ],
+        [
+          135,
+          45
+        ],
+        [
+          148,
+          52
+        ],
+        [
+          150,
+          62
+        ],
+        [
+          140,
+          70
+        ],
+        [
+          122,
+          74
+        ],
+        [
+          100,
+          75
+        ],
+        [
+          82,
+          72
+        ],
+        [
+          68,
+          65
+        ],
+        [
+          60,
+          54
+        ],
+        [
+          59,
+          45
+        ]
+      ]
+    },
+    {
+      "id": "region.elandris",
+      "name": "Elandris",
+      "summary": "Monsoonal eastern continent; terraced agriculture and dense coastal urbanism.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "continent",
+        "monsoon"
+      ],
+      "areaMkm2": 31.0,
+      "landShare": 0.17,
+      "labelPoint": {
+        "lat": -14,
+        "lon": 130
+      },
+      "features": [
+        {
+          "id": "region.elandric-terraces",
+          "name": "Elandric Terraces",
+          "type": "uplands",
+          "labelPoint": {
+            "lat": -10,
+            "lon": 122
+          },
+          "summary": "Terraced monsoon uplands of Elandris; among the most intensively farmed landscapes on the planet.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.cape-serrance",
+          "name": "Cape Serrance",
+          "type": "cape",
+          "labelPoint": {
+            "lat": -30,
+            "lon": 146
+          },
+          "summary": "Southeastern cape of Elandris, where the monsoon trough meets the mid-latitude storm track; the most cyclone-exposed inhabited coast on Elysium.",
+          "sources": [
+            "planet.geography"
+          ]
+        }
+      ],
+      "outline": [
+        [
+          102,
+          -32
+        ],
+        [
+          118,
+          -35
+        ],
+        [
+          134,
+          -30
+        ],
+        [
+          148,
+          -22
+        ],
+        [
+          158,
+          -12
+        ],
+        [
+          160,
+          -2
+        ],
+        [
+          152,
+          6
+        ],
+        [
+          138,
+          10
+        ],
+        [
+          122,
+          7
+        ],
+        [
+          110,
+          0
+        ],
+        [
+          102,
+          -10
+        ],
+        [
+          98,
+          -22
+        ]
+      ]
+    },
+    {
+      "id": "region.thalassar",
+      "name": "Thalassar",
+      "summary": "Maritime western continent of fjords, fisheries, and ocean culture.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "continent",
+        "maritime"
+      ],
+      "areaMkm2": 27.4,
+      "landShare": 0.15,
+      "labelPoint": {
+        "lat": 18,
+        "lon": -114
+      },
+      "features": [
+        {
+          "id": "region.thalassar-rim",
+          "name": "Thalassar Rim",
+          "type": "mountain-range",
+          "labelPoint": {
+            "lat": 25,
+            "lon": -100
+          },
+          "summary": "Western mountain rim of Thalassar; forces the orographic rainfall that makes the northern fjords the wettest land on the planet.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.mistral-shelf",
+          "name": "Mistral Shelf",
+          "type": "continental-shelf",
+          "labelPoint": {
+            "lat": 10,
+            "lon": -125
+          },
+          "summary": "Broad continental shelf off Thalassar; the richest fishery on Elysium, built on Silverdrift shoals.",
+          "sources": [
+            "planet.geography"
+          ]
+        }
+      ],
+      "outline": [
+        [
+          -138,
+          -8
+        ],
+        [
+          -125,
+          -10
+        ],
+        [
+          -112,
+          -5
+        ],
+        [
+          -100,
+          2
+        ],
+        [
+          -92,
+          12
+        ],
+        [
+          -90,
+          24
+        ],
+        [
+          -96,
+          33
+        ],
+        [
+          -104,
+          40
+        ],
+        [
+          -116,
+          44
+        ],
+        [
+          -128,
+          41
+        ],
+        [
+          -136,
+          32
+        ],
+        [
+          -140,
+          20
+        ],
+        [
+          -139,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "region.veydra",
+      "name": "Veydra",
+      "summary": "Subpolar southern continent; highlands, seasonal ice margin, and flagship science stations.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "continent",
+        "subpolar",
+        "research"
+      ],
+      "areaMkm2": 19.4,
+      "landShare": 0.11,
+      "labelPoint": {
+        "lat": -52,
+        "lon": -44
+      },
+      "features": [
+        {
+          "id": "region.veydran-highlands",
+          "name": "Veydran Highlands",
+          "type": "plateau",
+          "meanElevationM": 2100,
+          "labelPoint": {
+            "lat": -50,
+            "lon": -50
+          },
+          "summary": "High plateau of Veydra at 2,100 m mean elevation, carrying the planet's only permanent continental ice.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.ice-margin",
+          "name": "The Ice Margin",
+          "type": "seasonal-ice-shelf",
+          "labelPoint": {
+            "lat": -66,
+            "lon": -40
+          },
+          "summary": "Seasonal ice shelf on Veydra's southern coast, doubling the austral ice-covered area each winter.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.veydran-ice-cap",
+          "name": "Veydran Ice Cap",
+          "type": "ice-cap",
+          "summary": "Elysium's only permanent continental ice; 1.42 M km^2; permanently protected.",
+          "areaMkm2": 1.42,
+          "labelPoint": {
+            "lat": -58.0,
+            "lon": -45.0
+          },
+          "sources": [
+            "planet.geography"
+          ]
+        }
+      ],
+      "outline": [
+        [
+          -80,
+          -48
+        ],
+        [
+          -74,
+          -58
+        ],
+        [
+          -62,
+          -66
+        ],
+        [
+          -46,
+          -70
+        ],
+        [
+          -28,
+          -68
+        ],
+        [
+          -14,
+          -62
+        ],
+        [
+          -10,
+          -52
+        ],
+        [
+          -16,
+          -42
+        ],
+        [
+          -30,
+          -35
+        ],
+        [
+          -45,
+          -38
+        ],
+        [
+          -62,
+          -36
+        ],
+        [
+          -78,
+          -40
+        ]
+      ]
+    },
+    {
+      "id": "region.myriad-isles",
+      "name": "Myriad Isles",
+      "summary": "Volcanic equatorial archipelago straddling the antimeridian; ocean-stewardship heartland.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "archipelago",
+        "volcanic"
+      ],
+      "areaMkm2": 3.6,
+      "landShare": 0.02,
+      "labelPoint": {
+        "lat": 0,
+        "lon": 178
+      },
+      "features": [
+        {
+          "id": "region.isle-kaelis",
+          "name": "Kaelis",
+          "type": "island",
+          "labelPoint": {
+            "lat": 3.5,
+            "lon": 172.5
+          },
+          "summary": "Largest island of the Myriad Isles and birthplace of the ocean-stewardship traditions.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.isle-orphir",
+          "name": "Orphir",
+          "type": "island",
+          "labelPoint": {
+            "lat": -1.5,
+            "lon": 179.0
+          },
+          "summary": "Central island of the Myriad Isles, straddling the antimeridian.",
+          "sources": [
+            "planet.geography"
+          ]
+        },
+        {
+          "id": "region.isle-sable",
+          "name": "Sable",
+          "type": "island",
+          "labelPoint": {
+            "lat": -5.5,
+            "lon": -174.5
+          },
+          "summary": "Eastern island of the Myriad Isles, above the hydrothermal vent fields.",
+          "sources": [
+            "planet.geography"
+          ]
+        }
+      ],
+      "islandOutlines": [
+        {
+          "outline": [
+            [
+              170.5,
+              2.0
+            ],
+            [
+              174.5,
+              1.2
+            ],
+            [
+              175.0,
+              4.6
+            ],
+            [
+              171.5,
+              5.4
+            ]
+          ],
+          "featureId": "region.isle-kaelis"
+        },
+        {
+          "outline": [
+            [
+              177.0,
+              -3.0
+            ],
+            [
+              180.0,
+              -3.6
+            ],
+            [
+              180.9,
+              -0.4
+            ],
+            [
+              177.8,
+              0.4
+            ]
+          ],
+          "featureId": "region.isle-orphir"
+        },
+        {
+          "outline": [
+            [
+              -177.0,
+              -7.0
+            ],
+            [
+              -173.0,
+              -7.6
+            ],
+            [
+              -172.4,
+              -4.2
+            ],
+            [
+              -176.2,
+              -3.8
+            ]
+          ],
+          "featureId": "region.isle-sable"
+        }
+      ],
+      "antimeridianNote": "Orphir/Sable outlines may exceed +/-180 lon for ring continuity; normalize modulo 360 at render time."
+    }
+  ]
+}

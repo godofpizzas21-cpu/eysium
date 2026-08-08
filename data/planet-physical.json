@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.1.1",
+  "id": "planet.physical-constants",
+  "name": "Elysium Physical Constants",
+  "summary": "Authoritative physical constants for the planet Elysium, its star, and its moons.",
+  "sources": [
+    "planet.physical"
+  ],
+  "units": {
+    "length": "km unless suffixed",
+    "mass": "relative (solar/earth) as noted",
+    "time": "hours (h), Elysian days (dE), Elysian years (yE)",
+    "temperature": "celsius",
+    "pressure": "bar",
+    "angles": "degrees"
+  },
+  "star": {
+    "id": "planet.star-helia",
+    "name": "Helia",
+    "spectralClass": "G1V",
+    "massSolar": 1.04,
+    "luminositySolar": 1.12,
+    "ageGyr": 5.1,
+    "flareCycleElysianYears": 14.2,
+    "summary": "Elysium's primary: a quiet, low-variability G1V star whose magnetic stability spared the civilization a Carrington-class shock during its industrial adolescence.",
+    "sources": [
+      "planet.physical"
+    ]
+  },
+  "orbit": {
+    "semiMajorAxisAU": 1.103,
+    "eccentricity": 0.011,
+    "solarYearElysianDays": 384.24,
+    "solarYearEarthDays": 414.7,
+    "meanInsolationWm2": 1255
+  },
+  "planet": {
+    "meanRadiusKm": 6510,
+    "massEarth": 1.05,
+    "surfaceGravityMs2": 9.86,
+    "solarDayHours": 25.9,
+    "siderealDayHours": 25.83,
+    "axialTiltDeg": 19.4,
+    "magneticFieldGauss": 0.9,
+    "landFraction": 0.34,
+    "meanSurfaceTempC": 13.5,
+    "atmosphere": {
+      "surfacePressureBar": 1.06,
+      "compositionPct": {
+        "N2": 76.8,
+        "O2": 21.9,
+        "Ar": 0.9
+      },
+      "co2Ppm": 340,
+      "co2ConstitutionalBandPpm": [
+        320,
+        360
+      ]
+    },
+    "tectonics": {
+      "majorPlates": 9,
+      "designBasisQuakeMagnitude": 8.6,
+      "significantEruptionsPerCentury": 11
+    }
+  },
+  "moons": [
+    {
+      "id": "planet.moon-kalyra",
+      "name": "Kalyra",
+      "summary": "Major moon; tide-raiser and tilt stabilizer; hosts Concord installations.",
+      "sources": [
+        "planet.physical"
+      ],
+      "meanRadiusKm": 1290,
+      "orbitalDistanceKm": 402000,
+      "orbitalPeriodElysianDays": 26.4,
+      "tidalStrengthVsEarthLunar": 1.2
+    },
+    {
+      "id": "planet.moon-vesper",
+      "name": "Vesper",
+      "summary": "Minor captured moon; fast-moving night-sky runner; early space-industry site.",
+      "sources": [
+        "planet.physical"
+      ],
+      "meanRadiusKm": 210,
+      "orbitalDistanceKm": 96000,
+      "orbitalPeriodElysianDays": 3.09
+    }
+  ],
+  "render": {
+    "comment": "Per charter.canonical-units section 5: planet radius = 1.0 render unit.",
+    "kmPerRenderUnit": 6510
+  },
+  "system": {
+    "name": "The Helian System",
+    "planetCount": 7,
+    "elysiumOrdinal": 3,
+    "bodies": [
+      {
+        "id": "space.body-cindre",
+        "name": "Cindre",
+        "summary": "Airless, tidally stressed rockball.",
+        "sources": [
+          "planet.physical"
+        ],
+        "ordinal": 1,
+        "semiMajorAxisAu": 0.41
+      },
+      {
+        "id": "space.body-halix",
+        "name": "Halix",
+        "summary": "Dense CO2 atmosphere with a surface hot enough to melt lead.",
+        "sources": [
+          "planet.physical"
+        ],
+        "ordinal": 2,
+        "semiMajorAxisAu": 0.72
+      },
+      {
+        "id": "space.body-elysium",
+        "name": "Elysium",
+        "summary": "The homeworld.",
+        "sources": [
+          "planet.physical"
+        ],
+        "ordinal": 3,
+        "semiMajorAxisAu": 1.103
+      },
+      {
+        "id": "space.body-marn",
+        "name": "Marn",
+        "summary": "Cold desert world with a thin atmosphere and confirmed fossil microbial life; permanently quarantined.",
+        "sources": [
+          "planet.physical"
+        ],
+        "ordinal": 4,
+        "semiMajorAxisAu": 1.61,
+        "confirmedFossilLife": true
+      },
+      {
+        "id": "space.body-tyrran",
+        "name": "Tyrran",
+        "summary": "Gas giant of 291 Elysium masses with 61 known moons; its resonances shepherd the Belt.",
+        "sources": [
+          "planet.physical"
+        ],
+        "ordinal": 5,
+        "semiMajorAxisAu": 5.2,
+        "massElysium": 291,
+        "knownMoons": 61
+      },
+      {
+        "id": "space.body-nereus",
+        "name": "Nereus",
+        "summary": "Ice giant.",
+        "sources": [
+          "planet.physical"
+        ],
+        "ordinal": 6,
+        "semiMajorAxisAu": 9.4
+      },
+      {
+        "id": "space.body-ossian",
+        "name": "Ossian",
+        "summary": "Outermost ice giant.",
+        "sources": [
+          "planet.physical"
+        ],
+        "ordinal": 7,
+        "semiMajorAxisAu": 17.8
+      }
+    ],
+    "belt": {
+      "id": "space.tyrran-belt",
+      "name": "The Tyrran Belt",
+      "summary": "Asteroid population between 2.3 and 3.5 AU, shepherded by Tyrran resonances; source of the impacting-body hazard and target of the off-world materials programme.",
+      "sources": [
+        "planet.physical"
+      ],
+      "innerAu": 2.3,
+      "outerAu": 3.5,
+      "shepherdedBy": "space.body-tyrran"
+    },
+    "stationaryOrbitAltitudeKm": 38556
+  }
+}

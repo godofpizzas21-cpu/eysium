@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "cult.culture-data",
+  "name": "Arts, Festivals, Sport, Heritage, and Media",
+  "summary": "Elysian expressive culture: duodecimal music, the Contention, the long-novel sequence, the teal palette, the unfinished tradition in architecture, the festival year, sport and the enhancement problem, food, heritage doctrine, and the media answer to the attention problem.",
+  "sources": ["cult.arts", "cult.life"],
+  "asOf": "EY-0412-M08-D16",
+  "units": { "participation": "percent of adults", "count": "institutions or objects as stated" },
+  "context": {
+    "cultureHappensIn": "second waking",
+    "eveningCivilHours": 7,
+    "typicalPerformanceStartHour": 19,
+    "dayLengthCivilHours": 26,
+    "auroraVisibleFromCities": true
+  },
+  "music": {
+    "basis": "duodecimal",
+    "basisOrigin": "Six digits per hand and base-twelve counting through most of Elysian history.",
+    "standardOctaveDivisions": 12,
+    "microtonalOctaveDivisions": 24,
+    "microtonalRegions": ["polity.kessandra", "polity.kaelis-group"],
+    "defaultMetreBeats": 8,
+    "metreOrigin": "the eight-day week",
+    "metreNote": "Elysian listeners find four-beat metre pleasant and slightly hurried; eight is the resting pulse of the culture.",
+    "signatureInstrument": {
+      "id": "cult.cassine",
+      "name": "The cassine",
+      "summary": "Fretted twelve-string instrument played with all six digits of the stopping hand; the closest thing Elysium has to a universal instrument.",
+      "sources": ["cult.arts"],
+      "strings": 12
+    },
+    "adultsSingingRegularlyPct": 34,
+    "traditions": [
+      { "id": "cult.music-isle-polyphony", "name": "Isle and Thalassari polyphony", "summary": "Unaccompanied and many-voiced.", "sources": ["cult.arts"], "regions": ["polity.kaelis-group", "polity.mistral"] },
+      { "id": "cult.music-aurorian-slow", "name": "Aurorian slow song", "summary": "Built around the long winter dark and famously unhurried.", "sources": ["cult.arts"], "regions": ["polity.vailmark", "polity.northreach"] },
+      { "id": "cult.music-alcyonic-antiphon", "name": "Alcyonic antiphony", "summary": "Alternating between two groups; descends from flow-share work chants.", "sources": ["cult.arts"], "regions": ["polity.alcyone"], "originEvent": "hist.event-flow-share" }
+    ]
+  },
+  "theatre": {
+    "contention": {
+      "id": "cult.contention",
+      "name": "The Contention",
+      "summary": "A staged formal argument performed as entertainment, in which two performers argue opposed positions on a real question and neither may win.",
+      "sources": ["cult.arts"],
+      "tags": ["theatre", "civic"],
+      "rules": [
+        "Neither performer may win; there is no verdict and audience voting is forbidden by convention",
+        "Each must state the other's position at the outset to the other's satisfaction before arguing against it",
+        "The strongest objection to one's own case must be raised by oneself",
+        "Performances end with both performers stating what would change their minds"
+      ],
+      "rationale": "A culture that regards unanimity as a warning sign has made a spectator sport out of disagreeing well.",
+      "usedInEducation": true,
+      "educationUse": "Upper School civics assesses argument quality rather than conclusion through the Contention form."
+    }
+  },
+  "literature": {
+    "characteristicForm": "the sequence",
+    "sequenceSpanYears": [30, 50],
+    "serialPublicationNormal": true,
+    "authorsRevisionsTreatedAsPrimaryMaterial": true,
+    "revisionNote": "Changing one's mind is not embarrassing; concealing that one changed is.",
+    "poetryOftenUntranslatedByChoice": true,
+    "untranslatedRationale": "A poem in a language with 40,000 speakers belongs to those speakers, and Concordial is a working language, not a literary one."
+  },
+  "visualArt": {
+    "vegetationPalette": ["teal", "jade", "amber", "rust"],
+    "paletteSource": "planet.biosphere",
+    "greenIsExotic": true,
+    "greenSymbolism": ["strangeness", "sickness", "the supernatural"],
+    "canonNote": "True green appears in Elysian art mostly as a signal of strangeness, which visitors find bewildering and Elysians consider obvious.",
+    "publicArtFundedBy": "the Commune participatory allocation",
+    "publicArtChosenByResidents": true,
+    "qualityUneven": true
+  },
+  "architecture": {
+    "designLifeYears": 150,
+    "additive": true,
+    "joinsLeftVisible": true,
+    "unfinishedTradition": {
+      "id": "cult.unfinished-tradition",
+      "name": "The unfinished tradition",
+      "summary": "Major civic buildings are completed with one element deliberately left undone for a later generation to finish as it judges best.",
+      "sources": ["cult.arts"],
+      "originatedAt": "the Meridian Convention assembly hall at Sennary",
+      "originCity": "city.sennary",
+      "majorCivicBuildingsWithUnfinishedElementPct": 41,
+      "shareLaterCompletedPct": 25,
+      "rationale": "A building finished entirely by one generation asserts that generation's judgement over every generation that will use it; leaving something undone is stewardship and an admission that the builders could not see the future.",
+      "relatedTo": "gov.principle-humility"
+    }
+  },
+  "machineAssistedWork": {
+    "prohibited": false,
+    "provenanceDisclosureRequired": true,
+    "disclosureFramedAs": "an application of the vice of presentation, not a restriction on the work",
+    "criticalOpinionDivided": true,
+    "positionOne": "Simply another set of tools, no more remarkable than the printing press.",
+    "positionTwo": "The value of art lies substantially in its having cost someone something, and a cost not paid is a value not created.",
+    "resolved": false
+  },
+  "festivals": [
+    { "id": "cult.festival-naming", "name": "The Naming", "summary": "Aumar 1; communities read aloud their own dead from the Long Emergency. No speeches.", "sources": ["cult.life"], "scope": "universal", "month": 7, "day": 1, "definedBy": "cult.observance-naming" },
+    { "id": "cult.festival-thresholdday", "name": "Thresholdday", "summary": "The intercalary day; no work, no courts, no markets, no scheduled governance. Customs regional and mostly frivolous.", "sources": ["cult.life"], "scope": "universal", "intercalary": true, "definedBy": "cult.observance-thresholdday" },
+    { "id": "cult.festival-turning", "name": "The Turning", "summary": "Verane 1, the year's start at the northward equinox; observed everywhere and differently everywhere.", "sources": ["cult.life"], "scope": "planetary", "month": 1, "day": 1 },
+    { "id": "cult.festival-kalyra-nights", "name": "Kalyra Nights", "summary": "Marked on the major moon's cycle; tide festivals, night markets, and swimming.", "sources": ["cult.life"], "scope": "regional", "regions": ["polity.mistral", "polity.kaelis-group", "polity.amarath-coast"] },
+    { "id": "cult.festival-long-dark", "name": "The Long Dark", "summary": "Six weeks of deep Aurorian winter; lantern processions, communal cooking, and the slow songs.", "sources": ["cult.life"], "scope": "regional", "regions": ["polity.vailmark", "polity.northreach", "polity.hollen"] },
+    { "id": "cult.festival-onset", "name": "Onset", "summary": "The monsoon's arrival, dated by forecast rather than calendar and therefore never on the same day twice.", "sources": ["cult.life"], "scope": "regional", "regions": ["polity.kessandra", "polity.terrace-north"] },
+    { "id": "cult.festival-reading-of-waters", "name": "The Reading of Waters", "summary": "Publication of the year's flow-share allocation; a bureaucratic act eight and a half thousand years old that became a celebration.", "sources": ["cult.life"], "scope": "regional", "regions": ["polity.alcyone", "polity.ilvaret"], "originEvent": "hist.event-flow-share" },
+    { "id": "cult.festival-aurorafall", "name": "Aurorafall", "summary": "Informal; people go outside when the aurora is strong and cities dim their lighting further to let them.", "sources": ["cult.life"], "scope": "regional", "informal": true }
+  ],
+  "concordFundsFestivals": false,
+  "sport": {
+    "adultParticipationPct": 61,
+    "principalGame": {
+      "id": "cult.cassel",
+      "name": "Cassel",
+      "summary": "The planetary game: eight players a side, continuous play, no offside, a low-bouncing ball handled with both hands.",
+      "sources": ["cult.life"],
+      "playersPerSide": 8,
+      "playersOrigin": "the eight-day week",
+      "gripNote": "The six-digit grip makes one-handed catching and throwing natural in a way it would not be for a five-digit species.",
+      "leaguesInEveryRegion": true
+    },
+    "otherMajorForms": [
+      { "id": "cult.sport-open-water", "name": "Open-water distance swimming", "summary": "", "sources": ["cult.life"], "regions": ["polity.kaelis-group", "polity.orphir-group"] },
+      { "id": "cult.sport-cliff-running", "name": "Cliff running", "summary": "", "sources": ["cult.life"], "regions": ["polity.rimward", "polity.fjordmark"] },
+      { "id": "cult.sport-circuit", "name": "The Circuit", "summary": "Multi-stage cycling race crossing a different continent each year.", "sources": ["cult.life"] },
+      { "id": "cult.sport-wrestling", "name": "Traditional wrestling forms", "summary": "", "sources": ["cult.life"], "regions": ["polity.korren", "polity.highmarch"] }
+    ],
+    "enhancementProblem": {
+      "cleanTreatmentEnhancementLineExists": false,
+      "reason": "Somatic gene therapy is routine medicine, which makes the Earth concept of a clean line unworkable.",
+      "approach": "categories rather than prohibitions",
+      "athletesMustDiscloseFully": true,
+      "offenceIsDisclosureFailureNotIntervention": true,
+      "canonNote": "This works adequately and satisfies nobody."
+    }
+  },
+  "food": {
+    "culturedProteinIsOrdinary": true,
+    "mainMealIn": "late second waking",
+    "mainMealSocialByDefault": true,
+    "archetypalScene": "the Seldan hearth-day meal with several generations at the table",
+    "preStillnessMealLight": true,
+    "heavyEatingBeforeStillnessRegardedAs": "a mild personal failing",
+    "cooperativeProcessingDominant": true,
+    "adultsInFoodLearningPct": 19
+  },
+  "heritage": {
+    "doctrine": "maintained ruin, not reconstruction",
+    "doctrineStatement": "A reconstruction is a claim about what was there, and a ruin is a record of not knowing.",
+    "sites": [
+      { "id": "cult.site-ilvaret", "name": "Ilvaret", "summary": "The first city, stabilised and excavated and never rebuilt; New Ilvaret sits beside it, deliberately separate.", "sources": ["cult.life"], "regions": ["polity.ilvaret"], "originEvent": "hist.event-ilvaret-collapse" },
+      { "id": "cult.site-meridian-stone", "name": "The Meridian Stone", "summary": "Unadorned marker in an open field where the Convention sat, with Sennary a few kilometres away and out of sight of it.", "sources": ["cult.life"], "regions": ["region.meridian-stone"], "originEvent": "hist.event-meridian-convention" }
+    ],
+    "repatriation": {
+      "programmeSinceEY": 44,
+      "objectsReturned": 2100000,
+      "objectsContested": 180000,
+      "contestedReason": "The originating community no longer exists as an identifiable body.",
+      "contestedHeldInTrust": true,
+      "contestedPubliclyListed": true,
+      "displayedWithAcquisitionHistory": true,
+      "originEra": "hist.era-long-reach"
+    },
+    "museums": 41000,
+    "archiveCopiesPerRecord": 4,
+    "archiveNote": "Heritage policy and redundancy doctrine are, on Elysium, the same policy."
+  },
+  "media": {
+    "attentionProblemSolved": false,
+    "advertisingFundedMassMedia": false,
+    "advertisingProhibited": false,
+    "marginalisationReason": "The same instinct that forbids public assistants from optimising for engagement made attention-farmed media commercially and socially marginal.",
+    "funding": [
+      { "id": "cult.media-levy-funded", "name": "Levy-funded independent outlets", "summary": "", "sources": ["cult.life"], "sharePct": 44 },
+      { "id": "cult.media-cooperative", "name": "Cooperative and reader-owned outlets", "summary": "", "sources": ["cult.life"], "sharePct": 27 },
+      { "id": "cult.media-foundation", "name": "Stewardship-foundation outlets", "summary": "", "sources": ["cult.life"], "sharePct": 18, "ownershipForm": "econ.form-stewardship-foundation" },
+      { "id": "cult.media-commercial", "name": "Commercial subscription outlets", "summary": "", "sources": ["cult.life"], "sharePct": 11 }
+    ],
+    "levy": {
+      "collectedOn": "communications infrastructure",
+      "distributedByArmsLengthBody": true,
+      "bodyMayConsiderEditorialContent": false,
+      "allocationFollows": "audited reach and a published formula",
+      "allocationAppealableTo": "law.court-of-review"
+    },
+    "journalistStanding": {
+      "priorityAccessRequests": true,
+      "sourceProtectedDisclosureStatus": true,
+      "rightToAttendPublicProceedings": true,
+      "accessRequestsFiledByJournalistsPct": 31,
+      "accessRequestsFiledByLibrariesPct": 14
+    },
+    "residualStatement": "A right of access to record is worth what someone's willingness to read the record is worth, and no constitution can compel that."
+  },
+  "knownWeaknesses": [
+    { "id": "cult.weakness-sequence-attrition", "name": "Sequence attrition", "summary": "The long-novel form's most admired examples are unfinished because writers die mid-sequence; Elysian literature has an unusually large canon of works nobody can finish.", "sources": ["cult.arts"] },
+    { "id": "cult.weakness-contention-performance", "name": "Contention as performance", "summary": "The form rewards arguing well, which is not the same as being right; a popular performer can make a bad position look better than it is.", "sources": ["cult.arts"] },
+    { "id": "cult.weakness-untranslated", "name": "Untranslated poetry is unread", "summary": "Choosing not to translate protects a literature and confines it; several small-language traditions are undocumented outside their speaker communities.", "sources": ["cult.arts"] },
+    { "id": "cult.weakness-public-art-quality", "name": "Participatory public art is uneven", "summary": "Commune allocation produces genuinely local choices and a great deal of mediocre work.", "sources": ["cult.arts"] },
+    { "id": "cult.weakness-unfinished-excuse", "name": "The unfinished tradition can be an excuse", "summary": "Three Regions have used it to defer building elements they simply could not afford.", "sources": ["cult.arts"] },
+    { "id": "cult.weakness-provenance-patchy", "name": "Provenance disclosure is patchily observed", "summary": "Enforcement is weakest exactly where the work is least visible.", "sources": ["cult.arts"] },
+    { "id": "cult.weakness-attention-persists", "name": "The attention problem persists", "summary": "Three mechanisms, real improvement, and readership of the material that matters most remains low. The Concord has no fourth idea.", "sources": ["cult.life"] },
+    { "id": "cult.weakness-enhancement-categories", "name": "Enhancement categories satisfy nobody", "summary": "Disclosure-based sport categories work adequately and are disputed at every interregional season.", "sources": ["cult.life"] },
+    { "id": "cult.weakness-contested-repatriation", "name": "Contested repatriation", "summary": "180,000 objects with no identifiable originating community, held in trust — a holding position rather than a resolution.", "sources": ["cult.life"] },
+    { "id": "cult.weakness-levy-reach", "name": "Levy allocation by reach", "summary": "A formula following audited reach rewards outlets already read, which is precisely the dynamic the levy was meant to counter.", "sources": ["cult.life"] },
+    { "id": "cult.weakness-festival-inequality", "name": "Festival funding is unequal", "summary": "The Concord funds no festivals, so regional cultural life tracks regional fiscal capacity.", "sources": ["cult.life"] },
+    { "id": "cult.weakness-small-language-fragility", "name": "Small-language culture is fragile", "summary": "340 languages have under 1,000 speakers; documentation is funded on request and several communities have not requested it.", "sources": ["cult.life"] }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "mil.defence-data",
+  "name": "Defence, the Abolition Regime, and Disaster Response",
+  "summary": "Structure and strength of the Concord Service, doctrine and military ethics, command constraints, the Abolition verification regime, disaster response and the Serrance inversion, planetary defence, cyber defence, and intelligence.",
+  "sources": ["mil.service", "mil.response"],
+  "asOf": "EY-0412-M08-D16",
+  "units": { "strength": "personnel", "time": "civil hours or Elysian years as stated" },
+  "posture": {
+    "externalEnemyExists": false,
+    "contactedCivilizations": 0,
+    "canonNote": "The Concord maintains a service, not an army.",
+    "totalStrength": 4901000,
+    "policeStrengthForComparison": 6380000,
+    "defenceShareOfGcpPct": 1.1,
+    "armedComponentShareOfGcpPct": 0.09,
+    "proportionArgument": "A civilization that spends eleven times more on rescuing people from storms than on the capacity to fight is making a claim about itself, and Elysians make it deliberately."
+  },
+  "branches": [
+    { "id": "mil.response-corps", "name": "Response Corps", "summary": "Disaster response, rescue, medical, and engineering; 84% of the Service and mostly reservist.", "sources": ["mil.service"], "strength": 4100000, "shareOfServicePct": 83.7 },
+    { "id": "mil.orbital-guard", "name": "Orbital Guard", "summary": "Space traffic, debris management, and orbital rescue.", "sources": ["mil.service"], "strength": 210000, "answeredBy": ["phase-15"] },
+    { "id": "mil.cyber-directorate", "name": "Cyber Defence Directorate", "summary": "Defence of networks and public infrastructure against a non-state threat model.", "sources": ["mil.service"], "strength": 124000 },
+    { "id": "mil.planetary-defence", "name": "Planetary Defence Directorate", "summary": "Detection and deflection of impacting bodies from the Tyrran Belt population.", "sources": ["mil.service"], "strength": 86000 },
+    { "id": "mil.verification-inspectorate", "name": "Verification Inspectorate", "summary": "Enforcement of the Abolition; unannounced right of entry to any facility in any Region.", "sources": ["mil.service"], "strength": 41000 },
+    { "id": "mil.standing-force", "name": "Standing Force", "summary": "The armed contingency component; 0.09% of GCP and untested since EY 1.", "sources": ["mil.service"], "strength": 340000 }
+  ],
+  "doctrine": {
+    "statement": "Early detection. Absorbed impact. Rapid restoration.",
+    "preventionAttempted": false,
+    "rationale": "Doctrine is about shortening the interval between a thing happening and the system noticing, and about building systems that bend rather than break.",
+    "defensiveSpendingRecordedElsewhere": [
+      "energy.layer-microgrid",
+      "agri.reserve-concord",
+      "city.provision-disaster"
+    ]
+  },
+  "ethics": [
+    { "id": "mil.ethic-oath", "name": "The oath is to the Charter", "summary": "Not to the Concord, the Executive Board, or any person. Its operative clause is a duty to refuse.", "sources": ["mil.service"] },
+    { "id": "mil.ethic-duty-to-refuse", "name": "Duty to refuse a manifestly unlawful order", "summary": "Absolute, individual, and carrying no penalty for good-faith refusal. The most-taught provision in Service formation, because the Cassian Incident was averted by one officer exercising exactly this duty over ninety seconds.", "sources": ["mil.service"], "originEvent": "hist.event-cassian-incident" },
+    { "id": "mil.ethic-no-autonomous-lethal", "name": "No autonomous lethal systems", "summary": "Target selection and the decision to use force require an identified human at every escalation point.", "sources": ["mil.service"], "relatedTo": "res.moratorium-autonomous-weapons" },
+    { "id": "mil.ethic-no-auto-escalation", "name": "No automated escalation", "summary": "Systems may de-escalate automatically; they may never escalate.", "sources": ["mil.service"] },
+    { "id": "mil.ethic-no-secret-forces", "name": "No secret forces and no secret budget", "summary": "Every unit, strength, and funding line publishes; operational details may be withheld for a maximum of three years and then publish automatically.", "sources": ["mil.service"] },
+    { "id": "mil.ethic-rights-retained", "name": "Service members retain full Charter rights", "summary": "Including expression, association, and with narrow operational exceptions the right to organise.", "sources": ["mil.service"] },
+    { "id": "mil.ethic-no-conscription", "name": "No conscription", "summary": "Service is voluntary and the Charter forbids compulsion.", "sources": ["mil.service"] }
+  ],
+  "command": {
+    "commandedBy": "gov.portfolio-resilience-defence",
+    "portfolioHolderMayActAlone": false,
+    "deploymentWithinRegionRequires": "that Region's request, or an order of the Constitutional Court",
+    "everUsedAgainstARegionsWishes": false,
+    "useOfForceRequiresBoardDecision": true,
+    "assemblyReportCivilHours": 24,
+    "emergencyPowersEnlargeCommand": false
+  },
+  "abolition": {
+    "id": "mil.abolition-regime",
+    "name": "The Abolition regime",
+    "summary": "Verified dismantling of all strategic weapons, completed EY 34; Tier 1 entrenched and non-withdrawable even by a departing Region.",
+    "sources": ["mil.service"],
+    "originEvent": "hist.event-abolition",
+    "entrenchment": "gov.tier-1",
+    "enforcedBy": "mil.verification-inspectorate",
+    "instruments": [
+      { "id": "mil.abolition-material-accounting", "name": "Material accounting", "summary": "Continuous accounting of fissile material, tritium inventories, and neutron sources across all 6,200 fusion plants.", "sources": ["mil.service"] },
+      { "id": "mil.abolition-right-of-access", "name": "Right of access", "summary": "Entry to any facility in any Region, without notice and without stating cause.", "sources": ["mil.service"] },
+      { "id": "mil.abolition-pathogen-oversight", "name": "Pathogen oversight", "summary": "Joint with Biosecurity at all 41 Concord containment facilities and every licensed synthetic-biology site.", "sources": ["mil.service"] },
+      { "id": "mil.abolition-orbital-accounting", "name": "Orbital accounting", "summary": "Every object above 10 cm catalogued and attributed to an operator.", "sources": ["mil.service"], "answeredBy": ["phase-15"] },
+      { "id": "mil.abolition-publication", "name": "Publication", "summary": "All findings publish, including inconclusive ones and the Inspectorate's own access refusals.", "sources": ["mil.service"] }
+    ],
+    "breachIsPlanetaryOffence": "law.offence-disarmament",
+    "dualUseProblem": {
+      "solvable": false,
+      "reconstitutionTimeYears": 4,
+      "maximumTimeUndetectedMonths": 8,
+      "statement": "The Abolition removes the stockpile, not the capability, and makes reconstitution slow, visible, and criminal. It was never a guarantee that nobody could — it is an arrangement in which anyone who tried would be seen doing it by an inspectorate they cannot bar, while everyone else still had years to respond."
+    },
+    "formalProceedingsSinceEY34": 17,
+    "proceedingsConcerningConcealment": 0,
+    "proceedingsResultingInProsecution": 0,
+    "inspectorateSelfAssessment": "Either the system working or the system not looking hard enough, and we cannot fully distinguish these."
+  },
+  "disasterDoctrine": {
+    "originEvent": "hist.event-serrance-failure",
+    "principle": "For harm, a human must authorise. For protection, a human must cancel.",
+    "asymmetryNote": "Deliberately the mirror image of the Cassian rule: no system may escalate toward harm without a human deciding to, and no system may withhold protection while waiting for a human to decide.",
+    "automaticTriggers": ["forecast wind speed", "river stage", "ground acceleration", "epidemiological signal", "grid frequency"],
+    "cancellationRequiresNamedOfficial": true,
+    "cancellationReasonPublished": true,
+    "activationsSinceEY341": 11400,
+    "cancellationsSinceEY341": 1340,
+    "cancellationsLaterFoundWrong": 61,
+    "acknowledgedCost": "False activations are frequent, expensive, and erode public patience; three Regions measure declining evacuation compliance, which is exactly the failure mode a cry-wolf system produces. The Concord publishes the statistics rather than raising thresholds, and canon does not claim this has fully worked."
+  },
+  "disasterCapability": {
+    "mobilisationResponders": 10000,
+    "mobilisationCivilHours": 12,
+    "sustainedDeployment": 400000,
+    "sustainedDeploymentDays": 90,
+    "districtEmergencyHousingPct": 4,
+    "portReceptionNoticeHours": 48,
+    "cycloneEvacuationStandardPct": 90,
+    "cycloneEvacuationCivilHours": 36,
+    "planetaryExerciseIntervalYears": 4,
+    "layeredLikeTheGrid": true,
+    "communeHoldAloneDays": 14,
+    "concordTierPrimaryResponderSinceEY300": 11,
+    "reservists": 3100000,
+    "reservistStatutoryReleaseAtFullPay": true,
+    "reservistReleaseHonouredPct": 91
+  },
+  "planetaryDefence": {
+    "objectPopulationSource": "the Tyrran Belt",
+    "catalogueAbove100mPct": 99.4,
+    "catalogueAbove30mPct": 94.1,
+    "catalogueBelow30m": "negligible",
+    "typicalWarningTime": "decades",
+    "deflectionMethods": ["kinetic impactor", "gravity tractor", "ablation"],
+    "operationalDeflections": 1,
+    "vesperEvent": {
+      "id": "mil.vesper-event",
+      "name": "The Vesper Event",
+      "summary": "A 140-metre body identified on an impacting trajectory six years out; a gravity tractor placed in EY 264 and a kinetic impactor in EY 266 moved it to pass at 41,000 km in EY 268.",
+      "sources": ["mil.response"],
+      "ey": 268,
+      "objectDiameterM": 140,
+      "detectionLeadYears": 6,
+      "passDistanceKm": 41000,
+      "canonNote": "The Concord's most complete institutional success, taught alongside the Cassian Incident as the pair of events defining what the Concord thinks it is for: one catastrophe averted by refusing to act, one by acting decades ahead."
+    },
+    "smallBodyRiskResolved": false,
+    "smallBodyMitigation": "building standards and refuge capacity rather than detection",
+    "directorateSelfAssessment": "An answer to the wrong question, offered because we have no answer to the right one."
+  },
+  "cyberDefence": {
+    "threatModel": "non-state",
+    "threatModelOrigin": "hist.event-kessander-plague",
+    "publicInfrastructureSourcePublished": true,
+    "securityThroughSecrecyRejected": "A system whose security depends on its secrecy is a system nobody has checked.",
+    "manualFallbackRequired": true,
+    "fallbackExamples": ["manual grid District operation", "paper procedures in ports and hospitals", "physical dram"],
+    "communicationsDeniedScenarioExercised": true,
+    "offensiveCapabilityAgainstCivilianInfrastructure": false,
+    "renunciationUnilateral": true,
+    "renunciationTested": false,
+    "significantIncidentsPerYear": 40,
+    "concordTierSystemDisabledSinceEY366": false
+  },
+  "intelligence": {
+    "bulkCollectionPermitted": false,
+    "secretAgencyExists": false,
+    "assessmentBranchPublished": true,
+    "annualUnclassifiedAssessment": true,
+    "classifiedAnnexOpensAfterYears": 3,
+    "targetedCollectionRequiresWarrant": true,
+    "subjectNotifiedAfterOperation": true,
+    "domesticPoliticalIntelligenceIsCriminal": true,
+    "publishedSelfAssessment": "We would probably not see the next Kessander before it was used.",
+    "relaxationConsidered": 3,
+    "lastRelaxationConsideredEY": 388,
+    "relaxationAdopted": false,
+    "refusalReasoning": "A surveillance apparatus capable of finding one group is capable of finding anyone, and the Concord would rather be vulnerable to a rare catastrophe than to a permanent one.",
+    "canonPosition": "A deliberate, argued, and genuinely contested choice."
+  },
+  "knownWeaknesses": [
+    { "id": "mil.weakness-dual-use", "name": "Dual-use is unsolvable", "summary": "Fusion infrastructure is reconstitution infrastructure; the regime buys time and visibility, not impossibility.", "sources": ["mil.service"] },
+    { "id": "mil.weakness-inspectorate-uncertainty", "name": "The Inspectorate's own uncertainty", "summary": "Seventeen findings, none of concealment, and the Inspectorate publicly declines to claim this proves absence.", "sources": ["mil.service"] },
+    { "id": "mil.weakness-untested-force", "name": "No contested experience", "summary": "The Standing Force has not fought since EY 1; canon does not pretend simulation substitutes.", "sources": ["mil.service"] },
+    { "id": "mil.weakness-disaster-optimised", "name": "A service optimised for disaster", "summary": "If the Concord ever needed an army it would need years, and the arrangement assumes it would have them.", "sources": ["mil.service"] },
+    { "id": "mil.weakness-deployment-veto", "name": "Deployment veto cuts both ways", "summary": "A Region in genuine constitutional breakdown could refuse the deployment that would help it, and only the Court could override — slowly.", "sources": ["mil.service"] },
+    { "id": "mil.weakness-publication-constraint", "name": "Publication versus operations", "summary": "Full publication of units, strengths, and budgets is a real operational constraint; the Service has argued for exceptions roughly once a decade and never won one.", "sources": ["mil.service"] },
+    { "id": "mil.weakness-cry-wolf", "name": "Cry-wolf erosion", "summary": "Automatic protective activation produces frequent false alarms; three Regions measure declining evacuation compliance, and raising thresholds is refused.", "sources": ["mil.response"] },
+    { "id": "mil.weakness-small-body", "name": "Small-body blindness", "summary": "Objects under 30 m are effectively undetectable and would destroy a city district.", "sources": ["mil.response"] },
+    { "id": "mil.weakness-intelligence-blindness", "name": "Intelligence cannot see the threat it fears", "summary": "The Assessment Branch publishes annually that it would probably not detect the next engineered-pathogen group before use.", "sources": ["mil.response"] },
+    { "id": "mil.weakness-untested-renunciation", "name": "Untested renunciation", "summary": "The offensive-cyber renunciation is unilateral and has never been tested against a capable adversary.", "sources": ["mil.response"] },
+    { "id": "mil.weakness-reservist-release", "name": "Reservist release is uneven", "summary": "Statutory release at full pay is honoured at 91%; small employers in small Regions honour it least.", "sources": ["mil.response"] },
+    { "id": "mil.weakness-concord-inexperience", "name": "Concord-tier operational inexperience", "summary": "The Concord tier has led only eleven responses in a century, so its own competence is exercised mostly in drills.", "sources": ["mil.response"] }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.1",
+  "id": "planet.climate-zones",
+  "name": "Standard Climate Register of Elysium",
+  "summary": "Ten-class climate classification with latitude bands, temperature and precipitation envelopes, and exemplar regions.",
+  "sources": [
+    "planet.climate"
+  ],
+  "units": {
+    "temperature": "celsius",
+    "precipitation": "mm/Elysian year",
+    "latitude": "degrees"
+  },
+  "circulation": {
+    "tropicLatitudeDeg": 19.4,
+    "polarCircleLatitudeDeg": 70.6,
+    "hadleyDescentLatitudeDeg": [
+      34,
+      38
+    ],
+    "itczMigrationLatitudeDeg": [
+      -9,
+      9
+    ],
+    "itczInterannualVariabilityDeg": 1.6,
+    "coriolisFactorVsEarth": 0.926,
+    "cells": [
+      {
+        "id": "climate.cell-hadley",
+        "name": "Hadley cell",
+        "latitudeBandDeg": [
+          0,
+          36
+        ],
+        "surfaceWinds": "easterly trades",
+        "summary": "Equatorward circulation cell rising at the ITCZ and descending at 34-38 degrees, widened by Elysium's weaker Coriolis force.",
+        "sources": [
+          "planet.climate"
+        ]
+      },
+      {
+        "id": "climate.cell-ferrel",
+        "name": "Ferrel cell",
+        "latitudeBandDeg": [
+          36,
+          63
+        ],
+        "surfaceWinds": "westerlies",
+        "summary": "Mid-latitude cell carrying the westerlies and the storm track; produces broad, slow, long-lived cyclones.",
+        "sources": [
+          "planet.climate"
+        ]
+      },
+      {
+        "id": "climate.cell-polar",
+        "name": "Polar cell",
+        "latitudeBandDeg": [
+          63,
+          90
+        ],
+        "surfaceWinds": "polar easterlies",
+        "summary": "Weak, shallow polar cell; Elysium has no tight persistent stratospheric vortex.",
+        "sources": [
+          "planet.climate"
+        ]
+      }
+    ],
+    "oscillation": {
+      "id": "climate.amarant-oscillation",
+      "name": "Amarant Oscillation",
+      "meanPeriodYears": 4.1,
+      "forecastLeadMonths": 14,
+      "warmPhaseEffects": [
+        "Amarant Upwelling weakens",
+        "Elandric monsoon onset delayed 8-20 days",
+        "Thalassari rainfall increases"
+      ],
+      "summary": "Elysium's principal coupled ocean-atmosphere oscillation, on a 4.1-year mean period, forecast reliably 14 months ahead.",
+      "sources": [
+        "planet.climate"
+      ]
+    }
+  },
+  "zones": [
+    {
+      "id": "climate.e1",
+      "code": "E1",
+      "name": "Equatorial humid",
+      "summary": "Warm, wet, aseasonal equatorial climate with intense afternoon convection.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "tropical",
+        "humid"
+      ],
+      "latitudeBandDeg": [
+        0,
+        10
+      ],
+      "meanAnnualTempC": [
+        25,
+        28
+      ],
+      "precipitationMm": [
+        2200,
+        3600
+      ],
+      "exemplars": [
+        "region.verdanne",
+        "region.myriad-isles"
+      ],
+      "palette": "#0E6B63"
+    },
+    {
+      "id": "climate.e2",
+      "code": "E2",
+      "name": "Tropical monsoon",
+      "summary": "Strongly seasonal monsoon climate with reliable onset.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "tropical",
+        "monsoon"
+      ],
+      "latitudeBandDeg": [
+        5,
+        22
+      ],
+      "meanAnnualTempC": [
+        23,
+        27
+      ],
+      "precipitationMm": [
+        1400,
+        3000
+      ],
+      "exemplars": [
+        "region.elandris"
+      ],
+      "palette": "#15887A"
+    },
+    {
+      "id": "climate.e3",
+      "code": "E3",
+      "name": "Tropical seasonal / savanna",
+      "summary": "Wet-and-dry tropics; fire-adapted vegetation.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "tropical",
+        "seasonal"
+      ],
+      "latitudeBandDeg": [
+        12,
+        26
+      ],
+      "meanAnnualTempC": [
+        22,
+        26
+      ],
+      "precipitationMm": [
+        600,
+        1300
+      ],
+      "exemplars": [
+        "region.meridia"
+      ],
+      "palette": "#7FA24A"
+    },
+    {
+      "id": "climate.a1",
+      "code": "A1",
+      "name": "Subtropical arid",
+      "summary": "Hyper-arid desert under the Hadley descent and the Cindral rain shadow.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "arid",
+        "desert"
+      ],
+      "latitudeBandDeg": [
+        20,
+        36
+      ],
+      "meanAnnualTempC": [
+        18,
+        26
+      ],
+      "precipitationMm": [
+        0,
+        250
+      ],
+      "exemplars": [
+        "region.sirocc-basin"
+      ],
+      "palette": "#D8B26A"
+    },
+    {
+      "id": "climate.a2",
+      "code": "A2",
+      "name": "Subtropical semi-arid steppe",
+      "summary": "Transitional steppe fringing the arid core.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "semi-arid",
+        "steppe"
+      ],
+      "latitudeBandDeg": [
+        24,
+        38
+      ],
+      "meanAnnualTempC": [
+        15,
+        22
+      ],
+      "precipitationMm": [
+        250,
+        500
+      ],
+      "exemplars": [
+        "region.sirocc-basin"
+      ],
+      "palette": "#BFAE72"
+    },
+    {
+      "id": "climate.t1",
+      "code": "T1",
+      "name": "Winter-wet temperate",
+      "summary": "Mild winter-wet, summer-dry regime on subtropical west coasts.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "temperate",
+        "winter-wet"
+      ],
+      "latitudeBandDeg": [
+        34,
+        44
+      ],
+      "meanAnnualTempC": [
+        13,
+        18
+      ],
+      "precipitationMm": [
+        500,
+        900
+      ],
+      "exemplars": [
+        "region.thalassar"
+      ],
+      "palette": "#8FA98C"
+    },
+    {
+      "id": "climate.t2",
+      "code": "T2",
+      "name": "Oceanic temperate",
+      "summary": "Cool, extremely wet maritime climate; wettest land on Elysium.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "temperate",
+        "oceanic"
+      ],
+      "latitudeBandDeg": [
+        38,
+        52
+      ],
+      "meanAnnualTempC": [
+        8,
+        14
+      ],
+      "precipitationMm": [
+        1200,
+        5400
+      ],
+      "exemplars": [
+        "region.thalassar-rim"
+      ],
+      "palette": "#2E7D6B"
+    },
+    {
+      "id": "climate.t3",
+      "code": "T3",
+      "name": "Continental temperate",
+      "summary": "Four-season continental interior; the agricultural heartland climate.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "temperate",
+        "continental"
+      ],
+      "latitudeBandDeg": [
+        34,
+        54
+      ],
+      "meanAnnualTempC": [
+        4,
+        12
+      ],
+      "precipitationMm": [
+        400,
+        800
+      ],
+      "exemplars": [
+        "region.meridian-plain"
+      ],
+      "palette": "#A8B96A"
+    },
+    {
+      "id": "climate.b1",
+      "code": "B1",
+      "name": "Boreal / subarctic",
+      "summary": "Long cold winters, short intense growing season; taiga climate.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "boreal",
+        "cold"
+      ],
+      "latitudeBandDeg": [
+        50,
+        70
+      ],
+      "meanAnnualTempC": [
+        -6,
+        4
+      ],
+      "precipitationMm": [
+        300,
+        600
+      ],
+      "exemplars": [
+        "region.aurorian-taiga"
+      ],
+      "palette": "#C08A3E"
+    },
+    {
+      "id": "climate.p1",
+      "code": "P1",
+      "name": "Polar margin & tundra",
+      "summary": "Cold, dry, short-season polar margin; small extent thanks to the 19.4 degree tilt.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "polar",
+        "tundra"
+      ],
+      "latitudeBandDeg": [
+        68,
+        90
+      ],
+      "meanAnnualTempC": [
+        -18,
+        -2
+      ],
+      "precipitationMm": [
+        0,
+        300
+      ],
+      "exemplars": [
+        "region.veydran-highlands"
+      ],
+      "palette": "#CFD8DA"
+    },
+    {
+      "id": "climate.h1",
+      "code": "H1",
+      "name": "Highland (overlay class)",
+      "summary": "Elevation-modified overlay applied to any base zone; lapse rate 6.1 C/km.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "highland",
+        "overlay"
+      ],
+      "isOverlay": true,
+      "lapseRateCPerKm": 6.1,
+      "exemplars": [
+        "region.cindral-arc",
+        "region.veydran-highlands"
+      ],
+      "palette": "#9AA7B0"
+    }
+  ],
+  "cryosphere": {
+    "veydranIceCapMkm2": 1.42,
+    "mountainGlaciersMkm2": 0.21,
+    "australSeaIceWinterMkm2": 8.1,
+    "australSeaIceSummerMkm2": 1.6,
+    "borealSeaIceAboveLatDeg": 78,
+    "totalSeaLevelEquivalentM": 4.6
+  },
+  "paleoclimate": {
+    "glacialCyclePeriodYears": 118000,
+    "glacialInterglacialSwingC": 3.4,
+    "glacialSeaLevelDropM": 60,
+    "obliquityVariationDeg": 0.6,
+    "eccentricityMax": 0.028
+  },
+  "hazards": [
+    {
+      "id": "climate.hazard-cyclone",
+      "name": "Tropical cyclone",
+      "regions": [
+        "region.cape-serrance",
+        "region.elandris"
+      ],
+      "frequencyPerYear": [
+        1,
+        3
+      ],
+      "designBasisWindKmh": 285,
+      "answeredBy": [
+        "phase-10",
+        "phase-12"
+      ],
+      "summary": "Tropical cyclones making landfall on Cape Serrance and the Elandric coast; design basis 285 km/h.",
+      "sources": [
+        "planet.climate"
+      ]
+    },
+    {
+      "id": "climate.hazard-austral-storm",
+      "name": "Austral winter storm",
+      "regions": [
+        "ocean.austral",
+        "region.veydra"
+      ],
+      "frequencyPerSeason": [
+        20,
+        30
+      ],
+      "answeredBy": [
+        "phase-12"
+      ],
+      "summary": "Long-duration winter storms of the Austral Ocean; the reason the grid's 14-day islanding rule exists.",
+      "sources": [
+        "planet.climate"
+      ]
+    },
+    {
+      "id": "climate.hazard-monsoon-failure",
+      "name": "Monsoon failure",
+      "regions": [
+        "region.elandris"
+      ],
+      "returnPeriodYears": 7,
+      "answeredBy": [
+        "phase-11"
+      ],
+      "summary": "Delayed or failed Elandric monsoon in a warm Amarant phase, roughly one year in seven.",
+      "sources": [
+        "planet.climate"
+      ]
+    },
+    {
+      "id": "climate.hazard-sirocc-drought",
+      "name": "Sirocc drought",
+      "regions": [
+        "region.sirocc-basin",
+        "region.river-alcyon"
+      ],
+      "returnPeriodYears": 12,
+      "answeredBy": [
+        "phase-07",
+        "phase-11"
+      ],
+      "summary": "Multi-year drought in the Sirocc Basin and the Alcyon headwaters, roughly one year in twelve.",
+      "sources": [
+        "planet.climate"
+      ]
+    },
+    {
+      "id": "climate.hazard-alcyon-flood",
+      "name": "Alcyon flood",
+      "regions": [
+        "region.river-alcyon"
+      ],
+      "designBasisReturnPeriodYears": 500,
+      "answeredBy": [
+        "phase-07",
+        "phase-10"
+      ],
+      "summary": "Flooding in the lower Alcyon basin; design basis a 1-in-500-year event, met by floodplain reconnection rather than walls.",
+      "sources": [
+        "planet.climate"
+      ]
+    },
+    {
+      "id": "climate.hazard-overturning",
+      "name": "Overturning circulation weakening",
+      "regions": [
+        "global"
+      ],
+      "emergencyTriggerPct": -20,
+      "answeredBy": [
+        "phase-07"
+      ],
+      "summary": "Sustained weakening of the ocean overturning circulation; a 20% fall triggers a constitutional environmental emergency automatically.",
+      "sources": [
+        "planet.climate"
+      ]
+    }
+  ]
+}

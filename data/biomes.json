@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "planet.biomes",
+  "name": "Biomes and Marine Realms of Elysium",
+  "summary": "Terrestrial biomes, marine realms, land-use overlay, and flagship organisms, with the canonical ecology render palette.",
+  "sources": ["planet.biosphere"],
+  "units": { "area": "million km^2", "length": "m" },
+  "paletteNote": "Elysian vegetation is phyllocyanin teal, not chlorophyll green; xantholin-dominant cold and dormant taxa are amber and rust. Palette values are canonical for the Atlas ecology layer.",
+  "totals": {
+    "landAreaMkm2": 181.1,
+    "oceanAreaMkm2": 351.5,
+    "surfaceAreaMkm2": 532.6
+  },
+  "terrestrialBiomes": [
+    { "id": "biome.boreal-taiga", "name": "Boreal taiga", "summary": "Xantholin-gold conifer-analogue forest; the largest biome on Elysium.", "sources": ["planet.biosphere"], "tags": ["forest", "cold"], "areaMkm2": 34.0, "regions": ["region.aurorian-taiga"], "climateZones": ["climate.b1"], "palette": "#C08A3E" },
+    { "id": "biome.equatorial-rainforest", "name": "Equatorial rainforest", "summary": "Deep petrol-blue closed canopy with 110 m emergents.", "sources": ["planet.biosphere"], "tags": ["forest", "tropical", "carbon-sink"], "areaMkm2": 22.0, "regions": ["region.verdanne", "region.myriad-isles", "region.elandris"], "climateZones": ["climate.e1"], "palette": "#0E5F5A" },
+    { "id": "biome.tropical-seasonal", "name": "Tropical seasonal forest & savanna", "summary": "Monsoon-deciduous woodland and fire-adapted grassland.", "sources": ["planet.biosphere"], "tags": ["woodland", "tropical"], "areaMkm2": 20.5, "regions": ["region.meridia", "region.elandris"], "climateZones": ["climate.e2", "climate.e3"], "palette": "#7FA24A" },
+    { "id": "biome.temperate-broadleaf", "name": "Temperate broadleaf forest", "summary": "Jade in summer, rust in autumn as xantholin unmasks.", "sources": ["planet.biosphere"], "tags": ["forest", "temperate"], "areaMkm2": 19.0, "regions": ["region.auroria", "region.meridia", "region.thalassar"], "climateZones": ["climate.t3"], "palette": "#3E8F6E" },
+    { "id": "biome.subtropical-desert", "name": "Subtropical desert & semi-desert", "summary": "Hyper-arid core with salt pans and lithium brines.", "sources": ["planet.biosphere"], "tags": ["arid", "strategic-resource"], "areaMkm2": 17.0, "regions": ["region.sirocc-basin"], "climateZones": ["climate.a1", "climate.a2"], "palette": "#D8B26A" },
+    { "id": "biome.temperate-grassland", "name": "Temperate grassland", "summary": "The historic agricultural core of the Concord.", "sources": ["planet.biosphere"], "tags": ["grassland", "agriculture"], "areaMkm2": 16.5, "regions": ["region.meridian-plain"], "climateZones": ["climate.t3"], "palette": "#A8B96A" },
+    { "id": "biome.montane", "name": "Montane & alpine", "summary": "Lapse-zoned mountain systems with high endemism.", "sources": ["planet.biosphere"], "tags": ["montane", "endemic"], "areaMkm2": 12.0, "regions": ["region.cindral-arc", "region.vail-spine", "region.thalassar-rim", "region.veydran-highlands"], "climateZones": ["climate.h1"], "palette": "#8C9AA3" },
+    { "id": "biome.tundra", "name": "Tundra & polar barren", "summary": "Cushion flora and lichen-analogues on the polar margins.", "sources": ["planet.biosphere"], "tags": ["polar"], "areaMkm2": 10.5, "regions": ["region.veydra", "ocean.boreal"], "climateZones": ["climate.p1"], "palette": "#9FB0A8" },
+    { "id": "biome.oceanic-rainforest", "name": "Oceanic temperate rainforest", "summary": "The wettest land on Elysium at up to 5,400 mm/yr.", "sources": ["planet.biosphere"], "tags": ["forest", "wet"], "areaMkm2": 8.0, "regions": ["region.thalassar-rim"], "climateZones": ["climate.t2"], "palette": "#1F6F5C" },
+    { "id": "biome.winter-wet-scrub", "name": "Winter-wet scrub", "summary": "Aromatic fire-cycled shrubland.", "sources": ["planet.biosphere"], "tags": ["scrub", "fire-cycled"], "areaMkm2": 6.5, "regions": ["region.thalassar", "region.sirocc-basin"], "climateZones": ["climate.t1"], "palette": "#8FA98C" },
+    { "id": "biome.wetland", "name": "Wetland & floodplain mosaic", "summary": "Disproportionate biodiversity and carbon storage per unit area.", "sources": ["planet.biosphere"], "tags": ["wetland", "carbon-sink"], "areaMkm2": 6.0, "regions": ["region.river-alcyon", "region.lake-serapht"], "climateZones": ["climate.t3", "climate.e3"], "palette": "#4E8C7A" },
+    { "id": "biome.coastal-littoral", "name": "Coastal & littoral systems", "summary": "Tidal forest-analogues, dunes, and salt marsh on every coast.", "sources": ["planet.biosphere"], "tags": ["coastal", "protective"], "areaMkm2": 5.3, "regions": ["global"], "climateZones": [], "palette": "#6FA88F" },
+    { "id": "biome.freshwater", "name": "Freshwater lakes & inland seas", "summary": "Lake Serapht alone accounts for 96,000 km^2.", "sources": ["planet.biosphere"], "tags": ["freshwater"], "areaMkm2": 2.2, "regions": ["region.lake-serapht"], "climateZones": [], "palette": "#3D7FA6" },
+    { "id": "biome.permanent-ice", "name": "Permanent ice", "summary": "Veydran Ice Cap (1.42) plus mountain glaciers (0.21).", "sources": ["planet.biosphere"], "tags": ["ice", "protected"], "areaMkm2": 1.6, "regions": ["region.veydran-ice-cap"], "climateZones": ["climate.p1"], "palette": "#E4EDF0" }
+  ],
+  "marineRealms": [
+    { "id": "biome.abyssal", "name": "Abyssal plain & deep pelagic", "summary": "The largest intact ecosystem on Elysium; nodule mining constitutionally prohibited.", "sources": ["planet.biosphere"], "tags": ["marine", "deep", "protected"], "areaMkm2": 299.0, "palette": "#0B2A45" },
+    { "id": "biome.shelf", "name": "Continental shelf", "summary": "Shallow productive shelf; the Mistral Shelf is the richest fishery on the planet.", "sources": ["planet.biosphere"], "tags": ["marine", "fishery"], "areaMkm2": 26.5, "regions": ["region.mistral-shelf"], "palette": "#2A7CA8" },
+    { "id": "biome.slope-rise", "name": "Slope & rise", "summary": "Nutrient-transporting continental margin.", "sources": ["planet.biosphere"], "tags": ["marine"], "areaMkm2": 21.0, "palette": "#1B537A" },
+    { "id": "biome.trench", "name": "Trench", "summary": "Deepest point 10,240 m at the Serrance Trench.", "sources": ["planet.biosphere"], "tags": ["marine", "deep"], "areaMkm2": 2.0, "maxDepthM": 10240, "regions": ["ocean.serrance-trench"], "palette": "#061A2E" },
+    { "id": "biome.reef", "name": "Reef systems", "summary": "Stonebloom reefs; primary thermal-bleaching indicator.", "sources": ["planet.biosphere"], "tags": ["marine", "reef", "at-risk"], "areaMkm2": 1.8, "regions": ["region.myriad-isles"], "bleachingThresholdAnomalyC": 1.4, "palette": "#27A8A0" },
+    { "id": "biome.kelp", "name": "Kelp-analogue forest", "summary": "Cold-shelf algal forest on Thalassari, Veydran, and Boreal margins.", "sources": ["planet.biosphere"], "tags": ["marine", "forest"], "areaMkm2": 1.2, "palette": "#3E7A5E" }
+  ],
+  "landUse": {
+    "wildMinimallyModified": { "sharePct": 71.6, "areaMkm2": 129.7 },
+    "managedForestryRangeland": { "sharePct": 14.6, "areaMkm2": 26.4 },
+    "cultivated": { "sharePct": 8.9, "areaMkm2": 16.1 },
+    "restorationInProgress": { "sharePct": 3.5, "areaMkm2": 6.4 },
+    "builtEnvironment": { "sharePct": 1.4, "areaMkm2": 2.5 }
+  },
+  "protection": {
+    "landProtectedSharePct": 44.0,
+    "landProtectedMkm2": 79.7,
+    "oceanProtectedSharePct": 38.0,
+    "oceanProtectedMkm2": 133.6,
+    "permanentlyProtected": ["region.veydran-ice-cap", "region.verdanne", "biome.abyssal", "ocean.hydrothermal-fields"]
+  },
+  "biodiversity": {
+    "describedMulticellularSpecies": 2410000,
+    "estimatedTrueSpecies": 4800000,
+    "referenceGenomesComplete": 1060000,
+    "industrialEraExtinctions": 4180,
+    "activeRecoveryProgrammes": 11400,
+    "extinctInWildPreserved": 260,
+    "marineShareOfNetPrimaryProductionPct": 63
+  },
+  "kingdoms": [
+    { "id": "clade.phytaea", "name": "Phytaea", "summary": "Land plants; phyllocyanin photosynthesis.", "sources": ["planet.biosphere"] },
+    { "id": "clade.zoaea", "name": "Zoaea", "summary": "Motile heterotrophs; four- and six-limbed body plans.", "sources": ["planet.biosphere"] },
+    { "id": "clade.mycora", "name": "Mycora", "summary": "Decomposers and subsurface network builders.", "sources": ["planet.biosphere"] },
+    { "id": "clade.thallidae", "name": "Thallidae", "summary": "Marine primary producers; dominant oxygen source.", "sources": ["planet.biosphere"] },
+    { "id": "clade.archaeoforms", "name": "Archaeoforms", "summary": "Chemosynthesis, nitrogen fixation, extremophiles.", "sources": ["planet.biosphere"] }
+  ],
+  "flagshipSpecies": [
+    { "id": "species.skyroot", "name": "Skyroot", "summary": "110 m emergent tree supporting about 1,200 dependent species.", "sources": ["planet.biosphere"], "clade": "clade.phytaea", "biome": "biome.equatorial-rainforest", "heightM": 110 },
+    { "id": "species.vailpine", "name": "Vailpine", "summary": "Xantholin-gold conifer-analogue; structural species of the taiga.", "sources": ["planet.biosphere"], "clade": "clade.phytaea", "biome": "biome.boreal-taiga" },
+    { "id": "species.frostmane", "name": "Frostmane", "summary": "900 kg browsing herbivore; keystone of boreal nutrient cycling.", "sources": ["planet.biosphere"], "clade": "clade.zoaea", "biome": "biome.boreal-taiga", "massKg": 900 },
+    { "id": "species.silverdrift", "name": "Silverdrift", "summary": "Vast shoaling fish-analogue underpinning the Thalassari fishery.", "sources": ["planet.biosphere"], "clade": "clade.zoaea", "biome": "biome.shelf" },
+    { "id": "species.stonebloom", "name": "Stonebloom", "summary": "Reef-building symbiosis; primary bleaching-risk indicator.", "sources": ["planet.biosphere"], "clade": "clade.thallidae", "biome": "biome.reef" },
+    { "id": "species.austral-glider", "name": "Austral glider", "summary": "Largest flying animal on Elysium at 6.4 m wingspan.", "sources": ["planet.biosphere"], "clade": "clade.zoaea", "biome": "biome.tundra", "wingspanM": 6.4 },
+    { "id": "species.meshcap", "name": "Meshcap", "summary": "Subsurface network fungus linking forest root systems worldwide.", "sources": ["planet.biosphere"], "clade": "clade.mycora", "biome": "biome.temperate-broadleaf" },
+    { "id": "species.alcyon-lungfish", "name": "Alcyon lungfish", "summary": "Survives multi-year drought encysted in mud; cultural symbol of resilience.", "sources": ["planet.biosphere"], "clade": "clade.zoaea", "biome": "biome.wetland" }
+  ],
+  "biochemistry": {
+    "hereditaryMolecule": "helicin",
+    "nucleobaseCount": 6,
+    "codonMeanings": 4096,
+    "proteinogenicAminoAcids": 31,
+    "primaryPigment": "phyllocyanin",
+    "accessoryPigment": "xantholin",
+    "oxygenPartialPressureVsEarth": 1.1
+  }
+}

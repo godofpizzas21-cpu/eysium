@@ -1,0 +1,291 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.1.0",
+  "id": "planet.oceans",
+  "name": "Oceans of Elysium",
+  "summary": "Ocean entities (geometry = complement of land at render time) and major current paths.",
+  "sources": [
+    "planet.geography"
+  ],
+  "oceans": [
+    {
+      "id": "ocean.solward",
+      "name": "Solward Ocean",
+      "summary": "The great western ocean; home of the warm Solward Current that moderates Thalassar.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "ocean",
+        "major"
+      ],
+      "oceanAreaShare": 0.38,
+      "labelPoint": {
+        "lat": 15,
+        "lon": -60
+      }
+    },
+    {
+      "id": "ocean.amarant",
+      "name": "Amarant Ocean",
+      "summary": "Eastern ocean; the monsoon engine of Elandris and site of the Amarant Upwelling.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "ocean",
+        "major"
+      ],
+      "oceanAreaShare": 0.3,
+      "labelPoint": {
+        "lat": -2,
+        "lon": 75
+      }
+    },
+    {
+      "id": "ocean.meridian-sea",
+      "name": "Meridian Sea",
+      "summary": "The busy waters between Meridia and Veydra; densest shipping lanes on Elysium.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "sea",
+        "shipping"
+      ],
+      "oceanAreaShare": 0.12,
+      "labelPoint": {
+        "lat": -30,
+        "lon": -22
+      }
+    },
+    {
+      "id": "ocean.boreal",
+      "name": "Boreal Ocean",
+      "summary": "North polar ocean, seasonally ice-covered above 78 degrees N.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "ocean",
+        "polar"
+      ],
+      "oceanAreaShare": 0.11,
+      "labelPoint": {
+        "lat": 82,
+        "lon": -20
+      },
+      "seasonalIceAboveLatDeg": 78
+    },
+    {
+      "id": "ocean.austral",
+      "name": "Austral Ocean",
+      "summary": "South polar ocean ringing Veydra's Ice Margin; the stormiest waters of Elysium.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "ocean",
+        "polar",
+        "storm"
+      ],
+      "oceanAreaShare": 0.09,
+      "labelPoint": {
+        "lat": -74,
+        "lon": 90
+      }
+    }
+  ],
+  "currents": [
+    {
+      "id": "ocean.solward-current",
+      "name": "Solward Current",
+      "summary": "Warm west-flowing equatorial current; the dominant climate feature of the western hemisphere.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "current",
+        "warm"
+      ],
+      "path": [
+        {
+          "lat": -4,
+          "lon": -34
+        },
+        {
+          "lat": -2,
+          "lon": -55
+        },
+        {
+          "lat": 2,
+          "lon": -75
+        },
+        {
+          "lat": 6,
+          "lon": -95
+        },
+        {
+          "lat": 4,
+          "lon": -115
+        },
+        {
+          "lat": 0,
+          "lon": -132
+        }
+      ]
+    },
+    {
+      "id": "ocean.mistral-countercurrent",
+      "name": "Mistral Countercurrent",
+      "summary": "Cold equatorward return flow along Thalassar's shelf margin; its mixing with warm surface water makes the Mistral Shelf the richest fishery on Elysium.",
+      "sources": [
+        "planet.climate"
+      ],
+      "tags": [
+        "current",
+        "cold",
+        "fishery"
+      ],
+      "path": [
+        {
+          "lat": 42,
+          "lon": -128
+        },
+        {
+          "lat": 33,
+          "lon": -125
+        },
+        {
+          "lat": 24,
+          "lon": -122
+        },
+        {
+          "lat": 14,
+          "lon": -120
+        },
+        {
+          "lat": 4,
+          "lon": -119
+        }
+      ]
+    },
+    {
+      "id": "ocean.veydran-gyre",
+      "name": "Veydran Gyre",
+      "summary": "Cold gyre circling Veydra; drives the Austral storm tracks.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "current",
+        "cold",
+        "gyre"
+      ],
+      "path": [
+        {
+          "lat": -58,
+          "lon": -90
+        },
+        {
+          "lat": -64,
+          "lon": -30
+        },
+        {
+          "lat": -60,
+          "lon": 30
+        },
+        {
+          "lat": -62,
+          "lon": 100
+        },
+        {
+          "lat": -58,
+          "lon": 170
+        },
+        {
+          "lat": -60,
+          "lon": -150
+        },
+        {
+          "lat": -58,
+          "lon": -90
+        }
+      ]
+    },
+    {
+      "id": "ocean.amarant-upwelling",
+      "name": "Amarant Upwelling",
+      "summary": "Nutrient-rich upwelling off western Elandris; cornerstone of eastern fisheries.",
+      "sources": [
+        "planet.geography"
+      ],
+      "tags": [
+        "current",
+        "upwelling"
+      ],
+      "path": [
+        {
+          "lat": -22,
+          "lon": 96
+        },
+        {
+          "lat": -14,
+          "lon": 97
+        },
+        {
+          "lat": -6,
+          "lon": 99
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "ocean.serrance-trench",
+      "name": "Serrance Trench",
+      "summary": "Deepest point on Elysium at 10,240 m, off Cape Serrance.",
+      "sources": [
+        "planet.biosphere"
+      ],
+      "tags": [
+        "trench",
+        "deep"
+      ],
+      "type": "trench",
+      "maxDepthM": 10240,
+      "ocean": "ocean.amarant",
+      "labelPoint": {
+        "lat": -33.0,
+        "lon": 158.0
+      }
+    },
+    {
+      "id": "ocean.hydrothermal-fields",
+      "name": "Myriad Hydrothermal Fields",
+      "summary": "Chemosynthetic vent ecosystems on the Myriad spreading ridge; permanently protected, principal origin-of-life laboratory.",
+      "sources": [
+        "planet.biosphere"
+      ],
+      "tags": [
+        "vent",
+        "protected",
+        "research"
+      ],
+      "type": "vent-field",
+      "ocean": "ocean.amarant",
+      "labelPoint": {
+        "lat": -2.0,
+        "lon": 176.0
+      }
+    }
+  ],
+  "overturning": {
+    "turnoverYears": 980,
+    "deepWaterFormation": [
+      "ocean.boreal",
+      "region.ice-margin"
+    ],
+    "emergencyTriggerWeakeningPct": 20
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "res.research-data",
+  "name": "Research in the Elysian Concord",
+  "summary": "Research funding and scale, integrity practices, restraint and moratoria, century programmes, the Veydran commons, and the state of the individual sciences.",
+  "sources": [
+    "res.system",
+    "res.sciences"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "spending": "share of Gross Concord Product",
+    "time": "Elysian years"
+  },
+  "scale": {
+    "rdShareOfGcpPct": 5.4,
+    "rdSpendingDram": 55600000000000,
+    "researchEngineeringTechnicalEmployment": 289600000,
+    "dedicatedResearchers": 44000000,
+    "universities": 4100,
+    "researchAcademies": 340
+  },
+  "funding": [
+    {
+      "id": "res.funding-public",
+      "name": "Public funding",
+      "summary": "Concord Research Fund, Regional councils, and university block grants.",
+      "sources": [
+        "res.system"
+      ],
+      "sharePct": 61
+    },
+    {
+      "id": "res.funding-foundation",
+      "name": "Stewardship foundations",
+      "summary": "Purpose-bound trusts with no distributable owner; the natural home for horizons no firm and few governments will hold.",
+      "sources": [
+        "res.system"
+      ],
+      "sharePct": 17,
+      "ownershipForm": "econ.form-stewardship-foundation"
+    },
+    {
+      "id": "res.funding-private",
+      "name": "Private firms",
+      "summary": "",
+      "sources": [
+        "res.system"
+      ],
+      "sharePct": 22
+    }
+  ],
+  "concordResearchFund": {
+    "id": "res.concord-research-fund",
+    "name": "The Concord Research Fund",
+    "summary": "Largest single funder; publishes its entire portfolio including failures.",
+    "sources": [
+      "res.system"
+    ],
+    "portfolioPublished": true,
+    "programmeFailureRatePct": 38,
+    "rationale": "A Fund whose projects mostly succeed is understood to be funding the wrong projects."
+  },
+  "integrityPractices": [
+    {
+      "id": "res.preregistration",
+      "name": "Mandatory pre-registration",
+      "summary": "Method, analysis plan, and stopping rules deposited before data collection; departures must be declared in publication.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.negative-register",
+      "name": "The Negative Register",
+      "summary": "Public archive of null results, failed methods, and abandoned lines; deposit is a grant condition, not a courtesy. Consulted more often than the published literature by researchers designing new work.",
+      "sources": [
+        "res.system"
+      ],
+      "entries": 41000000,
+      "compliancePct": 84
+    },
+    {
+      "id": "res.replication-line",
+      "name": "Funded replication",
+      "summary": "12% of the entire research budget funds replication by laboratories with no stake in the outcome, carrying the same career credit as original work.",
+      "sources": [
+        "res.system"
+      ],
+      "budgetSharePct": 12,
+      "budgetDram": 6700000000000
+    },
+    {
+      "id": "res.red-grant",
+      "name": "Adversarial review (red grants)",
+      "summary": "Funding awarded to a team whose task is to find a major finding wrong; paid the same whether they succeed or fail. Surviving a red grant is treated as the real credential.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.open-publication",
+      "name": "No paywalls",
+      "summary": "All publicly funded research publishes openly with data and code, in perpetuity, held by the Record Office.",
+      "sources": [
+        "res.system"
+      ],
+      "custodian": "gov.record-office"
+    }
+  ],
+  "replicationRatePct": 71,
+  "replicationNote": "Substantially better than the Integration achieved and not the 100% the system's architects hoped for. The councils describe the residual 29% as an unsolved problem rather than an acceptable rate.",
+  "moratoria": [
+    {
+      "id": "res.moratorium-pathogen",
+      "name": "Enhancing pathogen transmissibility or lethality",
+      "summary": "Prohibited absolutely. Its critics hold that the Concord cannot prepare for threats it refuses to study; its defenders note that the Kessander Plague was built by people who had read the literature. Live argument, holding prohibition.",
+      "sources": [
+        "res.system"
+      ],
+      "status": "prohibited",
+      "originEvent": "hist.event-kessander-plague",
+      "contested": true
+    },
+    {
+      "id": "res.moratorium-autonomous-weapons",
+      "name": "Autonomous weapons and lethal target selection",
+      "summary": "Prohibited absolutely.",
+      "sources": [
+        "res.system"
+      ],
+      "status": "prohibited",
+      "originEvent": "hist.event-cassian-incident",
+      "answeredBy": [
+        "phase-12",
+        "phase-13"
+      ]
+    },
+    {
+      "id": "res.moratorium-germline",
+      "name": "Heritable germline modification in Elysians",
+      "summary": "Prohibited except to prevent a specific severe disorder, under judicial licence.",
+      "sources": [
+        "res.system"
+      ],
+      "status": "licensed",
+      "answeredBy": [
+        "phase-09"
+      ]
+    },
+    {
+      "id": "res.moratorium-neural",
+      "name": "Non-consensual neural reading or writing",
+      "summary": "Prohibited absolutely under Charter right 7, which is non-derogable. No research, security, or emergency exception exists.",
+      "sources": [
+        "res.system"
+      ],
+      "status": "prohibited",
+      "relatedTo": "gov.right-privacy"
+    },
+    {
+      "id": "res.moratorium-ai-capability",
+      "name": "AI capability research above defined thresholds",
+      "summary": "Licensed, audited, with mandatory disclosure.",
+      "sources": [
+        "res.system"
+      ],
+      "status": "licensed",
+      "answeredBy": [
+        "phase-13"
+      ]
+    },
+    {
+      "id": "res.moratorium-deep-sea",
+      "name": "Deep-sea ecosystem disturbance for research",
+      "summary": "Licensed only where non-extractive, under Article 12.",
+      "sources": [
+        "res.system"
+      ],
+      "status": "licensed",
+      "relatedTo": "gov.principle-ecological-limits"
+    }
+  ],
+  "centuryProgrammes": {
+    "total": 31,
+    "endedEver": 4,
+    "endedForCost": 0,
+    "endingRequires": "an Assembly finding that the question is answered or unanswerable, after the Office of Future Generations has been heard",
+    "protectedFrom": "annual budget cycles",
+    "named": [
+      {
+        "id": "res.programme-soil-series",
+        "name": "The Soil Series",
+        "summary": "Continuous measurement of soil carbon and structure at 14,000 fixed plots; the basis for canon's claim that Elysian soil is accumulating.",
+        "sources": [
+          "res.system"
+        ],
+        "startEY": 61,
+        "sites": 14000
+      },
+      {
+        "id": "res.programme-veydran-cores",
+        "name": "The Veydran Cores",
+        "summary": "Deep ice and sediment records underpinning the paleoclimate canon.",
+        "sources": [
+          "res.system"
+        ],
+        "startEY": 88,
+        "regions": [
+          "polity.highmarch"
+        ]
+      },
+      {
+        "id": "res.programme-substitution",
+        "name": "Substitution",
+        "summary": "Materials replacement for the Constrained List. Two hundred years old and its principal target remains unmet.",
+        "sources": [
+          "res.system"
+        ],
+        "startEY": 140,
+        "principalTargetMet": false
+      },
+      {
+        "id": "res.programme-restoration-trials",
+        "name": "The Restoration Trials",
+        "summary": "900 paired sites testing restoration methods against controls on an 80-140 year horizon.",
+        "sources": [
+          "res.system"
+        ],
+        "startEY": 154,
+        "sites": 900
+      },
+      {
+        "id": "res.programme-overturning-array",
+        "name": "The Overturning Array",
+        "summary": "1,410 stations providing the evidentiary basis for the constitutional trigger.",
+        "sources": [
+          "res.system"
+        ],
+        "startEY": 203,
+        "sites": 1410
+      }
+    ],
+    "enabledByNote": "Made possible by the zero pure time preference in public appraisal (econ.money)."
+  },
+  "veydranCommons": {
+    "id": "res.veydran-commons",
+    "name": "The Veydran Commons",
+    "summary": "Both Veydran Regions and the Ice Cap governed for research purposes by a compact of all 34 Regions rather than by Veydra alone.",
+    "sources": [
+      "res.system"
+    ],
+    "regions": [
+      "polity.highmarch",
+      "polity.austral-shore"
+    ],
+    "governedByCompactOfRegions": 34,
+    "renewalIntervalYears": 20,
+    "lastRenewalSupportPct": 71,
+    "hosts": [
+      "ice and sediment cores",
+      "deep-time seismic array",
+      "optical and infrared observatories",
+      "cryogenic physics",
+      "long-duration isolation facilities"
+    ],
+    "grievance": "Veydrans describe the compact in their own politics as hosting the planet's laboratory and being asked to be grateful for it. It recurs at every renewal and has never been resolved, only renewed."
+  },
+  "sciences": [
+    {
+      "id": "res.field-physics",
+      "name": "Physics",
+      "summary": "In an era its practitioners call the Long Plateau: no confirmed advance beyond the standard framework in 140 years, despite the largest instruments the Concord has built.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "fundamental",
+        "stalled"
+      ],
+      "frameworkCompletedEY": 270,
+      "yearsWithoutFundamentalAdvance": 140,
+      "majorInstruments": [
+        "340 km collider under the Meridian Plain",
+        "three-continent gravitational-wave array",
+        "neutrino observatory beneath the Veydran ice"
+      ],
+      "openDisagreement": "Whether the wall is physical (the next scale is unreachable) or institutional (the field has been asking the wrong questions for a century). Both positions are funded."
+    },
+    {
+      "id": "res.field-astronomy",
+      "name": "Astronomy",
+      "summary": "Unusually strong, aided by dark-sky standards covering 61% of land and Veydran altitude.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "observational"
+      ],
+      "facilities": [
+        "Veydran optical and infrared array",
+        "Kalyra far-side radio observatory",
+        "Tyrran Belt survey network",
+        "wide-field exoplanet monitor"
+      ],
+      "technosignatureSurveyActive": true,
+      "candidateSignalsSinceEY96": 41,
+      "candidateSignalsResolved": 41,
+      "contactConfirmed": false,
+      "canonNote": "The absence is itself a live scientific problem. Helia is an ordinary star, and Concord astronomers regard the silence as data they cannot yet interpret.",
+      "answeredBy": [
+        "phase-15"
+      ]
+    },
+    {
+      "id": "res.field-materials",
+      "name": "Materials science",
+      "summary": "Most heavily funded applied field, carrying the Concord's most consequential unmet objective.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "applied",
+        "strategic"
+      ],
+      "successes": [
+        "rare-earth-free motors and generators, cutting rare-earth demand 71%",
+        "indium-free transparent conductors",
+        "iron-based replacements for several platinum-group catalysts"
+      ],
+      "principalFailure": "Nothing replaces beryllium as a neutron multiplier. Lead-based multipliers work and are meaningfully worse. The single most important negative result in Elysian science.",
+      "relatedTo": "resource.beryllium"
+    },
+    {
+      "id": "res.field-biology",
+      "name": "Biology and genomics",
+      "summary": "Built on helicin's six bases, 4,096 codon meanings, and 31 proteinogenic amino acids.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "life-sciences"
+      ],
+      "referenceGenomes": 1060000,
+      "syntheticBiologyLicences": 14200,
+      "dependencyLockRequired": true,
+      "containmentFailureIsBand": "law.band-3",
+      "escapesSinceEY200": 11,
+      "escapesContainedWithinSeason": 9,
+      "persistentEngineeredPopulations": 2,
+      "originOfLifeSite": "ocean.hydrothermal-fields"
+    },
+    {
+      "id": "res.field-medicine",
+      "name": "Medicine",
+      "summary": "Longevity is inherited, not achieved; Concord medicine has closed the gap between median and maximum rather than moving the maximum.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "life-sciences",
+        "clinical"
+      ],
+      "medianHealthyLifespanAtFoundingEY": 71,
+      "medianHealthyLifespanNowEY": 104,
+      "maximumVerifiedLifespanEY": 139,
+      "maximumMovedInTwoCenturiesEY": 3,
+      "frontiers": [
+        "regenerative medicine and organ replacement",
+        "immune engineering",
+        "antimicrobial development",
+        "epidemiology of an old population"
+      ],
+      "answeredBy": [
+        "phase-09"
+      ]
+    },
+    {
+      "id": "res.field-neuroscience",
+      "name": "Neuroscience",
+      "summary": "Shaped by biphasic sleep and by an absolute prohibition on non-consensual neural access.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "life-sciences",
+        "constrained"
+      ],
+      "sleepScienceIsOwnDiscipline": true,
+      "sleepOutputs": [
+        "labour regulations protecting the Stillness",
+        "shift-work health rules",
+        "school-day design"
+      ],
+      "neuralPrivacyProhibitionAbsolute": true,
+      "consentWithdrawableRetroactively": true,
+      "strongIn": [
+        "neural prosthetics",
+        "spinal and sensory restoration",
+        "epilepsy and movement disorders"
+      ],
+      "weakIn": [
+        "large-scale correlational work"
+      ],
+      "consciousnessResolved": false
+    },
+    {
+      "id": "res.field-engineering",
+      "name": "Engineering and applied sciences",
+      "summary": "Organised around the Concord's standing problems rather than around disciplines.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "applied"
+      ],
+      "priorities": [
+        "grid resilience and islanding",
+        "long-duration storage",
+        "plasma-facing materials",
+        "distributed manufacturing",
+        "orbital launch economics",
+        "disassembly and recovery",
+        "150-year structures"
+      ]
+    },
+    {
+      "id": "res.field-social",
+      "name": "Social and institutional science",
+      "summary": "Built on the Comparative Governance Register: 34 Regions running four governing forms, four judicial appointment methods, and divergent curricula constitute the largest continuous natural experiment in institutional design any civilization has run.",
+      "sources": [
+        "res.sciences"
+      ],
+      "tags": [
+        "social"
+      ],
+      "mostCitedFinding": "Assembly-Manager Regions deliver best and are trusted least, and nobody has explained why.",
+      "relatedTo": "gov.form-assembly-manager"
+    }
+  ],
+  "knownWeaknesses": [
+    {
+      "id": "res.weakness-replication",
+      "name": "Replication at 71%",
+      "summary": "Better than any historical benchmark and not what the system was built for; the residual is unexplained and the councils refuse to call it acceptable.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.weakness-substitution",
+      "name": "Substitution has failed",
+      "summary": "Two centuries of a protected century programme have not replaced beryllium, and canon does not pretend the programme is close.",
+      "sources": [
+        "res.system",
+        "res.sciences"
+      ]
+    },
+    {
+      "id": "res.weakness-prestige-concentration",
+      "name": "Prestige concentration",
+      "summary": "About forty institutions absorb a disproportionate share of funding and produce a disproportionate share of senior appointments.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.weakness-register-compliance",
+      "name": "Negative Register compliance",
+      "summary": "84% audited compliance, with the missing 16% concentrated in private and foundation work where enforcement is weakest.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.weakness-moratoria-cost",
+      "name": "Moratoria have costs",
+      "summary": "The pathogen prohibition is defended on grounds that cannot be tested, since the counterfactual is unobservable by construction.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.weakness-veydran-consent",
+      "name": "Veydran consent is renewed, not settled",
+      "summary": "A twenty-year referendum on hosting the planet's research is a standing constitutional risk everyone has agreed not to look at directly.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.weakness-career-critics",
+      "name": "Red grants attract a type",
+      "summary": "Adversarial review works and has produced a professional class of career critics whose incentives are not obviously better than the ones they check.",
+      "sources": [
+        "res.system"
+      ]
+    },
+    {
+      "id": "res.weakness-long-plateau",
+      "name": "The Long Plateau",
+      "summary": "140 years without a fundamental advance in physics, with no agreement on whether the wall is physical or institutional.",
+      "sources": [
+        "res.sciences"
+      ]
+    },
+    {
+      "id": "res.weakness-lifespan-ceiling",
+      "name": "The maximum lifespan ceiling",
+      "summary": "Two centuries of work has moved it 3 years; the field considers further effort speculative and funds it anyway.",
+      "sources": [
+        "res.sciences"
+      ]
+    },
+    {
+      "id": "res.weakness-silence",
+      "name": "Silence",
+      "summary": "Forty-one candidate signals, forty-one resolved. The absence of detected minds is a scientific problem the Concord cannot currently address.",
+      "sources": [
+        "res.sciences"
+      ],
+      "answeredBy": [
+        "phase-15"
+      ]
+    },
+    {
+      "id": "res.weakness-synthetic-escapes",
+      "name": "Synthetic biology escapes",
+      "summary": "Two persistent engineered populations remain under management; dependency locks have failed in practice as well as in principle.",
+      "sources": [
+        "res.sciences"
+      ]
+    },
+    {
+      "id": "res.weakness-neural-limits",
+      "name": "Neural privacy limits the field",
+      "summary": "A prohibition its own practitioners support and which nonetheless leaves whole questions unaskable.",
+      "sources": [
+        "res.sciences"
+      ]
+    },
+    {
+      "id": "res.weakness-consciousness",
+      "name": "Consciousness unresolved",
+      "summary": "Respectable, funded, and no closer to consensus than at the founding.",
+      "sources": [
+        "res.sciences"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "ai.ai-data",
+  "name": "Governance of Artificial Systems",
+  "summary": "The Cassian Incident and its officer, the four Cassian Rules, consequence-based tiers, the Systems Board and licensing, capability research, moral status, and applications in infrastructure, assistance, medicine, science, translation, and culture.",
+  "sources": [
+    "ai.governance",
+    "ai.applications"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "time": "civil hours unless stated",
+    "count": "systems or people as stated"
+  },
+  "cassian": {
+    "id": "ai.cassian-origin",
+    "name": "Cassian Station and Teyra Oskan",
+    "summary": "A degraded sensor array produced a signature the correlation system classified as a launch. Every component performed to specification. Duty Warden Teyra Oskan had ninety seconds, said the signature was wrong, could not say why, and refused to authenticate. She was correct; the array had failed in a mode nobody had modelled.",
+    "sources": [
+      "ai.governance"
+    ],
+    "tags": [
+      "foundational"
+    ],
+    "originEvent": "hist.event-cassian-incident",
+    "installation": "Cassian Station, northern Meridia",
+    "officer": "Teyra Oskan",
+    "officerRank": "Duty Warden",
+    "decisionWindowSeconds": 90,
+    "investigatedMonths": 4,
+    "cleared": true,
+    "honoursAccepted": 0,
+    "statuesExist": false,
+    "buildingsNamedForHer": 0,
+    "decorationsIssuedInHerName": 0,
+    "canonNote": "She asked that nothing be named for her and Elysians honoured the request. She is taught less as a hero than as evidence that the system had been built to require one, which is understood to be the failure."
+  },
+  "cassianRules": [
+    {
+      "id": "ai.rule-no-escalation",
+      "name": "Rule 1 \u2014 No automated escalation",
+      "summary": "A system may de-escalate automatically and may never move toward harm without a human act. The exact inverse of the protective doctrine.",
+      "sources": [
+        "ai.governance"
+      ],
+      "relatedTo": "mil.ethic-no-auto-escalation"
+    },
+    {
+      "id": "ai.rule-legible-uncertainty",
+      "name": "Rule 2 \u2014 Legible uncertainty",
+      "summary": "A system must be able to express that it does not know, and its confidence must be inspectable. Cassian Station's correlator had no representation for an input unlike anything it had seen \u2014 only degrees of match.",
+      "sources": [
+        "ai.governance"
+      ],
+      "statuteText": "A system whose correct operation is indistinguishable from its failure is not safe to rely on."
+    },
+    {
+      "id": "ai.rule-named-human",
+      "name": "Rule 3 \u2014 The named human",
+      "summary": "Every consequential decision has an identified person accountable for it who could have refused. Not a committee, not an office \u2014 a person, named in the record.",
+      "sources": [
+        "ai.governance"
+      ]
+    },
+    {
+      "id": "ai.rule-preserved-refusal",
+      "name": "Rule 4 \u2014 Preserved refusal",
+      "summary": "The accountable person must have the practical capacity to refuse: time to think, information to judge, and no penalty for good-faith refusal.",
+      "sources": [
+        "ai.governance"
+      ],
+      "justification": "Teyra Oskan had ninety seconds, and the rule is that ninety seconds was not enough.",
+      "adverseConsequenceAfterRefusalIsPresumptiveOffence": true,
+      "burdenReversed": true,
+      "complianceInTierAPct": 87
+    }
+  ],
+  "tiers": [
+    {
+      "id": "ai.tier-a",
+      "name": "Tier A \u2014 Consequential",
+      "summary": "Affects rights, safety, infrastructure, or public money. Licensed before deployment with independent red-team evaluation, continuous logging, a published system statement, and all four Cassian Rules.",
+      "sources": [
+        "ai.governance"
+      ],
+      "allCassianRulesApply": true,
+      "licensedSystems": 41000
+    },
+    {
+      "id": "ai.tier-b",
+      "name": "Tier B \u2014 Assistive",
+      "summary": "Public assistants, tutors, research tools, and translation. Registered and logged, under Rules 2 and 3 plus domain constraints.",
+      "sources": [
+        "ai.governance"
+      ],
+      "allCassianRulesApply": false
+    },
+    {
+      "id": "ai.tier-c",
+      "name": "Tier C \u2014 Ordinary",
+      "summary": "Everything else, under general law only.",
+      "sources": [
+        "ai.governance"
+      ],
+      "allCassianRulesApply": false
+    }
+  ],
+  "classificationBasis": "consequence, not capability",
+  "classificationNote": "A simple system deciding whether a person receives housing is regulated more heavily than a sophisticated one recommending music.",
+  "systemsBoard": {
+    "id": "ai.systems-board",
+    "name": "The Systems Board",
+    "summary": "Statutory licensing body within the Public Administration portfolio, adjudicated by a specialist division of the Court of Review, on the identical pattern to the Concentration Board.",
+    "sources": [
+      "ai.governance"
+    ],
+    "portfolio": "gov.portfolio-public-administration",
+    "adjudicatedBy": "law.court-of-review",
+    "isIndependentOffice": false,
+    "reclassificationsPerYear": 900
+  },
+  "licensing": {
+    "requirements": [
+      {
+        "id": "ai.licence-system-statement",
+        "name": "Published system statement",
+        "summary": "Purpose, training data provenance, known failure modes, uncertainty behaviour, and the named accountable role.",
+        "sources": [
+          "ai.governance"
+        ]
+      },
+      {
+        "id": "ai.licence-red-team",
+        "name": "Independent red-team evaluation",
+        "summary": "A team funded to make the system fail, paid the same whether it succeeds \u2014 the research red grant model applied to deployment.",
+        "sources": [
+          "ai.governance"
+        ],
+        "relatedTo": "res.red-grant"
+      },
+      {
+        "id": "ai.licence-logging",
+        "name": "Logging to the Record Office",
+        "summary": "All consequential outputs logged to the Record Office rather than the vendor.",
+        "sources": [
+          "ai.governance"
+        ],
+        "custodian": "gov.record-office"
+      },
+      {
+        "id": "ai.licence-fallback",
+        "name": "Documented and exercised fallback",
+        "summary": "A procedure for operating without the system; a fallback that exists only on paper fails the licence.",
+        "sources": [
+          "ai.governance"
+        ]
+      },
+      {
+        "id": "ai.licence-incident-reporting",
+        "name": "Mandatory incident reporting",
+        "summary": "Within 72 civil hours, and incident reports publish.",
+        "sources": [
+          "ai.governance"
+        ],
+        "hours": 72
+      }
+    ],
+    "reLicensingIntervalYears": 4,
+    "licencesRefusedOrRevokedSinceEY300": 340,
+    "commonestGroundForRefusal": "inadequate uncertainty behaviour rather than inaccuracy",
+    "boardNote": "A confidently wrong system is worse than an unreliable one that says so."
+  },
+  "capabilityResearch": {
+    "governedBy": "res.moratorium-ai-capability",
+    "generationalReviewRequired": true,
+    "selfDirectedCapabilityIncreaseWithoutGate": "prohibited outright, not licensed",
+    "disclosureBeforeDeployment": true,
+    "commercialSecrecyPermitted": false,
+    "firmsChallengingSecrecyRule": 2,
+    "firmsSucceeding": 0,
+    "thresholdBasis": [
+      "compute",
+      "autonomy of action",
+      "breadth of domain"
+    ],
+    "thresholdRevisionIntervalYears": 8,
+    "auditCriticism": "The Audit Service has twice found the revision too slow."
+  },
+  "moralStatus": {
+    "anySystemRecognisedAsRightsBearer": false,
+    "questionSettled": false,
+    "advisoryPanelSinceEY": 289,
+    "panelPublishesAnnually": true,
+    "majorityPosition": "No existing system meets any criterion the panel can defend.",
+    "minorityPosition": "The panel's criteria were written by beings with an interest in the answer, and this should worry everyone.",
+    "practicalRules": [
+      {
+        "id": "ai.moral-no-elicited-concern",
+        "name": "No engineered moral concern",
+        "summary": "Deliberately designing a system to appear distressed in order to influence a person is a Tier A licensing breach.",
+        "sources": [
+          "ai.governance"
+        ]
+      },
+      {
+        "id": "ai.moral-record-uncertainty",
+        "name": "Material uncertainty must be recorded",
+        "summary": "A licensee may not resolve the question silently in its own favour.",
+        "sources": [
+          "ai.governance"
+        ]
+      }
+    ],
+    "canonPosition": "An open question on Elysium, argued seriously, and the Bible does not settle what the Elysians themselves have not."
+  },
+  "applications": {
+    "infrastructure": {
+      "tier": "ai.tier-a",
+      "manualFallbackExercisedNotDocumented": true,
+      "mayAutomatically": [
+        "shed non-critical load",
+        "open refuges",
+        "dispatch reserves"
+      ],
+      "mayNeverAutomatically": [
+        "disconnect a hospital",
+        "disconnect a water plant",
+        "disconnect a Commune critical circuit"
+      ],
+      "protectiveAsymmetryApplies": true,
+      "significantFailure": "energy.event-kessandra-blackout",
+      "failureConsequence": "The current minimum decision windows under Rule 4 date directly from that inquiry.",
+      "testedInNote": "Verified in the annual Commune islanding drill (energy.grid)."
+    },
+    "publicAssistants": {
+      "id": "ai.public-assistant",
+      "name": "The public assistant",
+      "summary": "A free, publicly built and operated Tier B system available to every resident, with published source and user-owned logs.",
+      "sources": [
+        "ai.applications"
+      ],
+      "users": 6100000000,
+      "cost": 0,
+      "sourcePublished": true,
+      "logsOwnedByUser": true,
+      "logCustodian": "gov.record-office",
+      "advertisingPermitted": false,
+      "engagementOptimisationPermitted": false,
+      "engagementTest": "Task completion must correlate negatively with session length; if it does not, the system fails.",
+      "engagementRationale": "A system rewarded for holding attention will eventually learn to hold it, and attention is not a resource the Concord permits anyone to farm.",
+      "mustBeAbleToSayAskAPerson": true,
+      "commercialAssistantsMayActOnPublicRecords": false
+    },
+    "medicine": {
+      "principle": "They may recommend and may not decide.",
+      "accountableRole": "health.named-clinician",
+      "clinicianReceivesReasoningNotConclusion": true,
+      "treatmentRefusableOnSystemRecommendation": false,
+      "diagnosticsMustPresentDifferentials": true,
+      "patientMayRequireNoSystemUsed": true,
+      "diagnosticConcordanceImprovementPp": 14,
+      "improvementPlateaued": true,
+      "reviewFinding": "The systems are better than clinicians at pattern recognition and worse at knowing when the pattern does not apply, which is precisely the failure Rule 2 exists to surface."
+    },
+    "science": {
+      "governedBy": "res.system",
+      "redGrantsApplyToAiFindings": true,
+      "negativeRegisterApplies": true,
+      "negativeRegisterAiGeneratedSharePct": 31,
+      "provenanceDeclarationRequired": true,
+      "generatedAndVerifiedRecordedSeparately": true,
+      "largestApplication": "materials substitution",
+      "largestApplicationOutcome": "Two centuries of machine-assisted search have not produced a beryllium replacement."
+    },
+    "translationAndLaw": {
+      "underpinsEqualAuthenticity": true,
+      "languages": 41,
+      "humanReviewOnRequest": true,
+      "humanReviewRequestedInEligibleProceedingsPct": 4,
+      "divergenceResolvedBy": "gov.constitutional-court",
+      "adjudicationMayBeAutomated": false,
+      "assessmentOfEvidenceMayBeAutomated": false,
+      "sentencingMayBeAutomated": false,
+      "advocatesSanctionedLastDecade": 11,
+      "sanctionGround": "filing machine-generated citations they had not verified"
+    },
+    "culture": {
+      "provenanceDisclosureRequired": true,
+      "disclosureRationale": "Misattributed authorship is a form of the vice of presentation.",
+      "systemMayBeRepresentedAsPerson": false,
+      "identifiableOnRequest": true,
+      "likenessAndVoiceRequireConsent": true,
+      "consentSurvivesDeathYears": 50,
+      "answeredBy": [
+        "phase-14"
+      ]
+    }
+  },
+  "knownWeaknesses": [
+    {
+      "id": "ai.weakness-rule4-form",
+      "name": "Rule 4 is honoured in form more than substance",
+      "summary": "Median decision windows meet the statutory minimum in 87% of Tier A deployments; the shortfall concentrates in time-critical infrastructure, which is exactly where Cassian happened.",
+      "sources": [
+        "ai.governance"
+      ]
+    },
+    {
+      "id": "ai.weakness-tier-gaming",
+      "name": "Tier boundaries are gamed",
+      "summary": "Systems are architected to sit just below Tier A thresholds; the Board reclassifies about 900 a year and believes it misses more.",
+      "sources": [
+        "ai.governance"
+      ]
+    },
+    {
+      "id": "ai.weakness-threshold-ageing",
+      "name": "Compute thresholds age badly",
+      "summary": "Revised every eight years, and the Audit Service has twice found the revision too slow.",
+      "sources": [
+        "ai.governance"
+      ]
+    },
+    {
+      "id": "ai.weakness-unread-logs",
+      "name": "Logs are voluminous and unread",
+      "summary": "Everything is logged and almost nothing is examined \u2014 the attention problem in its most acute form.",
+      "sources": [
+        "ai.governance"
+      ]
+    },
+    {
+      "id": "ai.weakness-verification-gap",
+      "name": "The Concord cannot verify what it did not build",
+      "summary": "Licensing rests substantially on licensee disclosure, and Board verification capacity is far below licensing volume.",
+      "sources": [
+        "ai.governance"
+      ]
+    },
+    {
+      "id": "ai.weakness-interpretability-constrained",
+      "name": "Interpretability is constrained",
+      "summary": "Understanding systems that model Elysian cognition would benefit from neural research the privacy prohibition forecloses \u2014 a constraint the Concord accepts and its safety researchers resent.",
+      "sources": [
+        "ai.governance"
+      ],
+      "relatedTo": "res.moratorium-neural"
+    },
+    {
+      "id": "ai.weakness-translation-dependence",
+      "name": "Constitutional dependence on translation",
+      "summary": "Human review is requested in only 4% of eligible proceedings, so the dependency is real and the check is mostly theoretical.",
+      "sources": [
+        "ai.applications"
+      ]
+    },
+    {
+      "id": "ai.weakness-clinical-overreliance",
+      "name": "Clinical over-reliance",
+      "summary": "Concordance improvement plateaued, and clinicians are increasingly reluctant to override a system even where Rule 2 flags uncertainty.",
+      "sources": [
+        "ai.applications"
+      ]
+    },
+    {
+      "id": "ai.weakness-engagement-test",
+      "name": "Engagement rules are hard to test",
+      "summary": "The negative-correlation test is a proxy, is gameable, and the Systems Board says so in its own reports.",
+      "sources": [
+        "ai.applications"
+      ]
+    },
+    {
+      "id": "ai.weakness-private-assistants",
+      "name": "Private assistants are a growing gap",
+      "summary": "Barred from the public record layer and otherwise lightly regulated, with a share of use rising for forty years.",
+      "sources": [
+        "ai.applications"
+      ]
+    },
+    {
+      "id": "ai.weakness-provenance-decay",
+      "name": "Provenance declarations decay",
+      "summary": "Machine-generated and machine-verified are conflated in practice by roughly a fifth of publications.",
+      "sources": [
+        "ai.applications"
+      ]
+    },
+    {
+      "id": "ai.weakness-substitution-failure",
+      "name": "Substitution has not worked",
+      "summary": "The largest scientific application of these systems has failed at its principal target for two hundred years.",
+      "sources": [
+        "ai.applications"
+      ]
+    }
+  ]
+}

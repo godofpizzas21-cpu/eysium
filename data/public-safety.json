@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "law.public-safety-data",
+  "name": "Public Safety, Restorative Justice, and Corrections",
+  "summary": "Policing structure and doctrine, use-of-force and oversight figures, the surveillance settlement, restorative justice outcomes, custody, release, and supervision orders.",
+  "sources": ["law.policing", "law.corrections"],
+  "asOf": "EY-0412-M08-D16",
+  "units": { "rate": "per 100,000 residents", "sentence": "Elysian years" },
+  "services": [
+    {
+      "id": "law.commune-response-teams", "name": "Commune Response Teams",
+      "summary": "Unarmed health, social-work and de-escalation professionals dispatched from the same emergency number as police; no power of arrest.",
+      "sources": ["law.policing"], "tags": ["public-safety", "unarmed"],
+      "strength": 3117500, "ratePer100k": 43,
+      "armed": false, "powerOfArrest": false,
+      "emergencyCallsResolvedWithoutPolicePct": 61,
+      "handles": ["mental health crisis", "welfare checks", "intoxication", "disputes without violence", "missing persons", "most road incidents"]
+    },
+    {
+      "id": "law.district-police", "name": "District Police Services",
+      "summary": "1,104 District services investigating and responding to crime; routine officers unarmed.",
+      "sources": ["law.policing"], "tags": ["public-safety", "police"],
+      "strength": 6380000, "ratePer100k": 88, "count": 1104,
+      "routineOfficersArmed": false, "specialistArmedSharePct": 1.1,
+      "branches": ["Response", "Investigation", "Community Liaison", "Specialist"]
+    },
+    {
+      "id": "law.concord-investigation-office", "name": "Concord Investigation Office",
+      "summary": "Investigates planetary offences only; no patrol function, no routine arrest powers, and must act through District services for physical enforcement.",
+      "sources": ["law.policing"], "tags": ["public-safety", "planetary"],
+      "patrolFunction": false, "routineArrestPowers": false,
+      "rationale": "A deliberate refusal to create a planetary constabulary."
+    }
+  ],
+  "arms": {
+    "routineOfficersArmed": false,
+    "specialistArmedSharePct": 1.1,
+    "deploymentAuthorisation": "per incident, by a duty commander of specified rank, recorded and reviewed",
+    "civilianFirearmsPer100Households": 2.9,
+    "civilianLicensingRequiresDemonstratedPurpose": true
+  },
+  "useOfForce": {
+    "standard": "necessary, proportionate, and the least available",
+    "reportingHours": 24,
+    "homicidesPerYear": 29000,
+    "homicideRatePer100k": 0.4,
+    "firearmDischargesByPolicePerYear": 610,
+    "deathsFollowingPoliceContactPerYear": 148,
+    "deathsRoutedToPoliceInError": 22,
+    "usesOfForceCausingInjuryPerYear": 41300,
+    "complaintsUpheldPerYear": 8900,
+    "publicationConvention": "Deaths at the hands of the state are counted, not averaged; each is published with name, District, and circumstances and triggers a mandatory public inquiry."
+  },
+  "oversight": [
+    { "id": "law.police-conduct-office", "name": "Police Conduct Office", "summary": "One per Region, independent of both police and the regional executive; investigates all complaints with its own investigators.", "sources": ["law.policing"], "tags": ["oversight"], "count": 34, "selfInvestigationPermitted": false },
+    { "id": "law.no-qualified-immunity", "name": "No qualified immunity", "summary": "No doctrine shields officers from liability for rights breaches; the service is liable in damages and the officer faces conduct process and ordinary prosecution.", "sources": ["law.policing"], "tags": ["oversight"] },
+    { "id": "law.recording-custody", "name": "Recordings held outside police", "summary": "All custodial and interaction recordings are held by the Record Office, which police may request but not edit or delete.", "sources": ["law.policing"], "tags": ["oversight"], "custodian": "gov.record-office" },
+    { "id": "law.duty-to-intervene", "name": "Duty to intervene", "summary": "An officer who witnesses excessive force and does not intervene or report commits a conduct offence of equal gravity to the force itself.", "sources": ["law.policing"], "tags": ["oversight"] },
+    { "id": "law.dismissal-register", "name": "Planetary dismissal register", "summary": "A dismissed officer cannot be employed by any other service.", "sources": ["law.policing"], "tags": ["oversight"] }
+  ],
+  "surveillance": {
+    "judicialWarrantRequired": true,
+    "administrativeAuthorisationPermitted": false,
+    "emergencyBypassHours": 12,
+    "emergencyBypassRequiresRatificationElseDestruction": true,
+    "bulkCollectionPermitted": false,
+    "bulkCollectionRelaxationAttempts": 3,
+    "lastRelaxationAttemptEY": 388,
+    "notificationRequired": true,
+    "notificationOuterLimitYears": 3,
+    "notificationsPerYear": 71000,
+    "warrantRefusalRatePct": 9.4,
+    "facialAndGaitRecognitionInPublicSpacePermitted": false,
+    "recognitionProhibitionTier": "gov.tier-2",
+    "auditTrigger": "Regions whose warrant refusal rate approaches zero are audited, because a court that never refuses is not reviewing."
+  },
+  "publicContact": {
+    "trustInCommunityLiaisonPct": 72,
+    "trustInDistrictPoliceServicePct": 51,
+    "policeStrikesLawful": true,
+    "policeUnionisationNormal": true,
+    "partyMembershipWhileServingPermitted": false,
+    "medianUrbanResponseMinutes": 7,
+    "worstRuralResponseMinutes": 90,
+    "band3PlusChargeRatePct": 54
+  },
+  "restorativeJustice": {
+    "defaultForBands": ["law.band-1", "law.band-2"],
+    "availableAtVictimOptionForBands": ["law.band-3", "law.band-4"],
+    "victimConsentAbsolute": true,
+    "admissionRequired": true,
+    "guaranteedSentencingDiscount": false,
+    "declineMayNotIncreaseSentence": true,
+    "conferenceFailureRatePct": 12,
+    "outcomeInstrument": "restoration plan registered with the District Court and enforceable as a court order",
+    "rationale": "Making refusal costly makes consent meaningless.",
+    "outcomes": [
+      { "id": "law.rj-reoffending-low-bands", "name": "Reoffending within 5 EY, bands 1-2", "summary": "Restorative 11% against conventional 19%.", "sources": ["law.corrections"], "restorativePct": 11, "conventionalPct": 19 },
+      { "id": "law.rj-reoffending-mid-bands", "name": "Reoffending within 5 EY, bands 3-4", "summary": "Restorative 24% against conventional 29%; the advantage narrows where stakes are highest.", "sources": ["law.corrections"], "restorativePct": 24, "conventionalPct": 29 },
+      { "id": "law.rj-victim-satisfaction", "name": "Victim satisfaction with process", "summary": "Restorative 81% against conventional 44%; the strongest justification for restoration, ahead of reoffending.", "sources": ["law.corrections"], "restorativePct": 81, "conventionalPct": 44 },
+      { "id": "law.rj-compensation-paid", "name": "Compensation actually paid", "summary": "Restorative 88% against conventional 51%.", "sources": ["law.corrections"], "restorativePct": 88, "conventionalPct": 51 }
+    ]
+  },
+  "custody": {
+    "governingPrinciple": "The deprivation of liberty is the punishment. Nothing else is.",
+    "rightsRetained": "every Charter right except freedom of movement, including the vote",
+    "detainedPopulation": 2972500,
+    "ratePer100k": 41,
+    "remandSharePct": 9.4,
+    "remandPopulation": 279415,
+    "band5SharePct": 6.1,
+    "medianSentenceServedEY": 2.8,
+    "facilities": 38400,
+    "maxResidentsPerFacility": 120,
+    "localPlacementWithin200kmPct": 84,
+    "workAtMarketWages": true,
+    "enrolledInEducationPct": 62,
+    "familyContactIsARight": true,
+    "separation": {
+      "solitaryAsPunishmentPermitted": false,
+      "safetySeparationDirectorHours": 24,
+      "absoluteMaximumHours": 72,
+      "medicalReviewIntervalHours": 12,
+      "overLimitSeparationsLastYear": 2140,
+      "concentratedInFacilities": 9,
+      "note": "One of the least well-observed rules in Elysian corrections and a recurring Audit Service finding — the clearest gap between what the law requires and what institutions deliver."
+    }
+  },
+  "release": {
+    "graduatedReleaseNormal": true,
+    "judicialReviewIntervalEY": 5,
+    "burdenOnStateToJustifyDetention": true,
+    "housingGuaranteed": true,
+    "caseworkerYears": 2,
+    "unrelatedConvictionQuestionsProhibited": true,
+    "spentConvictionPeriodEY": { "band1": 2, "band5": 20 },
+    "reoffendingWithin5EYPct": 18,
+    "publishedTargetPct": 12,
+    "targetUnmetForYears": 40
+  },
+  "supervisionOrders": {
+    "id": "law.supervision-order",
+    "name": "Judicial supervision order",
+    "summary": "Post-release conditions imposed by a court where risk remains; time-limited, appealable, may not amount to detention, and must be the least restrictive measure adequate to the risk.",
+    "sources": ["law.corrections"],
+    "maxDurationEY": 5,
+    "renewableOnFreshEvidenceOnly": true,
+    "mayAmountToDetention": false,
+    "peopleUnderOrder": 9400,
+    "preventiveDetentionOfTheSanePermitted": false,
+    "homicidesByRecentlyReleasedBand5_EY380to412": 214,
+    "courtPosition": "Constitutional Court, EY 297: a power to detain people for what they might do cannot be safely held by any state, and the harm it would prevent is smaller than the harm it would eventually cause.",
+    "referendumChallengesSurvived": 2,
+    "canonNote": "A live moral disagreement in which the Concord has chosen a side and pays for it."
+  },
+  "knownWeaknesses": [
+    { "id": "law.weakness-triage-failure", "name": "Triage failure", "summary": "The Response Team split depends on a dispatcher classifying a call in seconds; 22 of the 148 annual deaths followed a call routed to police that should have gone to a Response Team.", "sources": ["law.policing"] },
+    { "id": "law.weakness-oversight-capacity", "name": "Oversight capacity asymmetry", "summary": "Small Regions cannot staff a genuinely independent Conduct Office; three have been found too close to the services they oversee.", "sources": ["law.policing"] },
+    { "id": "law.weakness-surveillance-is-law", "name": "Surveillance is law, not physics", "summary": "Prohibitions on bulk collection and facial recognition are legal restraints on technically trivial capabilities.", "sources": ["law.policing"], "answeredBy": ["phase-13"] },
+    { "id": "law.weakness-rural-response", "name": "Rural response times", "summary": "Median urban response is 7 minutes; in Northreach and Austral Shore it exceeds 90. The Charter guarantees no response time and cannot.", "sources": ["law.policing"] },
+    { "id": "law.weakness-clearance", "name": "Investigative clearance", "summary": "Only 54% of band 3+ offences result in a charge; property-crime clearance has declined for two decades without an agreed explanation.", "sources": ["law.policing"] },
+    { "id": "law.weakness-trust-gap", "name": "Trust gap", "summary": "72% trust Community Liaison against 51% for their police service as a whole; stable and unexplained.", "sources": ["law.policing"] },
+    { "id": "law.weakness-separation-breaches", "name": "Separation limits are breached", "summary": "2,140 over-limit separations last year in nine facilities; a recurring finding.", "sources": ["law.corrections"] },
+    { "id": "law.weakness-reoffending-target", "name": "Reoffending target unmet", "summary": "18% against a 12% target, missed for forty years without an agreed explanation.", "sources": ["law.corrections"] },
+    { "id": "law.weakness-released-dangerous", "name": "Released dangerous persons", "summary": "214 homicides in 32 years by persons recently released from band 5 sentences; an accepted and unpopular cost of refusing preventive detention.", "sources": ["law.corrections"] },
+    { "id": "law.weakness-restoration-serious-harm", "name": "Restoration under-serves serious harm", "summary": "The reoffending advantage narrows sharply at bands 3-4, exactly where the stakes are highest.", "sources": ["law.corrections"] },
+    { "id": "law.weakness-spent-conviction-leakage", "name": "Spent-conviction leakage", "summary": "Convictions are legally spent but informally remembered, and long lifespans make this worse.", "sources": ["law.corrections"] }
+  ]
+}

@@ -1,0 +1,1267 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.1.0",
+  "id": "gov.regions-data",
+  "name": "Regions, Local Government, and Public Administration",
+  "summary": "The 34 constituent Regions of the Concord, the four tiers of government, governing forms, the civil service, and integrity systems.",
+  "sources": [
+    "gov.regions",
+    "gov.administration"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "population": "individuals",
+    "term": "Elysian years"
+  },
+  "tiers": [
+    {
+      "id": "gov.tier-concord",
+      "name": "Concord",
+      "summary": "Planetary tier; the ten enumerated powers.",
+      "sources": [
+        "gov.regions"
+      ],
+      "count": 1,
+      "typicalPopulation": 7250000000,
+      "shareOfPublicServantsPct": 1.9,
+      "shareOfPublicSpendingPct": 22
+    },
+    {
+      "id": "gov.tier-region",
+      "name": "Region",
+      "summary": "Constituent units; health, education, housing, policing, land use, most taxation.",
+      "sources": [
+        "gov.regions"
+      ],
+      "count": 34,
+      "typicalPopulation": 213000000,
+      "shareOfPublicServantsPct": 21
+    },
+    {
+      "id": "gov.tier-district",
+      "name": "District",
+      "summary": "Delivery tier; hospitals, schools, transit, utilities, planning.",
+      "sources": [
+        "gov.regions"
+      ],
+      "count": 1104,
+      "typicalPopulation": 6600000,
+      "shareOfPublicServantsPct": 63
+    },
+    {
+      "id": "gov.tier-commune",
+      "name": "Commune",
+      "summary": "Neighbourhood tier; public space, local services, participatory allocation.",
+      "sources": [
+        "gov.regions"
+      ],
+      "count": 47900,
+      "typicalPopulation": 151000,
+      "shareOfPublicServantsPct": 14
+    }
+  ],
+  "subsidiarityTest": [
+    {
+      "id": "gov.subsidiarity-capability",
+      "name": "Can the lower tier do this at all?",
+      "summary": "If yes, the enquiry usually ends.",
+      "sources": [
+        "gov.regions"
+      ],
+      "order": 1
+    },
+    {
+      "id": "gov.subsidiarity-boundary",
+      "name": "Does the problem cross the lower tier's boundary?",
+      "summary": "Atmosphere does; refuse collection does not.",
+      "sources": [
+        "gov.regions"
+      ],
+      "order": 2
+    },
+    {
+      "id": "gov.subsidiarity-fragmentation",
+      "name": "Would fragmentation impose costs the gain does not justify?",
+      "summary": "The only economic question, and deliberately the third one.",
+      "sources": [
+        "gov.regions"
+      ],
+      "order": 3
+    },
+    {
+      "id": "gov.subsidiarity-reversibility",
+      "name": "Is the transfer reversible?",
+      "summary": "Irreversible centralization requires a Tier 2 amendment. About a third of competence disputes turn on this alone.",
+      "sources": [
+        "gov.regions"
+      ],
+      "order": 4
+    }
+  ],
+  "governingForms": [
+    {
+      "id": "gov.form-assembly-executive",
+      "name": "Assembly-Executive",
+      "summary": "Elected assembly choosing a small collegial executive; commonest form.",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 16
+    },
+    {
+      "id": "gov.form-assembly-manager",
+      "name": "Assembly-Manager",
+      "summary": "Elected assembly sets policy, a professionally appointed manager executes on fixed contract. Highest service delivery, lowest public trust, unexplained.",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 9
+    },
+    {
+      "id": "gov.form-direct-democratic",
+      "name": "Direct-democratic",
+      "summary": "Frequent binding referendums with a small standing council.",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 5
+    },
+    {
+      "id": "gov.form-delegate-council",
+      "name": "Delegate council",
+      "summary": "Governed by delegates from its Districts, with no separately elected regional body.",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 4
+    }
+  ],
+  "delegateSelectionMethods": [
+    {
+      "id": "gov.delegate-assembly",
+      "name": "Elected by the regional assembly",
+      "summary": "",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 19
+    },
+    {
+      "id": "gov.delegate-direct",
+      "name": "Directly elected by the regional electorate",
+      "summary": "",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 9
+    },
+    {
+      "id": "gov.delegate-sortition",
+      "name": "Selected by a sortition panel from a qualified pool",
+      "summary": "",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 4
+    },
+    {
+      "id": "gov.delegate-rotation",
+      "name": "Rotated among District heads on a fixed schedule",
+      "summary": "",
+      "sources": [
+        "gov.regions"
+      ],
+      "regionCount": 2
+    }
+  ],
+  "regionalFloors": [
+    {
+      "id": "gov.floor-elected",
+      "name": "Government by an elected body",
+      "summary": "On a franchise no narrower than the Concord's.",
+      "sources": [
+        "gov.regions"
+      ]
+    },
+    {
+      "id": "gov.floor-rights",
+      "name": "Charter rights fully enforceable",
+      "summary": "",
+      "sources": [
+        "gov.regions"
+      ]
+    },
+    {
+      "id": "gov.floor-audit",
+      "name": "An independent audit body",
+      "summary": "One the regional government cannot appoint, fund, or discipline.",
+      "sources": [
+        "gov.regions"
+      ]
+    },
+    {
+      "id": "gov.floor-records",
+      "name": "Publication of records to the Concord standard",
+      "summary": "",
+      "sources": [
+        "gov.regions"
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "polity.ilvaret",
+      "name": "Ilvaret",
+      "summary": "Lower Alcyon Region; site of the ruins of Ilvaret and the oldest continuously administered territory on Elysium.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 340000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": 14.0,
+        "lon": 2.0
+      }
+    },
+    {
+      "id": "polity.alcyone",
+      "name": "Alcyone",
+      "summary": "Middle Alcyon Region; heartland of the flow-share tradition.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 310000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": 21.0,
+        "lon": 4.0
+      }
+    },
+    {
+      "id": "polity.sirocc",
+      "name": "Sirocc",
+      "summary": "Desert Region of the Sirocc Basin; lithium brine fields and the planet's largest solar installations.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 255000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": 26.0,
+        "lon": 8.0
+      }
+    },
+    {
+      "id": "polity.cindral",
+      "name": "Cindral",
+      "summary": "Mountain Region along the Cindral Arc; seismic, geothermal, and mineral-rich.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 210000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": 8.0,
+        "lon": 34.0
+      }
+    },
+    {
+      "id": "polity.kethran",
+      "name": "Kethran",
+      "summary": "Eastern Meridian uplands between the Cindral Arc and the Amarant coast.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 190000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": -4.0,
+        "lon": 28.0
+      }
+    },
+    {
+      "id": "polity.meridian",
+      "name": "Meridian",
+      "summary": "The Meridian Plain; historic agricultural core and site of the Meridian Stone.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 265000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": 30.0,
+        "lon": -12.0
+      }
+    },
+    {
+      "id": "polity.verdanne",
+      "name": "Verdanne",
+      "summary": "Equatorial rainforest Region; the Verdanne core is permanently protected.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 225000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": -12.0,
+        "lon": 10.0
+      }
+    },
+    {
+      "id": "polity.amarath-coast",
+      "name": "Amarath Coast",
+      "summary": "Eastern seaboard Region facing the Amarant Ocean.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 180000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": -2.0,
+        "lon": 40.0
+      }
+    },
+    {
+      "id": "polity.sudmark",
+      "name": "Sudmark",
+      "summary": "Southern Meridian Region of seasonal woodland and savanna.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 205000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.meridia"
+      ],
+      "labelPoint": {
+        "lat": -20.0,
+        "lon": -6.0
+      }
+    },
+    {
+      "id": "polity.kessandra",
+      "name": "Kessandra",
+      "summary": "Most populous Region on Elysium; northern Elandric monsoon lowlands.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 355000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": 2.0,
+        "lon": 112.0
+      }
+    },
+    {
+      "id": "polity.serrance",
+      "name": "Serrance",
+      "summary": "Storm-coast Region at Cape Serrance; the most cyclone-exposed inhabited territory on the planet.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 320000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": -28.0,
+        "lon": 150.0
+      }
+    },
+    {
+      "id": "polity.andriel",
+      "name": "Andriel",
+      "summary": "Central Elandric Region of dense river settlement.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 290000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": -8.0,
+        "lon": 128.0
+      }
+    },
+    {
+      "id": "polity.halvane",
+      "name": "Halvane",
+      "summary": "Southwestern Elandris; Amarant Upwelling fisheries.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 270000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": -18.0,
+        "lon": 120.0
+      }
+    },
+    {
+      "id": "polity.terrace-north",
+      "name": "Terrace North",
+      "summary": "Northern Elandric Terraces; intensive terraced agriculture.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 245000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": 6.0,
+        "lon": 132.0
+      }
+    },
+    {
+      "id": "polity.terrace-south",
+      "name": "Terrace South",
+      "summary": "Southern Elandric Terraces.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 230000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": -12.0,
+        "lon": 140.0
+      }
+    },
+    {
+      "id": "polity.mirran",
+      "name": "Mirran",
+      "summary": "Interior Elandric Region; the first to adopt sortition for Council delegates.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 220000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-sortition",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": -22.0,
+        "lon": 134.0
+      }
+    },
+    {
+      "id": "polity.oshaal",
+      "name": "Oshaal",
+      "summary": "Southern Elandric temperate Region.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 195000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": -32.0,
+        "lon": 126.0
+      }
+    },
+    {
+      "id": "polity.delvane",
+      "name": "Delvane",
+      "summary": "Northeastern Elandric coastal Region.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 185000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.elandris"
+      ],
+      "labelPoint": {
+        "lat": 10.0,
+        "lon": 142.0
+      }
+    },
+    {
+      "id": "polity.mistral",
+      "name": "Mistral",
+      "summary": "Region of the Mistral Shelf; the richest fishery on Elysium.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 290000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.thalassar"
+      ],
+      "labelPoint": {
+        "lat": 18.0,
+        "lon": -116.0
+      }
+    },
+    {
+      "id": "polity.fjordmark",
+      "name": "Fjordmark",
+      "summary": "Northern fjord coast; the wettest inhabited land on the planet.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 265000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.thalassar"
+      ],
+      "labelPoint": {
+        "lat": 41.0,
+        "lon": -124.0
+      }
+    },
+    {
+      "id": "polity.rimward",
+      "name": "Rimward",
+      "summary": "Interior plateau Region behind the Thalassar Rim.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 230000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.thalassar"
+      ],
+      "labelPoint": {
+        "lat": 8.0,
+        "lon": -106.0
+      }
+    },
+    {
+      "id": "polity.sablewater",
+      "name": "Sablewater",
+      "summary": "Southern Thalassari coast and winter-wet scrublands.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 205000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.thalassar"
+      ],
+      "labelPoint": {
+        "lat": -4.0,
+        "lon": -120.0
+      }
+    },
+    {
+      "id": "polity.coronal",
+      "name": "Coronal",
+      "summary": "Northern interior Region governed by a council of District delegates.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 170000000,
+      "governingForm": "gov.form-delegate-council",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.thalassar"
+      ],
+      "labelPoint": {
+        "lat": 30.0,
+        "lon": -110.0
+      }
+    },
+    {
+      "id": "polity.vailmark",
+      "name": "Vailmark",
+      "summary": "Region of the Vail Spine; the most important mineral province on Elysium and the cradle of industry.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 285000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.auroria"
+      ],
+      "labelPoint": {
+        "lat": 52.0,
+        "lon": 78.0
+      }
+    },
+    {
+      "id": "polity.serapht",
+      "name": "Serapht",
+      "summary": "Region around Lake Serapht; lake-effect snow belt.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 245000000,
+      "governingForm": "gov.form-assembly-executive",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.auroria"
+      ],
+      "labelPoint": {
+        "lat": 58.0,
+        "lon": 96.0
+      }
+    },
+    {
+      "id": "polity.korren",
+      "name": "Korren",
+      "summary": "Southern Aurorian broadleaf and mixed-forest Region.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 215000000,
+      "governingForm": "gov.form-assembly-manager",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.auroria"
+      ],
+      "labelPoint": {
+        "lat": 49.0,
+        "lon": 110.0
+      }
+    },
+    {
+      "id": "polity.northreach",
+      "name": "Northreach",
+      "summary": "Subpolar Region of scattered settlement and long winter darkness.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 190000000,
+      "governingForm": "gov.form-delegate-council",
+      "delegateSelection": "gov.delegate-rotation",
+      "councilSeats": 4,
+      "regions": [
+        "region.auroria"
+      ],
+      "labelPoint": {
+        "lat": 68.0,
+        "lon": 88.0
+      }
+    },
+    {
+      "id": "polity.hollen",
+      "name": "Hollen",
+      "summary": "Western Aurorian taiga Region.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 155000000,
+      "governingForm": "gov.form-delegate-council",
+      "delegateSelection": "gov.delegate-assembly",
+      "councilSeats": 4,
+      "regions": [
+        "region.auroria"
+      ],
+      "labelPoint": {
+        "lat": 61.0,
+        "lon": 66.0
+      }
+    },
+    {
+      "id": "polity.kaelis-group",
+      "name": "Kaelis Group",
+      "summary": "Largest Isle Region; birthplace of the ocean-stewardship traditions.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 140000000,
+      "governingForm": "gov.form-direct-democratic",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.myriad-isles"
+      ],
+      "labelPoint": {
+        "lat": -1.0,
+        "lon": 172.5
+      }
+    },
+    {
+      "id": "polity.orphir-group",
+      "name": "Orphir Group",
+      "summary": "Central Isle Region straddling the antimeridian.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 115000000,
+      "governingForm": "gov.form-direct-democratic",
+      "delegateSelection": "gov.delegate-direct",
+      "councilSeats": 4,
+      "regions": [
+        "region.myriad-isles"
+      ],
+      "labelPoint": {
+        "lat": 3.0,
+        "lon": 178.5
+      }
+    },
+    {
+      "id": "polity.sable-group",
+      "name": "Sable Group",
+      "summary": "Eastern Isle Region; hydrothermal research hub.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 87000000,
+      "governingForm": "gov.form-direct-democratic",
+      "delegateSelection": "gov.delegate-sortition",
+      "councilSeats": 4,
+      "regions": [
+        "region.myriad-isles"
+      ],
+      "labelPoint": {
+        "lat": -5.0,
+        "lon": -175.0
+      }
+    },
+    {
+      "id": "polity.highmarch",
+      "name": "Highmarch",
+      "summary": "Veydran highland Region; scientific commons and the Ice Cap's guardian jurisdiction.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 88000000,
+      "governingForm": "gov.form-direct-democratic",
+      "delegateSelection": "gov.delegate-sortition",
+      "councilSeats": 4,
+      "regions": [
+        "region.veydra"
+      ],
+      "labelPoint": {
+        "lat": -52.0,
+        "lon": -40.0
+      }
+    },
+    {
+      "id": "polity.austral-shore",
+      "name": "Austral Shore",
+      "summary": "Coastal Veydran Region facing the Austral Ocean.",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region"
+      ],
+      "population": 52000000,
+      "governingForm": "gov.form-direct-democratic",
+      "delegateSelection": "gov.delegate-sortition",
+      "councilSeats": 4,
+      "regions": [
+        "region.veydra"
+      ],
+      "labelPoint": {
+        "lat": -62.0,
+        "lon": -62.0
+      }
+    },
+    {
+      "id": "polity.orbital-territory",
+      "name": "Orbital Territory",
+      "summary": "The off-world Region: Kalyra settlements, orbital habitats, and Tyrran Belt stations. Its constitutional position is unsettled (dipl.external).",
+      "sources": [
+        "gov.regions"
+      ],
+      "tags": [
+        "region",
+        "off-world"
+      ],
+      "population": 28000000,
+      "governingForm": "gov.form-delegate-council",
+      "delegateSelection": "gov.delegate-rotation",
+      "councilSeats": 4
+    }
+  ],
+  "commune": {
+    "participatoryAllocationSharePct": [
+      8,
+      15
+    ],
+    "participationRatePct": 31,
+    "votingAgeEY": 16,
+    "localObjection": "A Commune may compel a published response and public hearing on any District or Regional decision affecting it, but cannot block."
+  },
+  "compacts": {
+    "active": 340,
+    "summary": "Binding agreements between Regions requiring no planetary approval; must be registered and published.",
+    "mayBindNonParties": false
+  },
+  "portfolios": [
+    {
+      "id": "gov.portfolio-atmosphere-ocean",
+      "name": "Atmosphere and Ocean",
+      "summary": "The Article 12 climate and ocean systems.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.portfolio-commons-orbit",
+      "name": "Commons and Orbit",
+      "summary": "Deep ocean, polar ice, orbital space, off-world territory.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.portfolio-resilience-defence",
+      "name": "Resilience and Defence",
+      "summary": "Defence, disarmament verification, disaster response.",
+      "sources": [
+        "gov.administration"
+      ],
+      "answeredBy": [
+        "phase-12"
+      ]
+    },
+    {
+      "id": "gov.portfolio-biosecurity",
+      "name": "Biosecurity and Health Security",
+      "summary": "Epidemic response and pathogen governance.",
+      "sources": [
+        "gov.administration"
+      ],
+      "answeredBy": [
+        "phase-09"
+      ]
+    },
+    {
+      "id": "gov.portfolio-networks",
+      "name": "Networks",
+      "summary": "Interregional transport, grid, and communications backbone.",
+      "sources": [
+        "gov.administration"
+      ],
+      "answeredBy": [
+        "phase-10"
+      ]
+    },
+    {
+      "id": "gov.portfolio-treasury-materials",
+      "name": "Treasury and Materials",
+      "summary": "Currency, monetary policy, Constrained List, strategic reserves.",
+      "sources": [
+        "gov.administration"
+      ],
+      "answeredBy": [
+        "phase-06"
+      ]
+    },
+    {
+      "id": "gov.portfolio-rights-legal",
+      "name": "Rights and Legal Affairs",
+      "summary": "Rights enforcement, legislative drafting, Court liaison.",
+      "sources": [
+        "gov.administration"
+      ],
+      "answeredBy": [
+        "phase-05"
+      ]
+    },
+    {
+      "id": "gov.portfolio-external",
+      "name": "External Relations",
+      "summary": "Diplomacy, treaties, first-contact preparedness.",
+      "sources": [
+        "gov.administration"
+      ],
+      "answeredBy": [
+        "phase-15"
+      ]
+    },
+    {
+      "id": "gov.portfolio-public-administration",
+      "name": "Public Administration",
+      "summary": "The civil service, records, and delivery standards.",
+      "sources": [
+        "gov.administration"
+      ]
+    }
+  ],
+  "civilService": {
+    "totalPublicServants": 579000000,
+    "shareOfLabourForcePct": 16.0,
+    "entry": "open competitive examination in all 41 registered languages",
+    "politicalAppointmentsBelowBoard": false,
+    "tenureProtected": true,
+    "politicalActivityPermittedOutsideOffice": true,
+    "exposedPostRotationYears": 5,
+    "exposedPostReturnBarYears": 15,
+    "shareOfTimeOnReasonsDocumentationPct": 9,
+    "correctionNote": "Corrected in Phase 6B: the Phase 4B figure of 43.1 million was arithmetically inconsistent with a population of 7.25 billion providing universal healthcare, education, and housing."
+  },
+  "integritySystems": [
+    {
+      "id": "gov.integrity-open-contracting",
+      "name": "Open contracting by default",
+      "summary": "Every contract at every tier published in machine-readable form within 30 days; no exemption threshold; price redaction capped at 3 years and itself published.",
+      "sources": [
+        "gov.administration"
+      ],
+      "originEvent": "hist.event-corran-scandal"
+    },
+    {
+      "id": "gov.integrity-asset-disclosure",
+      "name": "Asset and interest disclosure",
+      "summary": "Annual, on leaving office, and again at 2 and 5 years afterwards \u2014 because the payoff usually arrives later than the favour.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.integrity-conflict-registry",
+      "name": "The conflict registry",
+      "summary": "Conflicts must be registered before acting; acting on an unregistered conflict is an offence independent of the underlying decision.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.integrity-two-key",
+      "name": "Two-key authorisation",
+      "summary": "No single official may authorise a payment, licence, or consent above a modest threshold; the second key comes from a different reporting line and pairings are randomised.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.integrity-random-audit",
+      "name": "Random deep audit",
+      "summary": "2% of public bodies selected annually by public verifiable lot for full unannounced audit. Purpose is uncertainty, not detection efficiency.",
+      "sources": [
+        "gov.administration"
+      ],
+      "annualSharePct": 2
+    },
+    {
+      "id": "gov.integrity-protected-disclosure",
+      "name": "Protected disclosure",
+      "summary": "Retaliation is criminal with reversed burden of proof: adverse treatment within 3 years of disclosure is presumed retaliatory. Anonymous disclosure protected equally.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.integrity-cooling-off",
+      "name": "Cooling-off with continuing salary",
+      "summary": "10 years for office heads, 5 for exposed posts and Board members, paid \u2014 because an unpaid restriction restricts only those who cannot afford it.",
+      "sources": [
+        "gov.administration"
+      ]
+    }
+  ],
+  "integrityOutcomes": {
+    "procurementValueFlaggedPct": 0.7,
+    "valueRecoveredPct": 0.4,
+    "prosecutionsPerYear": 1340,
+    "convictionRatePct": 61,
+    "adverseAuditOpinionsPct": 2.1,
+    "residentsAskedForBribePct": 0.3,
+    "believeCorruptionCommonInDistrictPct": 11,
+    "believeCorruptionCommonAtConcordPct": 19,
+    "note": "Corruption is small, prosecuted, and mostly petty. The Audit Service states in every annual report that the residual rate is not zero and will not become zero. Perception exceeds measured reality and rises with distance from the resident."
+  },
+  "transparency": {
+    "publicationDefault": "open",
+    "exemptions": [
+      "active security operations",
+      "personal data",
+      "live commercial negotiation",
+      "legal privilege"
+    ],
+    "exemptionsTimeLimited": true,
+    "deliberativeMaterialOpensAfterYears": 3,
+    "permanentCabinetSecrecy": false,
+    "refusalLedgerPublished": true,
+    "appealOverturnRatePct": 34,
+    "failureReportingRequired": true,
+    "failureReportingNote": "Bodies that publish no failures are audited on that basis; a flawless self-report is treated as evidence of inattention or concealment."
+  },
+  "digitalAdministration": {
+    "publiclyBuiltAndOperated": true,
+    "sourcePublished": true,
+    "rationale": "A state that cannot read its own systems cannot be audited, and a state that cannot leave a supplier is governed by it.",
+    "automatedDecisionConstraints": [
+      "an identified human official is accountable for every decision affecting rights",
+      "the reasons requirement applies identically to automated decisions",
+      "any person may demand non-automated reconsideration"
+    ],
+    "answeredBy": [
+      "phase-13"
+    ]
+  },
+  "knownWeaknesses": [
+    {
+      "id": "gov.weakness-interregional-inequality",
+      "name": "Interregional inequality",
+      "summary": "Floors without ceilings lets wealthy Regions race ahead; equalization narrows but does not close the gap.",
+      "sources": [
+        "gov.regions"
+      ],
+      "answeredBy": [
+        "phase-06"
+      ]
+    },
+    {
+      "id": "gov.weakness-capacity-asymmetry",
+      "name": "Capacity asymmetry",
+      "summary": "Small Regions cannot staff competences they legally hold; Concord-funded shared services are criticised as centralization by the back door.",
+      "sources": [
+        "gov.regions"
+      ]
+    },
+    {
+      "id": "gov.weakness-comparability-distortion",
+      "name": "Comparability distortion",
+      "summary": "Published league tables reward measurable outcomes and can starve the unmeasurable.",
+      "sources": [
+        "gov.regions"
+      ],
+      "answeredBy": [
+        "phase-16"
+      ]
+    },
+    {
+      "id": "gov.weakness-orbital-anomaly",
+      "name": "Orbital Territory anomaly",
+      "summary": "A Region defined by installations rather than territory strains every assumption in Article 3.",
+      "sources": [
+        "gov.regions"
+      ],
+      "answeredBy": [
+        "phase-15"
+      ]
+    },
+    {
+      "id": "gov.weakness-boundary-conservatism",
+      "name": "Boundary conservatism",
+      "summary": "Founding watershed boundaries no longer match settlement in three Regions; correction is slow.",
+      "sources": [
+        "gov.regions"
+      ]
+    },
+    {
+      "id": "gov.weakness-compact-opacity",
+      "name": "Compact opacity",
+      "summary": "340 compacts are published but rarely read, and can shape obligations without planetary debate.",
+      "sources": [
+        "gov.regions"
+      ]
+    },
+    {
+      "id": "gov.weakness-documentation-burden",
+      "name": "Documentation burden",
+      "summary": "9% of civil service time goes to producing reasons; permanently contested.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.weakness-rotation-expertise",
+      "name": "Rotation versus expertise",
+      "summary": "Five-year rotation removes mastery from the posts where mastery is most useful.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.weakness-perception-gap",
+      "name": "Perception gap",
+      "summary": "Trust in the planetary tier is lower than its measured performance; unexplained and unfixed.",
+      "sources": [
+        "gov.administration"
+      ]
+    },
+    {
+      "id": "gov.weakness-attention",
+      "name": "Publication without readership",
+      "summary": "The Concord has solved disclosure and not solved attention. A right of access is worth what someone's willingness to read is worth.",
+      "sources": [
+        "gov.administration"
+      ],
+      "answeredBy": [
+        "phase-14"
+      ]
+    }
+  ]
+}

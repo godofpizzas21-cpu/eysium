@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "cult.languages-data",
+  "name": "Languages of Elysium",
+  "summary": "Language families, the Concordial contact language, Charter language guarantees, scripts, and belief distribution.",
+  "sources": ["cult.languages", "cult.foundations"],
+  "asOf": "EY-0412-M08-D16",
+  "units": { "speakers": "individuals" },
+  "totals": {
+    "livingLanguages": 2900,
+    "languagesOver10MSpeakers": 41,
+    "registeredLanguages": 41,
+    "endangeredUnder1000Speakers": 340,
+    "scriptLiteracyPct": 99.2,
+    "officialLanguage": null,
+    "officialLanguageNote": "The Concord has no official language. Concordial is a working language only."
+  },
+  "families": [
+    { "id": "lang.alcyonic", "name": "Alcyonic", "summary": "Descended from the flow-share administrative language; oldest written tradition on Elysium.", "sources": ["cult.languages"], "tags": ["family"], "regions": ["region.meridia", "region.river-alcyon"], "l1Speakers": 1940000000 },
+    { "id": "lang.elandric", "name": "Elandric", "summary": "Largest family by native speakers; deep tonal system.", "sources": ["cult.languages"], "tags": ["family", "tonal"], "regions": ["region.elandris"], "l1Speakers": 1880000000 },
+    { "id": "lang.thalassic", "name": "Thalassic", "summary": "Maritime family with exceptionally precise sea vocabulary.", "sources": ["cult.languages"], "tags": ["family", "maritime"], "regions": ["region.thalassar"], "l1Speakers": 970000000 },
+    { "id": "lang.boreal-vail", "name": "Boreal-Vail", "summary": "Heavily agglutinative; the language family of early industry.", "sources": ["cult.languages"], "tags": ["family", "agglutinative"], "regions": ["region.auroria", "region.vail-spine"], "l1Speakers": 910000000 },
+    { "id": "lang.serranic", "name": "Serranic", "summary": "Storm-coast languages, commonly bilingual with Elandric.", "sources": ["cult.languages"], "tags": ["family"], "regions": ["region.cape-serrance", "region.elandris"], "l1Speakers": 440000000 },
+    { "id": "lang.isle-tongues", "name": "Isle tongues", "summary": "Nine related languages with a rich navigational lexicon.", "sources": ["cult.languages"], "tags": ["family", "navigational"], "regions": ["region.myriad-isles"], "l1Speakers": 310000000 },
+    { "id": "lang.veydran", "name": "Veydran", "summary": "Smallest family; three surviving languages.", "sources": ["cult.languages"], "tags": ["family", "small"], "regions": ["region.veydra"], "l1Speakers": 20000000 }
+  ],
+  "concordial": {
+    "id": "lang.concordial",
+    "name": "Concordial",
+    "summary": "Contact language descended from the Long Reach maritime pidgin; the Concord's working language, belonging to no region.",
+    "sources": ["cult.languages"],
+    "tags": ["contact-language", "working-language", "creole"],
+    "originEvent": "hist.event-isles-epidemic",
+    "originNote": "Creolized in port cities over six centuries following the Long Reach; standardized by the Concord in EY 6.",
+    "grammarSource": "lang.thalassic",
+    "lexiconSources": ["lang.alcyonic", "lang.elandric", "lang.isle-tongues"],
+    "l1Speakers": 190000000,
+    "l2Speakers": 5150000000,
+    "l2SharePct": 71,
+    "alphabetLetters": 31,
+    "orthographyStandardizedEY": 6
+  },
+  "charterGuarantees": [
+    { "id": "lang.right-to-be-governed", "name": "Right to be governed in your own language", "summary": "Any resident may deal with any organ of the Concord in any registered language and receive binding response in the same.", "sources": ["cult.languages"], "answeredBy": ["phase-04"] },
+    { "id": "lang.equal-authenticity", "name": "Equal authenticity", "summary": "Legislation is drafted simultaneously in all 41 registered languages, all equally authoritative; no version is the original.", "sources": ["cult.languages"], "answeredBy": ["phase-04", "phase-05"] },
+    { "id": "lang.no-language-condition", "name": "No language may be a condition of a right", "summary": "Civil service, education, and eligibility for office cannot require any specific language.", "sources": ["cult.languages"], "answeredBy": ["phase-04"] }
+  ],
+  "scripts": [
+    { "id": "lang.script-alcyonic", "name": "Alcyonic syllabary", "summary": "Oldest script on Elysium; in continuous use since 4,900 BE.", "sources": ["cult.languages"], "type": "syllabary", "families": ["lang.alcyonic"] },
+    { "id": "lang.script-elandric", "name": "Elandric logo-syllabary", "summary": "Mixed logographic and syllabic script.", "sources": ["cult.languages"], "type": "logo-syllabary", "families": ["lang.elandric"] },
+    { "id": "lang.script-boreal", "name": "Boreal alphabet", "summary": "Alphabet of the Boreal-Vail family.", "sources": ["cult.languages"], "type": "alphabet", "families": ["lang.boreal-vail"] },
+    { "id": "lang.script-thalassic", "name": "Thalassic alphabet", "summary": "Alphabet of the maritime west.", "sources": ["cult.languages"], "type": "alphabet", "families": ["lang.thalassic"] },
+    { "id": "lang.script-isle", "name": "Isle abugida", "summary": "Abugida of the Myriad Isles.", "sources": ["cult.languages"], "type": "abugida", "families": ["lang.isle-tongues"] },
+    { "id": "lang.script-concordial", "name": "Concordial phonemic alphabet", "summary": "Fully phonemic 31-letter alphabet standardized EY 6.", "sources": ["cult.languages"], "type": "alphabet", "families": [] }
+  ],
+  "civicVirtues": [
+    { "id": "cult.virtue-candour", "name": "Candour", "summary": "Say what is true, especially when it is against you; the corresponding vice is presentation, not lying.", "sources": ["cult.foundations"] },
+    { "id": "cult.virtue-stewardship", "name": "Stewardship", "summary": "You hold things in trust for those who cannot argue with you: the dead, the unborn, the biosphere.", "sources": ["cult.foundations"] },
+    { "id": "cult.virtue-redundancy", "name": "Redundancy", "summary": "Anything that matters should have a second way of working; an engineering principle that became a moral one.", "sources": ["cult.foundations"] },
+    { "id": "cult.virtue-restraint", "name": "Restraint", "summary": "Capacity is not a reason. The Concord's answer to power without aggression.", "sources": ["cult.foundations"] },
+    { "id": "cult.virtue-repair", "name": "Repair", "summary": "Nothing is finished; everything is maintained. The era is named the Long Maintenance with pride.", "sources": ["cult.foundations"] }
+  ],
+  "belief": [
+    { "id": "cult.belief-unaffiliated", "name": "No affiliation", "summary": "Secular, philosophical, or indifferent; many still keep Alcyonic ancestral observances.", "sources": ["cult.foundations"], "sharePct": 38 },
+    { "id": "cult.belief-stewardship", "name": "Stewardship traditions", "summary": "Largest organised family of belief and mostly non-theistic; rooted in Isle ocean stewardship. Central observance is a public accounting of what one has taken and returned.", "sources": ["cult.foundations"], "tags": ["non-theistic"], "regions": ["region.myriad-isles"], "sharePct": 21 },
+    { "id": "cult.belief-theistic", "name": "Theistic traditions", "summary": "Diverse and regional; declined since the founding without suppression, a live source of grievance.", "sources": ["cult.foundations"], "tags": ["theistic"], "regions": ["region.auroria", "region.elandris"], "sharePct": 17 },
+    { "id": "cult.belief-alcyonic-ancestral", "name": "Alcyonic ancestral practice", "summary": "Continuous lineage-and-memory tradition of the Alcyon basin, tied to the flow-share and the ruins of Ilvaret.", "sources": ["cult.foundations"], "regions": ["region.river-alcyon"], "sharePct": 14 },
+    { "id": "cult.belief-other", "name": "Local, syncretic, and other", "summary": "", "sources": ["cult.foundations"], "sharePct": 10 }
+  ],
+  "observances": [
+    { "id": "cult.observance-naming", "name": "The Naming", "summary": "First day of Aumar; communities read aloud their own local dead from the Long Emergency. No speeches; officials attend but do not speak.", "sources": ["cult.foundations"], "tags": ["remembrance", "universal"], "month": 7, "day": 1 },
+    { "id": "cult.observance-thresholdday", "name": "Thresholdday", "summary": "The intercalary day; the Concord's only universal holiday. No work, courts, markets, or scheduled governance.", "sources": ["cult.foundations", "hist.calendar"], "tags": ["holiday", "universal"], "intercalary": true }
+  ],
+  "dailyRhythm": [
+    { "id": "cult.rhythm-first-waking", "name": "First waking", "summary": "Dawn to early afternoon; most formal work, schooling, and institutional business.", "sources": ["cult.foundations"] },
+    { "id": "cult.rhythm-stillness", "name": "The Stillness", "summary": "Early-afternoon rest of about 1.5 civil hours; commerce pauses and cities fall quiet. Protected by labour law.", "sources": ["cult.foundations"], "answeredBy": ["phase-06"] },
+    { "id": "cult.rhythm-second-waking", "name": "Second waking", "summary": "Mid-afternoon to late night; the longer half, and where most social, family, artistic, and civic life happens.", "sources": ["cult.foundations"] }
+  ]
+}

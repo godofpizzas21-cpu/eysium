@@ -1,0 +1,454 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "space.space-data",
+  "name": "Space Infrastructure, the Orbital Territory, and First Contact",
+  "summary": "Off-world population and installations, the Low Ring, Kalyra and Vesper, the Tyrran Belt, the light-lag rule, Marn's planetary protection, space law, the Orbital Territory's constitutional problem, external relations, and the first-contact protocol.",
+  "sources": [
+    "space.infrastructure",
+    "dipl.external"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "distance": "km unless stated",
+    "population": "individuals",
+    "time": "civil units as stated"
+  },
+  "offWorldPopulation": {
+    "total": 28000000,
+    "shareOfPopulationPct": 0.4,
+    "distribution": [
+      {
+        "id": "space.low-ring",
+        "name": "The Low Ring",
+        "summary": "Rotating habitats and industry in low and mid orbit; 3,400 objects above 100 tonnes, of which 210 are inhabited habitats spinning at 0.7-1.0 g at the rim.",
+        "sources": [
+          "space.infrastructure"
+        ],
+        "population": 14200000,
+        "objectsAbove100t": 3400,
+        "inhabitedHabitats": 210,
+        "rimGravityG": [
+          0.7,
+          1.0
+        ]
+      },
+      {
+        "id": "space.kalyra-settlements",
+        "name": "Kalyra settlements",
+        "summary": "Buried habitation under regolith shielding, the far-side observatory, and Belt logistics staging.",
+        "sources": [
+          "space.infrastructure"
+        ],
+        "population": 7400000,
+        "body": "planet.moon-kalyra"
+      },
+      {
+        "id": "space.vesper-industry",
+        "name": "Vesper",
+        "summary": "The industrial moon, where off-world manufacture began in the EY 160s; its mass driver has been the cheapest source of bulk material in Elysian space for two centuries.",
+        "sources": [
+          "space.infrastructure"
+        ],
+        "population": 3100000,
+        "body": "planet.moon-vesper"
+      },
+      {
+        "id": "space.belt-stations",
+        "name": "Tyrran Belt stations",
+        "summary": "Mining and processing on long rotations.",
+        "sources": [
+          "space.infrastructure"
+        ],
+        "population": 2100000,
+        "stations": 340
+      },
+      {
+        "id": "space.in-transit",
+        "name": "In transit",
+        "summary": "Crews, passengers, and long-haul construction.",
+        "sources": [
+          "space.infrastructure"
+        ],
+        "population": 1200000
+      }
+    ]
+  },
+  "orbitalMechanics": {
+    "siderealDayHours": 25.83,
+    "stationaryOrbitAltitudeKm": 38556,
+    "escapeVelocityKmS": 11.42,
+    "orbitalStructuralMassNeverOnElysiumPct": 94,
+    "habitationInStationaryOrbit": false,
+    "stationaryOrbitUses": [
+      "communications",
+      "weather",
+      "navigation"
+    ]
+  },
+  "kalyraFarSideArray": {
+    "id": "space.kalyra-far-side-array",
+    "name": "The Kalyra Far-Side Array",
+    "summary": "The Concord's principal radio observatory, shielded from Elysium's emissions by 1,290 km of rock; the quietest radio environment in the Helian system.",
+    "sources": [
+      "space.infrastructure"
+    ],
+    "shieldingKm": 1290,
+    "protectionZone": true,
+    "transmitterProhibitionBindsAllOperators": true,
+    "resolvedCandidateSignals": true,
+    "exemptionsGrantedSinceEY380": 3
+  },
+  "belt": {
+    "stations": 340,
+    "populationOnRotation": 2100000,
+    "lightLagCivilMinutes": [
+      10,
+      38
+    ],
+    "transitElysianMonths": [
+      8,
+      14
+    ],
+    "berylliumSupplySharePct": 11,
+    "platinumGroupSupplySharePct": 34,
+    "operationsSinceEY": 232,
+    "restorationBondsRequired": true,
+    "materialPassportsRequired": true,
+    "assessment": "A hope with a budget rather than a plan.",
+    "constraintUnresolved": "resource.beryllium"
+  },
+  "lightLagRule": {
+    "id": "space.light-lag-rule",
+    "name": "The light-lag rule",
+    "summary": "Cassian Rule 4 requires the accountable human to have the practical capacity to refuse, which a supervisor on Elysium does not have across a 10-38 minute lag. The named human must therefore be inside the light-lag budget.",
+    "sources": [
+      "space.infrastructure"
+    ],
+    "derivedFrom": "ai.rule-preserved-refusal",
+    "maxRoundTripLatencySeconds": 4,
+    "consequence": "Belt stations carry accountable officers because the rules will not let them be supervised from home. A purely robotic Belt would be cheaper and is not lawful.",
+    "beyondBudgetSystemsRestrictedTo": [
+      "observe",
+      "record",
+      "manoeuvre for own safety",
+      "refuse"
+    ],
+    "challengedEveryYears": 30,
+    "relaxed": false
+  },
+  "marn": {
+    "id": "space.marn-protection",
+    "name": "Marn planetary protection",
+    "summary": "Marn carries the only extraterrestrial life Elysians have found: fossil microbial mats confirmed in EY 214, with unresolved evidence of possible extant subsurface communities. It is under permanent quarantine.",
+    "sources": [
+      "space.infrastructure"
+    ],
+    "body": "space.body-marn",
+    "fossilLifeConfirmedEY": 214,
+    "crewedLandingPermitted": false,
+    "missionsFlown": 61,
+    "elysiansLanded": 0,
+    "entrenchment": "gov.tier-1",
+    "rationale": "A biosphere that cannot argue for itself, whose destruction would be irreversible and whose scientific value is not yet understood, is exactly what Article 12 exists to protect.",
+    "relatedTo": "gov.principle-ecological-limits"
+  },
+  "exploration": {
+    "planetsVisitedRobotically": 7,
+    "tyrranMoonsVisited": 41,
+    "crewedPresenceLimit": "the Belt",
+    "crewedProgrammeBeyondBelt": false,
+    "longSignal": {
+      "id": "space.long-signal",
+      "name": "The Long Signal",
+      "summary": "A fusion-accelerated probe launched toward the nearest Helia-like star, arriving in approximately 9,100 Elysian years and transmitting continuously. Nobody who built it will learn what it finds.",
+      "sources": [
+        "space.infrastructure"
+      ],
+      "launchedEY": 340,
+      "arrivalYears": 9100,
+      "canonNote": "Cited in Elysian civic education as the clearest single expression of the civilization's relationship with time \u2014 the same instinct that produced century programmes, the zero discount rate, and buildings left unfinished for successors."
+    }
+  },
+  "spaceLaw": [
+    {
+      "id": "space.law-commons",
+      "name": "Orbital space is a planetary commons",
+      "summary": "No Region may own or appropriate it; operators hold licensed slots, not property, and slots revert.",
+      "sources": [
+        "space.infrastructure"
+      ],
+      "relatedTo": "gov.power-commons"
+    },
+    {
+      "id": "space.law-attribution",
+      "name": "Attribution of every object above 10 cm",
+      "summary": "Catalogued and attributed to an operator; unattributed objects are removed at the last known operator's cost.",
+      "sources": [
+        "space.infrastructure"
+      ],
+      "relatedTo": "mil.abolition-orbital-accounting"
+    },
+    {
+      "id": "space.law-deorbit-bond",
+      "name": "Deorbit bonds",
+      "summary": "Every object placed in orbit carries a removal bond posted before launch, on the principle of mine restoration bonds.",
+      "sources": [
+        "space.infrastructure"
+      ]
+    },
+    {
+      "id": "space.law-no-weapons",
+      "name": "No weapons in orbit",
+      "summary": "Part of the Abolition and verified through the same accounting.",
+      "sources": [
+        "space.infrastructure"
+      ],
+      "relatedTo": "mil.abolition-regime"
+    },
+    {
+      "id": "space.law-use-charges",
+      "name": "Commons and orbital use charges",
+      "summary": "Fund the Orbital Guard and the commons at 4% of Concord revenue.",
+      "sources": [
+        "space.infrastructure"
+      ],
+      "relatedTo": "econ.tax-commons-use"
+    }
+  ],
+  "orbitalTerritory": {
+    "id": "dipl.orbital-territory-problem",
+    "name": "The Orbital Territory problem",
+    "summary": "The 34th Region holds 28 million people, four Council seats, and a constitutional position that breaks four assumptions the Charter makes.",
+    "sources": [
+      "dipl.external"
+    ],
+    "polity": "polity.orbital-territory",
+    "councilSeats": 4,
+    "populationPerSeat": 7000000,
+    "comparisonRegion": "polity.kessandra",
+    "comparisonPopulationPerSeat": 88750000,
+    "onRotationPct": 61,
+    "settledPopulation": 9000000,
+    "hasTerritory": false,
+    "districtsOrganisedBy": "installation",
+    "withdrawalProcedureApplies": false,
+    "courtDeclinedToAnswer": 2,
+    "reformsProposed": [
+      {
+        "id": "dipl.reform-non-region",
+        "name": "Non-Region status",
+        "summary": "Representation without Council seats.",
+        "sources": [
+          "dipl.external"
+        ],
+        "passed": false
+      },
+      {
+        "id": "dipl.reform-split",
+        "name": "Split into several Regions by location",
+        "summary": "",
+        "sources": [
+          "dipl.external"
+        ],
+        "passed": false
+      },
+      {
+        "id": "dipl.reform-status-quo",
+        "name": "Leave it exactly as it is",
+        "summary": "On the ground that no arrangement will fit and this one at least works. Winning by default.",
+        "sources": [
+          "dipl.external"
+        ],
+        "passed": false,
+        "winningByDefault": true
+      }
+    ]
+  },
+  "externalRelations": {
+    "portfolio": "gov.portfolio-external",
+    "otherPolitiesOnElysium": 0,
+    "contactedCivilizations": 0,
+    "actualWork": [
+      "first-contact preparedness",
+      "custody of the 340 interregional compacts",
+      "maintaining the Thalassar fisheries lineage",
+      "holding the doctrine of contact ready"
+    ],
+    "standingJustification": "A civilization which has never needed diplomacy is exactly the civilization that would be worst at it if it suddenly did, and maintaining the capacity is cheap."
+  },
+  "firstContact": {
+    "candidateSignalsSinceEY96": 41,
+    "candidateSignalsResolved": 41,
+    "contactConfirmed": false,
+    "receptionProtocol": [
+      {
+        "id": "dipl.protocol-verify",
+        "name": "Verification first",
+        "summary": "No response of any kind until the Kalyra Far-Side Array and at least two independent installations confirm.",
+        "sources": [
+          "dipl.external"
+        ],
+        "order": 1
+      },
+      {
+        "id": "dipl.protocol-disclose",
+        "name": "Mandatory disclosure",
+        "summary": "Confirmation publishes immediately and planet-wide; no verification period may be conducted in secret and the Record Office holds raw data from the moment of detection.",
+        "sources": [
+          "dipl.external"
+        ],
+        "order": 2,
+        "custodian": "gov.record-office"
+      },
+      {
+        "id": "dipl.protocol-no-individual",
+        "name": "No individual may respond",
+        "summary": "Not the Convenor, not the Board, not a Region, not a private operator. Unauthorised transmission is a planetary offence.",
+        "sources": [
+          "dipl.external"
+        ],
+        "order": 3
+      },
+      {
+        "id": "dipl.protocol-assembly",
+        "name": "The Assembly convenes",
+        "summary": "Any reply requires an Assembly resolution with Council concurrence, after a Review Panel of 300 citizens chosen by lot has sat and published.",
+        "sources": [
+          "dipl.external"
+        ],
+        "order": 4,
+        "relatedTo": "gov.review-panel"
+      },
+      {
+        "id": "dipl.protocol-publish-first",
+        "name": "What is said publishes before it is sent",
+        "summary": "",
+        "sources": [
+          "dipl.external"
+        ],
+        "order": 5
+      }
+    ],
+    "protocolSpeed": "months from confirmation to any reply",
+    "protocolDefence": "A civilization which took four years to write its own constitution is not going to improvise its first sentence to another species, and the alternative is someone deciding alone.",
+    "transmission": {
+      "deliberateBroadcast": false,
+      "policySinceEY": 231,
+      "challengedInAssembly": 11,
+      "lastChallengeEY": 401,
+      "marginNarrowing": true,
+      "rationale": "The Concord cannot estimate the risks of announcing itself, cannot estimate the benefits, and has concluded that an irreversible act under total uncertainty is exactly what the humility clause disfavours.",
+      "objection": "A civilization which believes in candour above almost everything has chosen silence, and the inconsistency should trouble it.",
+      "resolved": false
+    },
+    "unpreparedFor": [
+      "treating with a non-Elysian polity",
+      "whether Charter rights extend to a non-Elysian intelligence",
+      "external migration",
+      "whether the Abolition survives the arrival of someone not party to it"
+    ],
+    "readinessAssessmentIntervalYears": 4,
+    "consecutiveEditionsWithSameConclusion": 11,
+    "standingConclusion": "The Concord is well prepared to detect, adequately prepared to verify, poorly prepared to decide, and not prepared at all to be wrong.",
+    "sharedAdvisoryPanelNote": "The same Advisory Panel that considers artificial moral status (ai.governance) also holds the non-Elysian rights question, and its minority position applies with equal force."
+  },
+  "knownWeaknesses": [
+    {
+      "id": "space.weakness-belt-insufficient",
+      "name": "The Belt has not solved beryllium",
+      "summary": "11% of supply after 180 years; the economics improve slowly and the fusion fleet's growth ceiling remains.",
+      "sources": [
+        "space.infrastructure"
+      ]
+    },
+    {
+      "id": "space.weakness-light-lag-cost",
+      "name": "The light-lag rule is expensive",
+      "summary": "A robotic Belt would be cheaper and is not lawful; challenged roughly every thirty years and defended each time on Cassian grounds.",
+      "sources": [
+        "space.infrastructure"
+      ]
+    },
+    {
+      "id": "space.weakness-habitat-ageing",
+      "name": "Habitat radiation ageing",
+      "summary": "Low Ring habitats accumulate structural damage faster than models predicted; 14 of 210 are past design life and operating under waiver.",
+      "sources": [
+        "space.infrastructure"
+      ]
+    },
+    {
+      "id": "space.weakness-debris",
+      "name": "Debris in mid orbit",
+      "summary": "Attribution works and removal is slow; the Guard describes the mid-inclination population as manageable and not improving.",
+      "sources": [
+        "space.infrastructure"
+      ]
+    },
+    {
+      "id": "space.weakness-quiet-zone",
+      "name": "Kalyra quiet zone erosion",
+      "summary": "Commercial pressure to relax the transmitter exclusion is constant, and three exemptions have been granted since EY 380.",
+      "sources": [
+        "space.infrastructure"
+      ]
+    },
+    {
+      "id": "space.weakness-off-world-dependence",
+      "name": "Off-world dependence on Elysium",
+      "summary": "Every habitat imports food, medicine, and complex components; none is self-sufficient and the Concord has never tested a 12-month resupply interruption.",
+      "sources": [
+        "space.infrastructure"
+      ]
+    },
+    {
+      "id": "dipl.weakness-territory-fits-nothing",
+      "name": "The Orbital Territory fits nothing",
+      "summary": "No territory, extreme representation, a mostly temporary population, and a withdrawal procedure that cannot be applied. Three reforms proposed, none passed, status quo winning by default.",
+      "sources": [
+        "dipl.external"
+      ]
+    },
+    {
+      "id": "dipl.weakness-representation",
+      "name": "Nine million settled people, four Council seats",
+      "summary": "Whichever population figure is used, the representation is indefensible on one measure or the other.",
+      "sources": [
+        "dipl.external"
+      ]
+    },
+    {
+      "id": "dipl.weakness-protocol-slow",
+      "name": "The Reception Protocol is slow",
+      "summary": "Months from confirmation to reply, defended on principle and never tested.",
+      "sources": [
+        "dipl.external"
+      ]
+    },
+    {
+      "id": "dipl.weakness-silence-vs-candour",
+      "name": "Silence contradicts candour",
+      "summary": "The transmission policy sits awkwardly beside the Concord's central virtue, and its opponents say so at every review.",
+      "sources": [
+        "dipl.external"
+      ]
+    },
+    {
+      "id": "dipl.weakness-species-specific-rights",
+      "name": "Rights are species-specific",
+      "summary": "Charter rights are written for Elysians and nobody knows what that means for anyone else.",
+      "sources": [
+        "dipl.external"
+      ]
+    },
+    {
+      "id": "dipl.weakness-abolition-after-contact",
+      "name": "The Abolition after contact",
+      "summary": "Deliberately unanswered in advance; canon does not resolve it either.",
+      "sources": [
+        "dipl.external"
+      ]
+    }
+  ]
+}

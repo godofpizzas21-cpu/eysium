@@ -1,0 +1,581 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.1.0",
+  "id": "law.justice-data",
+  "name": "Courts and Law of the Elysian Concord",
+  "summary": "Court structure, lay assessors, judicial appointment, the legal profession, access-to-justice indicators, criminal grading and floor, procedural rights, wrongful conviction, and civil law.",
+  "sources": [
+    "law.courts",
+    "law.substantive"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "sentence": "Elysian years",
+    "time": "days unless stated"
+  },
+  "courts": [
+    {
+      "id": "law.mediation-house",
+      "name": "Mediation House",
+      "summary": "One per Commune; free, multilingual, voluntary in outcome but compulsory in attendance before most civil filings.",
+      "sources": [
+        "law.courts"
+      ],
+      "tags": [
+        "court-system",
+        "pre-court"
+      ],
+      "count": 47900,
+      "level": 0,
+      "professionalJudges": false,
+      "medianResolutionDays": 30,
+      "civilDisputesResolvedPct": 71,
+      "minorOffencesResolvedPct": 34,
+      "penaltyForRefusingSettlement": false
+    },
+    {
+      "id": "law.district-court",
+      "name": "District Court",
+      "summary": "First instance for criminal and civil matters; one professional judge sitting with two lay assessors drawn by lot.",
+      "sources": [
+        "law.courts"
+      ],
+      "tags": [
+        "court-system",
+        "first-instance"
+      ],
+      "count": 3400,
+      "systems": 1104,
+      "level": 1,
+      "professionalJudges": 1,
+      "layAssessors": 2,
+      "assessorsHaveEqualVote": true
+    },
+    {
+      "id": "law.regional-appeal",
+      "name": "Regional Court of Appeal",
+      "summary": "One per Region; appeal on fact and law before three professional judges.",
+      "sources": [
+        "law.courts"
+      ],
+      "tags": [
+        "court-system",
+        "appellate"
+      ],
+      "count": 34,
+      "level": 2,
+      "professionalJudges": 3
+    },
+    {
+      "id": "law.court-of-review",
+      "name": "The Court of Review",
+      "summary": "Final appeal on questions of law and harmoniser of law across the Regions; 45 judges sitting in panels of five. Says what the law means, not what it may be.",
+      "sources": [
+        "law.courts"
+      ],
+      "tags": [
+        "court-system",
+        "apex"
+      ],
+      "count": 1,
+      "level": 3,
+      "judges": 45,
+      "panelSize": 5,
+      "appointedBy": "gov.nominating-assembly",
+      "confirmedBy": "gov.council-of-regions"
+    },
+    {
+      "id": "law.constitutional-court-ref",
+      "name": "The Constitutional Court (jurisdiction in the court system)",
+      "summary": "Separate apex for constitutional questions; says what the law may be. Composition and appointment are canonized in gov.institutions.",
+      "sources": [
+        "law.courts",
+        "gov.institutions"
+      ],
+      "tags": [
+        "court-system",
+        "apex",
+        "constitutional"
+      ],
+      "count": 1,
+      "level": 4,
+      "definedBy": "gov.constitutional-court"
+    }
+  ],
+  "layAssessors": {
+    "selection": "sortition from District adult residents",
+    "serviceLength": "single case",
+    "payment": "full earnings replacement",
+    "equalVoteOnVerdictAndSentence": true,
+    "judgeOutvotedRatePct": 6.2,
+    "outvoteMustBePublished": true,
+    "rationale": "A decision-maker who cannot be selected, promoted, or retained by anyone has nothing to trade."
+  },
+  "judiciary": {
+    "appointmentFloors": [
+      "appointment by a body independent of the regional executive",
+      "published reasons for every appointment",
+      "a published competitive process"
+    ],
+    "regionalAppointmentMethods": [
+      {
+        "id": "law.judicial-commission",
+        "name": "Judicial commission",
+        "summary": "",
+        "sources": [
+          "law.courts"
+        ],
+        "regionCount": 21
+      },
+      {
+        "id": "law.commission-lay-majority",
+        "name": "Commission with sortition-selected lay majority",
+        "summary": "",
+        "sources": [
+          "law.courts"
+        ],
+        "regionCount": 9
+      },
+      {
+        "id": "law.elected-judges",
+        "name": "Elected from a pre-qualified pool",
+        "summary": "",
+        "sources": [
+          "law.courts"
+        ],
+        "regionCount": 4
+      }
+    ],
+    "mandatoryRetirementAgeEY": 95,
+    "removalRequires": "an Audit Service finding plus two-thirds of the appointing body",
+    "salaryReductionProhibited": true,
+    "judgmentsPublishDissents": true,
+    "courtOfReviewJudgmentLanguages": 41,
+    "translationToConcordialDays": 30
+  },
+  "legalProfession": {
+    "advocatesTotal": 3100000,
+    "advocatesPer100k": 43,
+    "publicLegalServiceAdvocates": 1160000,
+    "publicLegalServiceIndependentOfGovernment": true,
+    "criminalRepresentationFree": true,
+    "civilRepresentationThresholdHouseholdsPct": 62,
+    "prosecutionIndependentOfPoliceAndExecutive": true,
+    "prosecutionTest": "evidence supports conviction AND prosecution serves a public purpose",
+    "privateProsecutionPermitted": false,
+    "pleaBargainingPermitted": false,
+    "pleaBargainingRationale": "A system that trades a sentence for a plea prices the right to trial, and Charter right 16 does not permit rights to have prices.",
+    "bodies": [
+      {
+        "id": "law.public-legal-service",
+        "name": "The Public Legal Service",
+        "summary": "1.16 million publicly employed advocates providing free criminal representation to all and civil representation to 62% of households; organisationally independent of prosecutors, police, and government, and constitutionally funded so the body defending people from the state cannot be starved by it.",
+        "sources": [
+          "law.courts"
+        ],
+        "tags": [
+          "legal-profession",
+          "public"
+        ],
+        "advocates": 1160000,
+        "independentOfGovernment": true
+      },
+      {
+        "id": "law.prosecution-service",
+        "name": "Regional Prosecution Services",
+        "summary": "Independent of both police and the regional executive; must decline a charge unless the evidence supports conviction and prosecution serves a public purpose, and must publish reasons for declining cases involving death or serious injury.",
+        "sources": [
+          "law.courts"
+        ],
+        "tags": [
+          "legal-profession",
+          "public"
+        ],
+        "independentOfPoliceAndExecutive": true
+      }
+    ]
+  },
+  "accessToJustice": {
+    "medianDaysToCivilJudgment": 141,
+    "medianDaysChargeToVerdict": 96,
+    "civilDisputesResolvedWithoutCourtPct": 71,
+    "criminalDefendantsRepresentedPct": 100,
+    "proceedingsInPartysOwnLanguagePct": 99.4,
+    "costOfDefendedCivilClaimDaysOfMedianIncome": 4,
+    "loserPaysCapped": true,
+    "noCostsBelowLegalAidThreshold": true,
+    "uncappedCostsAbolishedEY": 118
+  },
+  "constitutionalReview": {
+    "anyCourtMayFindIncompatibility": true,
+    "onlyConstitutionalCourtMaySetAside": true,
+    "referralsPerYear": 340,
+    "referralsAcceptedPerYear": 60,
+    "standing": [
+      "any person affected",
+      "gov.office-future-generations",
+      "any Region",
+      "gov.audit-service",
+      "any group of 100,000 residents by petition, without personal injury"
+    ],
+    "remedyOrder": [
+      "interpretation that saves the law",
+      "declaration of incompatibility with a deadline",
+      "suspension",
+      "annulment"
+    ],
+    "remedyRationale": "The humility clause operating as remedial doctrine: prefer the outcome that leaves the most room to correct a mistake."
+  },
+  "criminalLaw": {
+    "competence": "regional",
+    "regionalCodes": 34,
+    "harmPrinciple": "Conduct is criminal only if it harms or endangers an identifiable interest of another person, the public, or the biosphere.",
+    "drugUseCriminal": false,
+    "drugSupplyOutsideRegulatedSystemCriminal": true,
+    "modelCriminalCodeAdoptions": 19,
+    "modelCivilCodeAdoptions": 26,
+    "maximumSentenceEY": 30,
+    "lifeSentenceExists": false,
+    "indefiniteDetentionPermitted": false,
+    "preventiveDetentionOfTheSanePermitted": false,
+    "deathPenalty": false,
+    "custodialReviewIntervalEY": 5,
+    "capContested": "After the Kessander Plague reconstruction, the maximum sentence for an offence that killed 340 million was 30 years. Two amendment attempts have failed after adverse Review Panel opinions. Unresolved."
+  },
+  "offenceBands": [
+    {
+      "id": "law.band-1",
+      "name": "Band 1 \u2014 Regulatory and minor",
+      "summary": "Mediation House, restoration order, or fine.",
+      "sources": [
+        "law.substantive"
+      ],
+      "band": 1
+    },
+    {
+      "id": "law.band-2",
+      "name": "Band 2 \u2014 Harm without lasting injury",
+      "summary": "Restorative process, supervision, or service.",
+      "sources": [
+        "law.substantive"
+      ],
+      "band": 2
+    },
+    {
+      "id": "law.band-3",
+      "name": "Band 3 \u2014 Serious harm",
+      "summary": "Supervision or custody up to 4 EY.",
+      "sources": [
+        "law.substantive"
+      ],
+      "band": 3,
+      "maxCustodyEY": 4
+    },
+    {
+      "id": "law.band-4",
+      "name": "Band 4 \u2014 Grave harm",
+      "summary": "Custody 4-15 EY.",
+      "sources": [
+        "law.substantive"
+      ],
+      "band": 4,
+      "minCustodyEY": 4,
+      "maxCustodyEY": 15
+    },
+    {
+      "id": "law.band-5",
+      "name": "Band 5 \u2014 Gravest",
+      "summary": "Killing, mass ecological destruction, biosecurity offences, atrocity. Custody 15-30 EY; no limitation period.",
+      "sources": [
+        "law.substantive"
+      ],
+      "band": 5,
+      "minCustodyEY": 15,
+      "maxCustodyEY": 30,
+      "limitationPeriod": null
+    }
+  ],
+  "planetaryOffences": [
+    {
+      "id": "law.offence-article12",
+      "name": "Offences against the Article 12 systems",
+      "summary": "Including extraction of retained carbon for combustion.",
+      "sources": [
+        "law.substantive"
+      ],
+      "relatedTo": "gov.principle-ecological-limits"
+    },
+    {
+      "id": "law.offence-biosecurity",
+      "name": "Biosecurity and pathogen offences",
+      "summary": "",
+      "sources": [
+        "law.substantive"
+      ],
+      "answeredBy": [
+        "phase-09"
+      ]
+    },
+    {
+      "id": "law.offence-disarmament",
+      "name": "Disarmament violations",
+      "summary": "",
+      "sources": [
+        "law.substantive"
+      ],
+      "relatedEvent": "hist.event-abolition",
+      "answeredBy": [
+        "phase-12"
+      ]
+    },
+    {
+      "id": "law.offence-concord-corruption",
+      "name": "Corruption in Concord bodies",
+      "summary": "",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.offence-commons",
+      "name": "Offences against the planetary commons",
+      "summary": "",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.offence-offworld",
+      "name": "Offences against off-world installations",
+      "summary": "",
+      "sources": [
+        "law.substantive"
+      ],
+      "answeredBy": [
+        "phase-15"
+      ]
+    }
+  ],
+  "criminalFloor": [
+    {
+      "id": "law.floor-legality",
+      "name": "No retroactive offence or penalty",
+      "summary": "Conduct is criminal only if defined by law before it occurred.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.floor-mens-rea",
+      "name": "Mental element required for custody",
+      "summary": "Strict liability only for regulatory offences punishable by fine.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.floor-presumption",
+      "name": "Presumption of innocence",
+      "summary": "Burden on the prosecution throughout; the only permitted reversals concern retaliation against protected disclosers.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.floor-standard",
+      "name": "Proof beyond reasonable doubt",
+      "summary": "",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.floor-double-jeopardy",
+      "name": "No double jeopardy",
+      "summary": "Except reopening on new evidence in favour of the convicted person, which may be done at any time without limit.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.floor-limitation",
+      "name": "Limitation periods",
+      "summary": "For all offences except band 5.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.floor-proportionality",
+      "name": "Proportionality",
+      "summary": "Between offence and sentence, reviewable on appeal.",
+      "sources": [
+        "law.substantive"
+      ]
+    }
+  ],
+  "proceduralRights": [
+    {
+      "id": "law.proc-counsel",
+      "name": "Counsel from first contact",
+      "summary": "Questioning before counsel arrives is inadmissible for any purpose.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.proc-recording",
+      "name": "Complete custodial recording",
+      "summary": "Held by the Record Office, not by police; a gap is presumed adverse to the state.",
+      "sources": [
+        "law.substantive"
+      ],
+      "custodian": "gov.record-office"
+    },
+    {
+      "id": "law.proc-production",
+      "name": "Production before a judge within 48 hours",
+      "summary": "No exception, including under emergency powers.",
+      "sources": [
+        "law.substantive"
+      ],
+      "hours": 48,
+      "derogable": false
+    },
+    {
+      "id": "law.proc-remand",
+      "name": "Remand limits",
+      "summary": "Judicial authorisation renewed every 30 days; trial must begin within 90 days or the person is released.",
+      "sources": [
+        "law.substantive"
+      ],
+      "renewalDays": 30,
+      "trialStartDays": 90
+    },
+    {
+      "id": "law.proc-exclusion",
+      "name": "Exclusion of unlawfully obtained evidence",
+      "summary": "No good-faith exception; derivative evidence excluded unless an independent source is proved.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.proc-appeal",
+      "name": "Reasons and appeal as of right",
+      "summary": "Every verdict and sentence publishes reasons; one appeal as of right on fact and law.",
+      "sources": [
+        "law.substantive"
+      ]
+    }
+  ],
+  "wrongfulConviction": {
+    "reviewChamberPerRegion": true,
+    "independentOfConvictingCourts": true,
+    "mayInvestigateOwnInitiative": true,
+    "applicationsFree": true,
+    "convictionsOverturnedPct": 0.7,
+    "medianYearsToOverturnEY": 6.4,
+    "compensationAutomatic": true,
+    "publishedInquiryMandatory": true,
+    "note": "The 0.7% figure is published as a floor on the true rate, not a measurement of it. A system reporting no wrongful convictions is assumed to be failing to look."
+  },
+  "civilLaw": {
+    "contractComprehensibilityRequirement": "Terms are unenforceable if not reasonably comprehensible to the party bound.",
+    "charterRightWaiverVoid": true,
+    "tortBasis": "fault-based, with strict liability for ecological damage and inherently hazardous activity",
+    "stewardshipObligation": "An owner may not degrade land's ecological function; the obligation runs with the land and binds successors.",
+    "protectedAreaLandOwnableNotDevelopable": true,
+    "stewardshipOrigin": "hist.event-flow-share",
+    "householdFormsRecognisedAsConstituted": true,
+    "dissolutionByMediationDefault": true,
+    "childrenSeparatelyRepresented": true
+  },
+  "remandSharePctOfDetained": 9.4,
+  "knownWeaknesses": [
+    {
+      "id": "law.weakness-mediation-opacity",
+      "name": "Mediation opacity",
+      "summary": "71% of civil disputes resolve without published reasons or precedent; systematic unfairness inside Mediation Houses would be invisible to the case law.",
+      "sources": [
+        "law.courts"
+      ]
+    },
+    {
+      "id": "law.weakness-settlement-pressure",
+      "name": "Settlement pressure on the weaker party",
+      "summary": "Compulsory attendance plus an eager mediator can produce settlements a court would not approve. Partially mitigated, not solved.",
+      "sources": [
+        "law.courts"
+      ]
+    },
+    {
+      "id": "law.weakness-forum-shopping",
+      "name": "Legal pluralism and forum shopping",
+      "summary": "Thirty-four codes produce genuine forum shopping in commercial and family matters.",
+      "sources": [
+        "law.courts",
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.weakness-assessor-variance",
+      "name": "Assessor variance",
+      "summary": "Lay assessors vary and outcomes vary with them; the Concord publishes the variance rather than hiding it.",
+      "sources": [
+        "law.courts"
+      ]
+    },
+    {
+      "id": "law.weakness-apex-delay",
+      "name": "Delay at the apex",
+      "summary": "A conflict between Regional appellate lines can persist for a decade before the Court of Review resolves it.",
+      "sources": [
+        "law.courts"
+      ]
+    },
+    {
+      "id": "law.weakness-sentence-cap",
+      "name": "The 30-year cap",
+      "summary": "Publicly contested for atrocity; twice sustained against public opinion by Review Panels. Genuinely unresolved.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.weakness-ecological-prosecution",
+      "name": "Ecological offences are hard to prosecute",
+      "summary": "Diffuse causation, long latency, and corporate structure make band 5 ecological convictions rare relative to the harm done.",
+      "sources": [
+        "law.substantive"
+      ],
+      "answeredBy": [
+        "phase-07"
+      ]
+    },
+    {
+      "id": "law.weakness-wrongful-underdetection",
+      "name": "Wrongful convictions are under-detected",
+      "summary": "The 0.7% figure is a floor and known to be one.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.weakness-procedural-cost",
+      "name": "Procedural cost",
+      "summary": "No plea bargaining, full recording, and universal representation make criminal justice slow and expensive by design.",
+      "sources": [
+        "law.substantive"
+      ]
+    },
+    {
+      "id": "law.weakness-model-code-gravity",
+      "name": "Model-code gravity",
+      "summary": "Convergence by attraction is voluntary in form; a Region departing from the model code faces friction that looks a little like compulsion.",
+      "sources": [
+        "law.substantive"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "env.environment-data",
+  "name": "Environment, Carbon Management, and Climate Resilience",
+  "summary": "Protection tiers, restoration programmes, biodiversity and extinction debt, the chemical regime and legacy pollution, the planetary carbon account, the overturning watch, sea level, and hazard adaptation.",
+  "sources": ["env.conservation", "env.climate"],
+  "asOf": "EY-0412-M08-D16",
+  "units": { "area": "million km^2", "carbon": "Gt CO2 per Elysian year", "power": "TW" },
+  "carbonAccount": {
+    "currentCo2Ppm": 340,
+    "corridorPpm": [320, 360],
+    "insideCorridorSinceEY": 210,
+    "concordEraPeakPpm": 505,
+    "longEmergencyPeakPpm": 610,
+    "publishedBy": "gov.ecological-commission",
+    "publicationInterval": "quarterly",
+    "grossResidualEmissionsGt": 1.9,
+    "removalGt": 2.1,
+    "netPositionGt": -0.2,
+    "largestResidualSource": "cement process chemistry",
+    "corridorHasFloor": true,
+    "floorRationale": "Below 320 ppm the Concord must stop drawing down. Photosynthesis, yield, and the biosphere it actually has are adapted to the present concentration, and a civilization able to engineer its atmosphere downward would eventually be tempted to keep going. The floor is restraint written as a number.",
+    "removalMethods": [
+      { "id": "env.removal-biological", "name": "Biological removal", "summary": "Restoration, soil carbon, and blue carbon. Cheap and reversible — a forest can burn.", "sources": ["env.climate"], "annualGt": 0.9, "energyTW": 0 },
+      { "id": "env.removal-dac", "name": "Direct air capture", "summary": "Expensive and permanent. A quarter of one percent of planetary generation removes 0.8 Gt a year.", "sources": ["env.climate"], "annualGt": 0.8, "energyTW": 0.12, "shareOfPlanetaryEnergyPct": 0.27 },
+      { "id": "env.removal-weathering", "name": "Enhanced weathering", "summary": "Slow and durable; energy cost carried in materials handling.", "sources": ["env.climate"], "annualGt": 0.4, "energyTW": 0 }
+    ],
+    "portfolioRationale": "A removal portfolio with one method is a removal portfolio with one failure mode.",
+    "breachProcedure": {
+      "thresholdNoticeHorizonYears": 10,
+      "executiveResponseDays": 90,
+      "assemblyDebateRequired": true,
+      "crossingTriggersAutomaticEmergency": true,
+      "discretionAvailable": false
+    },
+    "thresholdNotices": [
+      { "id": "env.notice-288", "name": "Threshold notice EY 288", "summary": "Approach to the ceiling after a decade of high cement output.", "sources": ["env.climate"], "ey": 288, "edge": "ceiling" },
+      { "id": "env.notice-341", "name": "Threshold notice EY 341", "summary": "Approach to the floor as removal capacity overshot during low industrial demand.", "sources": ["env.climate"], "ey": 341, "edge": "floor" },
+      { "id": "env.notice-396", "name": "Threshold notice EY 396", "summary": "Approach to the floor, same cause.", "sources": ["env.climate"], "ey": 396, "edge": "floor" }
+    ],
+    "edgeCrossedSinceEY210": false
+  },
+  "overturningWatch": {
+    "currentStrengthPct": 96,
+    "longEmergencyTroughPct": 79,
+    "emergencyTriggerPct": 80,
+    "monitoringStations": 1410,
+    "continuousMonitoring": true,
+    "detectionConfidencePct": 94,
+    "detectionYears": 4,
+    "precautionaryTriggerProposedPct": 88,
+    "precautionaryProposalsRejected": 3,
+    "canonNote": "The Concord cannot detect the trigger condition quickly. If weakening began tomorrow the constitutional emergency would fire around EY 416, by which point the cause would be four years old. The Council of Regions holds that an automatic planetary emergency at 94% confidence is defensible and one at 60% is not. Genuinely unresolved."
+  },
+  "seaLevel": {
+    "riseAbovePreIndustrialM": 0.62,
+    "committedRiseRecognisedBE": 38,
+    "committedRiseTotalM": 0.9,
+    "committedRiseRemainingM": 0.28,
+    "cryosphericBudgetM": 4.6,
+    "populationBehindEngineeredDefence": 410000000,
+    "populationInManagedRetreat": 31000000,
+    "settlementsLostSinceEY300": 11,
+    "structuralAdvantage": "Elysium is not one ice sheet away from catastrophe because it does not have an ice sheet of that scale; defences are designed to a defensible worst case rather than an open-ended one.",
+    "managedRetreat": {
+      "compensation": "full replacement value",
+      "communeRelocatedTogetherWhereChosen": true,
+      "communeSurvivesLossOfSite": true,
+      "retainedOnRelocation": ["name", "register", "participatory allocation", "seat in District structures"]
+    }
+  },
+  "hazardAdaptation": [
+    { "id": "env.adapt-cyclone", "name": "Tropical cyclone", "summary": "285 km/h structural design basis, mangrove-analogue and reef buffers, and evacuation infrastructure sized for 90% of exposed population in 36 civil hours.", "sources": ["env.climate"], "hazard": "climate.hazard-cyclone", "regions": ["polity.serrance"], "answeredBy": ["phase-12"] },
+    { "id": "env.adapt-austral-storm", "name": "Austral winter storm", "summary": "Long-duration design; the grid's 14-day islanding rule is largely an austral requirement.", "sources": ["env.climate"], "hazard": "climate.hazard-austral-storm", "regions": ["polity.austral-shore"] },
+    { "id": "env.adapt-monsoon-failure", "name": "Monsoon failure", "summary": "Food reserves sized against three consecutive warm Amarant phases.", "sources": ["env.climate"], "hazard": "climate.hazard-monsoon-failure", "answeredBy": ["phase-11"] },
+    { "id": "env.adapt-sirocc-drought", "name": "Sirocc drought", "summary": "Fossil-aquifer drawdown ceilings, with desalination and transfer capacity held idle against multi-year events.", "sources": ["env.climate"], "hazard": "climate.hazard-sirocc-drought", "regions": ["polity.sirocc"] },
+    { "id": "env.adapt-alcyon-flood", "name": "Alcyon flood", "summary": "1-in-500-year design basis, achieved by floodplain reconnection rather than channelisation.", "sources": ["env.climate"], "hazard": "climate.hazard-alcyon-flood", "regions": ["polity.alcyone", "polity.ilvaret"] },
+    { "id": "env.adapt-heat", "name": "Heat extremes", "summary": "Urban design standards, cool-refuge provision in every Commune, and a statutory work-cessation temperature.", "sources": ["env.climate"], "answeredBy": ["phase-10"] },
+    { "id": "env.adapt-reef", "name": "Reef bleaching", "summary": "Thermal-refuge identification and assisted gene flow, triggered at a 1.4 C local anomaly. 2,400 km2 treated; contested and expanding.", "sources": ["env.climate"], "treatedKm2": 2400, "contested": true }
+  ],
+  "protectionTiers": [
+    { "id": "env.tier-inviolable", "name": "Inviolable", "summary": "Abyssal plain, Veydran Ice Cap, Verdanne core, Myriad hydrothermal fields. Nothing extractive; research under licence only; reducible only by Tier 1 amendment.", "sources": ["env.conservation"], "landMkm2": 3.4, "oceanMkm2": 84.0, "reducibleBy": "gov.tier-1" },
+    { "id": "env.tier-strict-reserve", "name": "Strict reserve", "summary": "Non-extractive access, monitoring, and restoration.", "sources": ["env.conservation"], "landMkm2": 21.1, "oceanMkm2": 24.6, "reducibleBy": "gov.tier-2" },
+    { "id": "env.tier-managed", "name": "Managed conservation", "summary": "Traditional use, low-impact harvest, and tourism under quota.", "sources": ["env.conservation"], "landMkm2": 38.9, "oceanMkm2": 21.4, "reducibleBy": "gov.tier-2" },
+    { "id": "env.tier-corridor", "name": "Connectivity corridor", "summary": "Working landscapes managed for passage; farming, forestry, and transport permitted if passage standards are met.", "sources": ["env.conservation"], "landMkm2": 16.3, "oceanMkm2": 3.6, "reducibleBy": "gov.tier-2" }
+  ],
+  "protection": {
+    "landProtectedMkm2": 79.7,
+    "oceanProtectedMkm2": 133.6,
+    "landProtectedSharePct": 44.0,
+    "oceanProtectedSharePct": 38.0,
+    "connectedNetworkSharePct": 71,
+    "ratchet": "Boundaries may be enlarged by ordinary legislation but reduced only by Tier 2 amendment following a published adverse finding, and never for the inviolable tier.",
+    "connectivityPrinciple": "A reserve a species cannot leave is a large enclosure rather than a habitat. Elysian conservation does not equate protection with absence of people."
+  },
+  "restoration": {
+    "totalMkm2": 6.4,
+    "shareOfLandPct": 3.5,
+    "functionalEquivalenceYears": [80, 140],
+    "fundableBecauseOf": "econ.money zero pure time preference",
+    "programmes": [
+      { "id": "env.restore-forest", "name": "Forest and woodland restoration", "summary": "Mostly former marginal cultivation returning to temperate broadleaf and taiga.", "sources": ["env.conservation"], "areaMkm2": 2.9 },
+      { "id": "env.restore-wetland", "name": "Wetland and floodplain reconnection", "summary": "Alcyon basin and Serapht margins; flood control and carbon in one act.", "sources": ["env.conservation"], "areaMkm2": 1.4 },
+      { "id": "env.restore-grassland", "name": "Grassland and soil restoration", "summary": "Meridian Plain margins; soil is accumulating planet-wide.", "sources": ["env.conservation"], "areaMkm2": 1.1 },
+      { "id": "env.restore-coastal", "name": "Coastal and reef restoration", "summary": "Living shorelines, kelp-analogue, and Stonebloom.", "sources": ["env.conservation"], "areaMkm2": 0.6 },
+      { "id": "env.restore-industrial", "name": "Post-industrial and mine site restoration", "summary": "Funded by restoration bonds posted before extraction begins.", "sources": ["env.conservation"], "areaMkm2": 0.4 }
+    ]
+  },
+  "biodiversity": {
+    "describedSpecies": 2410000,
+    "estimatedTrueSpecies": 4800000,
+    "referenceGenomes": 1060000,
+    "industrialEraExtinctions": 4180,
+    "activeRecoveryProgrammes": 11400,
+    "extinctInWildPreserved": 260,
+    "returnedFromLivingCollections": 14,
+    "extinctionDebtRange": [9000, 14000],
+    "extinctionDebtHorizonYears": [300, 800],
+    "recoveryReachesShareOfDebt": 0.1,
+    "extinctionDebtNote": "Published annually, undisputed, and the strongest counter-argument to any account of the Concord as ecologically successful.",
+    "deExtinction": {
+      "attempts": 3,
+      "partialSuccesses": 1,
+      "licensingRestrictive": true,
+      "objection": "Moral hazard: a civilization that believes extinction is reversible will take risks that one believing it permanent will not.",
+      "objectionRaisedBy": "gov.office-future-generations",
+      "counterArgument": "Refusing an available repair in order to preserve a useful fear is itself a moral position.",
+      "resolved": false
+    }
+  },
+  "pollution": {
+    "particulateVsIntegrationPct": 4,
+    "airPollutionSignificantCauseOfDeath": false,
+    "chemicalRegime": {
+      "burdenOnRegistrant": true,
+      "prohibitedUntilShownAcceptable": true,
+      "degradationPathwayRequired": true,
+      "registeredSubstances": 41000,
+      "applicationsRefusedPerYear": 900
+    },
+    "legacyPersistence": {
+      "currentBurdenVsPeakPct": 34,
+      "annualDeclinePct": 0.9,
+      "projectedClearanceEY": 600,
+      "accelerationAvailable": false,
+      "compounds": ["fluorinated surfactants", "brominated compounds", "industrial solvents"]
+    },
+    "microplastics": { "oceanBurdenVsPeakPct": 41, "sedimentElevatedForMillennia": true },
+    "nutrientRunoff": {
+      "phosphorusRecoveryPct": 92,
+      "leakagePct": 8,
+      "regionsWithSeasonalHypoxia": 4,
+      "answeredBy": ["phase-11"]
+    },
+    "darkSkyStandardsLandSharePct": 61,
+    "darkSkyRationale": "Ecological evidence, astronomy, and the cultural place of the aurora, which reaches mid-latitudes on Elysium. Elysians regard a sky you cannot see the aurora from as a defect in a city."
+  },
+  "enforcement": {
+    "commissionEnforces": false,
+    "commissionRole": "measure, publish, and compel a response on breach",
+    "prosecutedUnder": "law.substantive",
+    "gravestOffencesBand": "law.band-5",
+    "band5EcologicalConvictionsPerYear": 40,
+    "principalDeterrent": "Material passports and open contracting, which make ecological damage visible in records before it becomes visible in ecosystems."
+  },
+  "knownWeaknesses": [
+    { "id": "env.weakness-detection-lag", "name": "Slow overturning detection", "summary": "Four years to 94% confidence; the constitutional trigger cannot fire faster than the ocean speaks, and the precautionary alternative has been rejected three times.", "sources": ["env.climate"] },
+    { "id": "env.weakness-removal-overshoot", "name": "Removal capacity overshoot", "summary": "Two of three threshold notices concerned the floor; removal infrastructure is easier to build than to modulate.", "sources": ["env.climate"] },
+    { "id": "env.weakness-committed-rise", "name": "Committed rise is unavoidable", "summary": "0.28 m of the recognised commitment remains and no policy affects it.", "sources": ["env.climate"] },
+    { "id": "env.weakness-settlements-lost", "name": "Settlements lost", "summary": "Eleven Isle settlements gone since EY 300; adaptation has a lower bound and canon names it.", "sources": ["env.climate"] },
+    { "id": "env.weakness-assisted-gene-flow", "name": "Assisted gene flow is unresolved", "summary": "Permitted, contested, and expanding without an agreed answer to the objection against it.", "sources": ["env.climate"] },
+    { "id": "env.weakness-cement", "name": "Cement", "summary": "Residual process emissions are the largest single component of the 1.9 Gt and have resisted forty years of substitution research.", "sources": ["env.climate"] },
+    { "id": "env.weakness-extinction-debt", "name": "Extinction debt", "summary": "9,000-14,000 species committed to extinction by damage already done; recovery reaches perhaps a tenth.", "sources": ["env.conservation"] },
+    { "id": "env.weakness-legacy-persistence", "name": "Legacy persistence", "summary": "Pre-founding compounds at 34% of peak, clearing around EY 600, with no available acceleration.", "sources": ["env.conservation"] },
+    { "id": "env.weakness-prosecution-gap", "name": "Prosecution gap", "summary": "About 40 band 5 ecological convictions a year against harm nobody believes is that small.", "sources": ["env.conservation"] },
+    { "id": "env.weakness-paper-protection", "name": "Paper protection", "summary": "Protected status is planetary but enforcement is regional; inadequate monitoring found in six Regions with small administrations.", "sources": ["env.conservation"] },
+    { "id": "env.weakness-restoration-lag", "name": "Restoration lag", "summary": "Functional equivalence takes 80-140 years, so present policy is judged on results nobody alive at its adoption will see.", "sources": ["env.conservation"] },
+    { "id": "env.weakness-ratchet", "name": "The ratchet cuts both ways", "summary": "Three protected areas are now known to be poorly sited and remain protected anyway.", "sources": ["env.conservation"] },
+    { "id": "env.weakness-de-extinction", "name": "De-extinction unresolved", "summary": "Licensing is restrictive on a moral-hazard argument that has never been answered, only asserted more loudly by both sides.", "sources": ["env.conservation"] },
+    { "id": "env.weakness-nutrient-runoff", "name": "Nutrient runoff", "summary": "8% loop leakage still produces seasonal hypoxia in four Regions.", "sources": ["env.conservation"], "answeredBy": ["phase-11"] }
+  ]
+}

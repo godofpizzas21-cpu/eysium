@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "gov.government-data",
+  "name": "Government of the Elysian Concord",
+  "summary": "Constitutional structure, rights, entrenchment tiers, planetary institutions, elections, and the independent offices.",
+  "sources": ["gov.constitution", "gov.institutions"],
+  "asOf": "EY-0412-M08-D16",
+  "units": { "term": "Elysian years", "age": "Elysian years" },
+  "charter": {
+    "id": "gov.charter",
+    "name": "The Concord Charter",
+    "summary": "Constitution of the Elysian Concord, in force since EY-0001-M01-D01; 41,000 words in each of 41 equally authoritative languages.",
+    "sources": ["gov.constitution"],
+    "tags": ["constitution", "foundational"],
+    "inForceFrom": "EY-0001-M01-D01",
+    "wordCount": 41000,
+    "authenticLanguages": 41,
+    "amendmentsAdopted": 31,
+    "openingLine": "We were not conquered into this. We agreed, having seen the alternative."
+  },
+  "structuralPrinciples": [
+    { "id": "gov.principle-decentralization", "name": "Decentralization by default", "summary": "All powers rest with Regions except those the Charter enumerates to the Concord; ambiguity resolves downward.", "sources": ["gov.constitution"], "article": 3 },
+    { "id": "gov.principle-audit", "name": "The audit principle", "summary": "Every organ of government is audited by a body it cannot appoint, fund, or discipline.", "sources": ["gov.constitution"], "article": 9 },
+    { "id": "gov.principle-ecological-limits", "name": "Ecological limits are constitutional", "summary": "Article 12 thresholds cannot be suspended by legislation, emergency, or executive act.", "sources": ["gov.constitution"], "article": 12 },
+    { "id": "gov.principle-candour", "name": "Candour in government", "summary": "Published deliberations, mandatory minority reports, and the reasons requirement.", "sources": ["gov.constitution"], "article": 15 },
+    { "id": "gov.principle-humility", "name": "The humility clause", "summary": "Where words and purposes diverge, prefer purposes; where purposes are unclear, prefer the reading that leaves most room to correct a mistake.", "sources": ["gov.constitution"], "article": 41 }
+  ],
+  "enumeratedPowers": [
+    { "id": "gov.power-climate", "name": "Atmosphere, ocean, and climate system", "summary": "Physically indivisible systems.", "sources": ["gov.constitution"] },
+    { "id": "gov.power-commons", "name": "Planetary commons", "summary": "Deep ocean, polar ice, and orbital space; no Region can own them.", "sources": ["gov.constitution"] },
+    { "id": "gov.power-defence", "name": "Defence, disarmament verification, and disaster response", "summary": "Direct lesson of the Long Emergency.", "sources": ["gov.constitution"], "answeredBy": ["phase-12"] },
+    { "id": "gov.power-biosecurity", "name": "Epidemic response and biosecurity", "summary": "Pathogens ignore borders.", "sources": ["gov.constitution"], "answeredBy": ["phase-09"] },
+    { "id": "gov.power-networks", "name": "Interregional transport, grid, and communications backbone", "summary": "Network effects require planetary coordination.", "sources": ["gov.constitution"], "answeredBy": ["phase-07", "phase-10"] },
+    { "id": "gov.power-currency", "name": "Currency and planetary monetary policy", "summary": "", "sources": ["gov.constitution"], "answeredBy": ["phase-06"] },
+    { "id": "gov.power-constrained-materials", "name": "Constrained List materials and strategic reserves", "summary": "", "sources": ["gov.constitution"], "answeredBy": ["phase-06"] },
+    { "id": "gov.power-rights", "name": "Fundamental rights and their enforcement", "summary": "Cannot vary by Region.", "sources": ["gov.constitution"] },
+    { "id": "gov.power-space", "name": "Space infrastructure and off-world territories", "summary": "", "sources": ["gov.constitution"], "answeredBy": ["phase-15"] },
+    { "id": "gov.power-external", "name": "External relations and first contact", "summary": "", "sources": ["gov.constitution"], "answeredBy": ["phase-15"] }
+  ],
+  "powersNote": "Everything not enumerated is regional or local. The Concord may set floors but not ceilings, and may not direct how a Region meets a floor.",
+  "rights": [
+    { "id": "gov.right-belief", "name": "Freedom of belief and non-belief", "summary": "No established religion, no religious test.", "sources": ["gov.constitution"], "class": "liberty", "derogable": false },
+    { "id": "gov.right-expression", "name": "Freedom of expression, association, and assembly", "summary": "", "sources": ["gov.constitution"], "class": "liberty", "derogable": false },
+    { "id": "gov.right-movement", "name": "Freedom of movement and residence", "summary": "No internal borders, no internal citizenship.", "sources": ["gov.constitution"], "class": "liberty", "derogable": false },
+    { "id": "gov.right-bodily-autonomy", "name": "Bodily and reproductive autonomy", "summary": "The Charter expressly forbids any birth quota, incentive, or restriction.", "sources": ["gov.constitution"], "class": "liberty", "derogable": false },
+    { "id": "gov.right-freedom-from-torture", "name": "Freedom from torture, arbitrary detention, and capital punishment", "summary": "Capital punishment abolished at the founding.", "sources": ["gov.constitution"], "class": "liberty", "derogable": false, "answeredBy": ["phase-05"] },
+    { "id": "gov.right-equality", "name": "Equality before the law", "summary": "Without distinction of region, language, belief, sex, ancestry, or disability.", "sources": ["gov.constitution"], "class": "liberty", "derogable": false },
+    { "id": "gov.right-privacy", "name": "Privacy of person, home, communications, and data", "summary": "", "sources": ["gov.constitution"], "class": "liberty", "derogable": false },
+    { "id": "gov.right-housing", "name": "Housing adequate to health and dignity", "summary": "", "sources": ["gov.constitution"], "class": "provision", "derogable": true, "answeredBy": ["phase-10"] },
+    { "id": "gov.right-healthcare", "name": "Healthcare", "summary": "", "sources": ["gov.constitution"], "class": "provision", "derogable": true, "answeredBy": ["phase-09"] },
+    { "id": "gov.right-education", "name": "Education, including lifelong education", "summary": "", "sources": ["gov.constitution"], "class": "provision", "derogable": true, "answeredBy": ["phase-08"] },
+    { "id": "gov.right-subsistence", "name": "Subsistence income", "summary": "Sufficient for participation in civic life.", "sources": ["gov.constitution"], "class": "provision", "derogable": true, "answeredBy": ["phase-06"] },
+    { "id": "gov.right-commons", "name": "Access to the commons", "summary": "Clean air and water, and access to protected land and coast.", "sources": ["gov.constitution"], "class": "provision", "derogable": true },
+    { "id": "gov.right-language", "name": "Right to be governed in your own language", "summary": "In any of the 41 registered languages.", "sources": ["gov.constitution", "cult.languages"], "class": "procedural", "derogable": true },
+    { "id": "gov.right-record-access", "name": "Right of access to record", "summary": "Any record of any public body, with narrow, published, appealable exceptions.", "sources": ["gov.constitution"], "class": "procedural", "derogable": true },
+    { "id": "gov.right-reasons", "name": "Right to reasons", "summary": "To be told why a decision affecting you was made.", "sources": ["gov.constitution"], "class": "procedural", "derogable": true },
+    { "id": "gov.right-fair-hearing", "name": "Fair hearing, presumption of innocence, and appeal", "summary": "", "sources": ["gov.constitution"], "class": "procedural", "derogable": true, "answeredBy": ["phase-05"] }
+  ],
+  "entrenchmentTiers": [
+    { "id": "gov.tier-1", "name": "Tier 1 — Foundational", "summary": "Rights 1-7, ecological limits, the Abolition, the amendment and withdrawal procedures.", "sources": ["gov.constitution"], "assemblyThreshold": "two-thirds", "councilThreshold": "two-thirds", "referendumRequired": true, "regionalMajoritiesRequired": "two-thirds of Regions" },
+    { "id": "gov.tier-2", "name": "Tier 2 — Structural", "summary": "Institutional design, distribution of competences, independent offices.", "sources": ["gov.constitution"], "assemblyThreshold": "two-thirds", "councilThreshold": "two-thirds", "referendumRequired": false, "regionalMajoritiesRequired": "majority of Regions" },
+    { "id": "gov.tier-3", "name": "Tier 3 — Constitutional statute", "summary": "Electoral rules, procedural detail, the registered-language list.", "sources": ["gov.constitution"], "assemblyThreshold": "three-fifths", "councilThreshold": "concurrence", "referendumRequired": false, "regionalMajoritiesRequired": null }
+  ],
+  "amendmentReviewPanel": {
+    "id": "gov.review-panel",
+    "name": "Amendment Review Panel",
+    "summary": "300 citizens chosen by lot, sitting 90 days, taking evidence in public and publishing a non-binding reasoned opinion. No amendment may be voted on before publication.",
+    "sources": ["gov.constitution"],
+    "members": 300,
+    "selection": "sortition",
+    "sittingDays": 90,
+    "binding": false,
+    "amendmentsPassedAgainstOpinion": 0
+  },
+  "withdrawal": {
+    "id": "gov.withdrawal-procedure",
+    "name": "Withdrawal procedure",
+    "summary": "Legalised by the Fourth Amendment after the EY 31 crisis; two referendums on an absolute-majority threshold separated by a four-year cooling period, with Court-arbitrated settlement.",
+    "sources": ["gov.constitution"],
+    "coolingPeriodYears": 4,
+    "referendumsRequired": 2,
+    "threshold": "absolute majority of the electorate",
+    "nonWithdrawableObligations": ["gov.principle-ecological-limits", "hist.event-abolition"],
+    "attemptsSinceAdoption": 2,
+    "completedWithdrawals": 0
+  },
+  "emergencyPowers": {
+    "id": "gov.emergency-powers",
+    "name": "Emergency powers",
+    "summary": "Real but caged; the tightest-drafted section of the Charter, written after the Emergency of EY 233.",
+    "sources": ["gov.constitution"],
+    "originEvent": "hist.event-emergency-233",
+    "automaticLapseDays": 30,
+    "extensionThreshold": "two-thirds of the Assembly",
+    "absoluteCapDays": 180,
+    "beyondCapRequires": "planetary referendum",
+    "automaticJudicialReviewDays": 7,
+    "nonDerogableRightsStand": true,
+    "selfPerpetuationProhibited": true,
+    "postMortemDays": 180,
+    "declarationsSinceEY1": 14
+  },
+  "regions": {
+    "total": 34,
+    "continental": 33,
+    "offWorld": 1,
+    "internalGovernmentOwnedBy": "phase-04b"
+  },
+  "institutions": [
+    {
+      "id": "gov.assembly", "name": "The Assembly",
+      "summary": "Directly elected chamber and primary legislature; 720 members on open-list proportional representation.",
+      "sources": ["gov.institutions"], "tags": ["legislature", "elected"],
+      "members": 720, "termYears": 4, "electoralSystem": "open-list proportional representation with compensatory planetary tier",
+      "thresholdPct": 1.5, "franchiseAgeEY": 16, "consecutiveTermLimit": 3, "lifetimeTermLimit": 5, "typicalTurnoutPct": 78.4
+    },
+    {
+      "id": "gov.council-of-regions", "name": "The Council of Regions",
+      "summary": "Chamber of the constituent units and guardian of decentralization; four delegates per Region regardless of population.",
+      "sources": ["gov.institutions"], "tags": ["legislature", "regional"],
+      "members": 136, "delegatesPerRegion": 4, "termYears": 6, "staggeredReplacementMonths": 18,
+      "absoluteVetoOn": "measures touching regional competence or the distribution of powers",
+      "suspensiveVetoYears": 1
+    },
+    {
+      "id": "gov.executive-board", "name": "The Executive Board",
+      "summary": "Collegial executive of nine; no president, no prime minister. Decisions are of the Board, not of a member.",
+      "sources": ["gov.institutions"], "tags": ["executive", "collegial"],
+      "members": 9, "termYears": 4, "consecutiveTermLimit": 2,
+      "chairRotationMonths": 18, "chairTitle": "Convenor", "consecutiveChairAllowed": false,
+      "dismissalIndividual": "Assembly majority", "dismissalCollective": "two-thirds of the Assembly"
+    },
+    {
+      "id": "gov.constitutional-court", "name": "The Constitutional Court",
+      "summary": "Fifteen justices on single non-renewable 18-year terms, barred from all subsequent public office for life.",
+      "sources": ["gov.institutions"], "tags": ["judiciary", "constitutional"],
+      "members": 15, "termYears": 18, "renewable": false, "lifetimeOfficeBarAfterService": true,
+      "appointedBy": "gov.nominating-assembly", "confirmedBy": "gov.council-of-regions",
+      "jurisdiction": ["constitutional review", "competence disputes", "automatic emergency review", "withdrawal arbitration", "reconciliation of divergent language texts"]
+    }
+  ],
+  "elections": {
+    "assemblyIntervalYears": 4,
+    "fixedDate": true,
+    "earlyDissolutionPossible": false,
+    "votingCompulsory": false,
+    "privateDonationsPermitted": false,
+    "publicFundingEqualPerQualifyingCandidate": true,
+    "independentExpenditure": "registered, capped, published in real time",
+    "recordRequirement": "Every candidate publishes a standard-format record of prior positions, votes, and reversals.",
+    "planetaryParties": 6,
+    "regionalFormations": 11,
+    "singlePartyMajorityEverAchieved": false,
+    "minimumCoalitionPartiesHistorically": 3
+  },
+  "independentOffices": {
+    "commonProtections": {
+      "fundingFormula": "fixed proportion of planetary revenue, set constitutionally and not voted annually",
+      "appointedBy": "gov.nominating-assembly",
+      "headTermYears": 9,
+      "headTermRenewable": false,
+      "publicationCannotBePrevented": true,
+      "coolingOffYears": 10
+    },
+    "offices": [
+      { "id": "gov.audit-service", "name": "The Audit Service", "summary": "Audits every organ of government — financial, performance, and legal compliance; may compel documents and testimony; findings trigger removal procedures.", "sources": ["gov.institutions"], "tags": ["independent-office", "audit"], "rebuiltAfter": "hist.event-corran-scandal" },
+      { "id": "gov.record-office", "name": "The Record Office", "summary": "Administers the right of access to record and the Public Record Act; maintains the permanent archive; adjudicates access refusals.", "sources": ["gov.institutions"], "tags": ["independent-office", "transparency"] },
+      { "id": "gov.electoral-commission", "name": "The Electoral Commission", "summary": "Administers elections, registers parties, enforces campaign finance, and certifies results.", "sources": ["gov.institutions"], "tags": ["independent-office", "elections"] },
+      { "id": "gov.ecological-commission", "name": "The Ecological Commission", "summary": "Monitors the Article 12 constitutional limits and publishes the planetary environmental account. It may measure, publish, and compel a response on breach, but cannot make policy.", "sources": ["gov.institutions"], "tags": ["independent-office", "ecology"], "answeredBy": ["phase-07"] },
+      { "id": "gov.office-future-generations", "name": "The Office of Future Generations", "summary": "Represents Elysians not yet born; holds a one-year suspensive veto compelling a published Parliamentary response. Cannot block permanently.", "sources": ["gov.institutions"], "tags": ["independent-office", "stewardship", "contested"], "suspensiveVetoYears": 1, "vetoesUsed": 41, "vetoesOverridden": 23, "yearsInOperation": 206 }
+    ]
+  },
+  "nominatingAssembly": {
+    "id": "gov.nominating-assembly",
+    "name": "The Nominating Assembly",
+    "summary": "Four hundred citizens chosen by lot for one year who appoint the heads of the independent offices and confirm the Constitutional Court shortlist, and do nothing else.",
+    "sources": ["gov.institutions"],
+    "tags": ["sortition", "anti-capture"],
+    "members": 400,
+    "selection": "sortition from the full adult population",
+    "termYears": 1,
+    "paidLeaveAsOfRight": true,
+    "subsequentAppointmentBarYears": 10,
+    "successfullyCapturedEver": false
+  },
+  "knownWeaknesses": [
+    { "id": "gov.weakness-slow-amendment", "name": "Slow amendment", "summary": "Tier 1 rigidity means a genuinely necessary change could arrive too late.", "sources": ["gov.constitution"] },
+    { "id": "gov.weakness-court-dependence", "name": "Court dependence", "summary": "Ambiguity resolves downward because the Court says so; a captured Court could reverse decentralization.", "sources": ["gov.constitution"] },
+    { "id": "gov.weakness-floors-without-ceilings", "name": "Floors without ceilings", "summary": "The Concord cannot prevent a wealthy Region racing ahead, widening interregional inequality.", "sources": ["gov.constitution"], "answeredBy": ["phase-06"] },
+    { "id": "gov.weakness-translation-dependence", "name": "Translation dependence", "summary": "Equal authenticity of 41 texts depends on translation infrastructure.", "sources": ["gov.constitution"], "answeredBy": ["phase-13"] },
+    { "id": "gov.weakness-consensus-drift", "name": "Consensus drift", "summary": "A culture that prizes dissent can mistake the performance of dissent for its substance. Recognised and unsolved.", "sources": ["gov.constitution"] },
+    { "id": "gov.weakness-executive-slowness", "name": "Executive slowness", "summary": "Collegial decision-making is slow; contributed to the Serrance Storm Failure.", "sources": ["gov.institutions"], "relatedEvent": "hist.event-serrance-failure" },
+    { "id": "gov.weakness-council-malapportionment", "name": "Council malapportionment", "summary": "Veydra's 140 million hold the same Council weight as Elandris's 2.31 billion; a standing grievance.", "sources": ["gov.institutions"] },
+    { "id": "gov.weakness-diffuse-responsibility", "name": "Diffuse responsibility", "summary": "Collective decisions make individual blame hard to assign — sometimes a feature, sometimes an escape.", "sources": ["gov.institutions"] },
+    { "id": "gov.weakness-sortition-variance", "name": "Sortition variance", "summary": "Nominating Assemblies vary in quality year to year and are heavily lobbied.", "sources": ["gov.institutions"] },
+    { "id": "gov.weakness-expertise-loss", "name": "Expertise loss", "summary": "Single non-renewable terms and 10-year cooling-off discard accumulated skill by design.", "sources": ["gov.institutions"] }
+  ]
+}

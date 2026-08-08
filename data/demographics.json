@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "hist.demographics-data",
+  "name": "Demographics of the Elysian Concord",
+  "summary": "Species physiology, population distribution, age structure, households, mobility, and mortality as of the reference date.",
+  "sources": ["hist.demographics"],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "age": "Elysian years (1 EY = 1.135 Earth years)",
+    "population": "individuals",
+    "density": "individuals per km^2 of continental land"
+  },
+  "species": {
+    "id": "species.elysian",
+    "name": "Elysian",
+    "summary": "Native sapient species of Elysium; clade Zoaea; six digits per hand; median lifespan 112 Elysian years.",
+    "sources": ["hist.demographics"],
+    "tags": ["sapient", "native"],
+    "clade": "clade.zoaea",
+    "meanAdultHeightM": 1.72,
+    "meanAdultMassKg": 68,
+    "digitsPerHand": 6,
+    "intersexSharePct": 0.9,
+    "gestationDays": 290,
+    "singletonBirthSharePct": 96.2,
+    "sexualMaturityEY": 13,
+    "legalMajorityEY": 16,
+    "medianLifespanEY": 112,
+    "medianHealthyLifespanEY": 104,
+    "maxVerifiedLifespanEY": 139,
+    "sleep": {
+      "pattern": "biphasic",
+      "circadianPeriodHours": 26,
+      "nightSleepCivilHours": 7,
+      "afternoonRestCivilHours": 1.5,
+      "restPeriodName": "the Stillness"
+    },
+    "counting": {
+      "traditionalBase": 12,
+      "reason": "two hands of six digits",
+      "standardizedBase": 10,
+      "standardizedAt": "the Meridian Convention",
+      "survivesIn": ["calendar", "traditional measures", "music", "vernacular speech"]
+    }
+  },
+  "population": {
+    "total": 7250000000,
+    "offWorld": 28000000,
+    "urbanizationPct": 87.4,
+    "totalFertilityRate": 2.04,
+    "projectedRangeNext200Years": [7100000000, 7400000000],
+    "policyNote": "The Concord has never operated a birth quota, incentive, or restriction; the Charter forbids it. The decline from 11.2 bn was voluntary.",
+    "openDisagreement": "Whether a flat population is desirable is an unresolved Concord political argument between growth and stability advocates."
+  },
+  "populationByRegion": [
+    { "id": "demo.pop-elandris", "name": "Elandris", "summary": "Most populous continent.", "sources": ["hist.demographics"], "regions": ["region.elandris"], "population": 2310000000, "sharePct": 31.9, "densityPerKm2": 74.5 },
+    { "id": "demo.pop-meridia", "name": "Meridia", "summary": "Heartland continent.", "sources": ["hist.demographics"], "regions": ["region.meridia"], "population": 2180000000, "sharePct": 30.1, "densityPerKm2": 37.5 },
+    { "id": "demo.pop-thalassar", "name": "Thalassar", "summary": "Maritime west.", "sources": ["hist.demographics"], "regions": ["region.thalassar"], "population": 1160000000, "sharePct": 16.0, "densityPerKm2": 42.3 },
+    { "id": "demo.pop-auroria", "name": "Auroria", "summary": "Boreal north.", "sources": ["hist.demographics"], "regions": ["region.auroria"], "population": 1090000000, "sharePct": 15.0, "densityPerKm2": 26.3 },
+    { "id": "demo.pop-myriad-isles", "name": "Myriad Isles", "summary": "Highest population density on Elysium.", "sources": ["hist.demographics"], "regions": ["region.myriad-isles"], "population": 342000000, "sharePct": 4.7, "densityPerKm2": 95.0 },
+    { "id": "demo.pop-veydra", "name": "Veydra", "summary": "Scientific commons; nearly empty by design.", "sources": ["hist.demographics"], "regions": ["region.veydra"], "population": 140000000, "sharePct": 1.9, "densityPerKm2": 7.2 },
+    { "id": "demo.pop-offworld", "name": "Off-world", "summary": "Kalyra, orbital habitats, and Tyrran Belt stations (space.infrastructure).", "sources": ["hist.demographics"], "population": 28000000, "sharePct": 0.4 }
+  ],
+  "ageStructure": [
+    { "id": "demo.age-minor", "name": "0-15 EY", "summary": "Minors; legal majority at 16 EY.", "sources": ["hist.demographics"], "minEY": 0, "maxEY": 15, "sharePct": 18.2 },
+    { "id": "demo.age-adult", "name": "16-59 EY", "summary": "Primary working and family-forming years.", "sources": ["hist.demographics"], "minEY": 16, "maxEY": 59, "sharePct": 44.9 },
+    { "id": "demo.age-senior", "name": "60-99 EY", "summary": "Most remain in full work; median retirement 88 EY.", "sources": ["hist.demographics"], "minEY": 60, "maxEY": 99, "sharePct": 27.1 },
+    { "id": "demo.age-centenarian", "name": "100+ EY", "summary": "710 million Elysians; 2.1 million over 130 EY.", "sources": ["hist.demographics"], "minEY": 100, "maxEY": 139, "sharePct": 9.8 }
+  ],
+  "medianAgeEY": 47,
+  "medianRetirementAgeEY": 88,
+  "frailtyWeightedDependencyRatio": 0.31,
+  "households": {
+    "meanSize": 3.4,
+    "types": [
+      { "id": "demo.hh-multigenerational", "name": "Multi-generational (3+ generations)", "summary": "Plurality household type; four living generations are ordinary.", "sources": ["hist.demographics"], "sharePct": 31 },
+      { "id": "demo.hh-two-adult-children", "name": "Two-adult with children", "summary": "", "sources": ["hist.demographics"], "sharePct": 24 },
+      { "id": "demo.hh-single", "name": "Single-adult", "summary": "", "sources": ["hist.demographics"], "sharePct": 19 },
+      { "id": "demo.hh-two-adult", "name": "Two-adult without children", "summary": "", "sources": ["hist.demographics"], "sharePct": 15 },
+      { "id": "demo.hh-coresidential", "name": "Co-residential group", "summary": "Formalised households of unrelated adults.", "sources": ["hist.demographics"], "sharePct": 11 }
+    ]
+  },
+  "mobility": {
+    "annualInterregionalMovePct": 4.1,
+    "livingOutsideRegionOfBirthPct": 22,
+    "internalBordersExist": false
+  },
+  "mortality": {
+    "infantMortalityPer100k": 1.1,
+    "maternalMortalityPer100k": 0.4,
+    "ageAssociatedDeclineSharePct": 68,
+    "infectiousDiseaseSharePct": 1.9,
+    "injuryAccidentSharePct": 4.3,
+    "suicidePer100kPerYear": 2.1
+  },
+  "vulnerabilities": [
+    { "id": "demo.risk-pathogen", "name": "Pathogen exposure of an aged population", "summary": "A very old population is disproportionately vulnerable to a novel pathogen; sized against by Phase 9 biosecurity.", "sources": ["hist.demographics"], "answeredBy": ["phase-09"] },
+    { "id": "demo.risk-slow-recovery", "name": "Slow demographic recovery", "summary": "At TFR 2.04 with 112-year lifespans, a mass-casualty shock takes over a century to work through; population is treated as a protected slow variable.", "sources": ["hist.demographics"], "answeredBy": ["phase-09", "phase-12"] }
+  ]
+}

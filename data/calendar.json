@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "hist.calendar-data",
+  "name": "The Elysian Civil Calendar",
+  "summary": "Month, week, and clock structure of the Elysian civil calendar, with exact SI conversions and the canonical reference date.",
+  "sources": ["hist.calendar"],
+  "units": {
+    "civilTime": "civil units are fractions of the solar day and do not equal SI units",
+    "siEquivalent": "seconds"
+  },
+  "clock": {
+    "solarDaySeconds": 93240,
+    "hoursPerDay": 26,
+    "minutesPerHour": 60,
+    "beatsPerMinute": 60,
+    "hourSeconds": 3586.1538,
+    "minuteSeconds": 59.7692,
+    "beatSeconds": 0.99615,
+    "notation": "H:MM on a 26-hour cycle; midnight 0:00, midday 13:00"
+  },
+  "year": {
+    "solarYearDays": 384.24,
+    "civilYearDays": 384,
+    "monthsPerYear": 12,
+    "daysPerMonth": 32,
+    "weeksPerMonth": 4,
+    "daysPerWeek": 8,
+    "weeksPerYear": 48,
+    "perpetual": true,
+    "perpetualNote": "384 divides evenly into 8-day weeks, so every date falls on the same weekday in every year.",
+    "yearStart": "northward equinox",
+    "leapRule": {
+      "id": "cal.thresholdday",
+      "name": "Thresholdday",
+      "summary": "Intercalary day at year end, outside all weeks and months; preserves perpetual weekday alignment.",
+      "sources": ["hist.calendar"],
+      "everyNYears": 4,
+      "exceptDivisibleBy": 100,
+      "intercalaryDaysPerCentury": 24,
+      "meanCivilYearDays": 384.24,
+      "universalHoliday": true
+    }
+  },
+  "months": [
+    { "id": "cal.month-verane", "index": 1, "name": "Verane", "summary": "First month; year opens at the northward equinox.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-kelith", "index": 2, "name": "Kelith", "summary": "Second month.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-ostreth", "index": 3, "name": "Ostreth", "summary": "Third month.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-sarien", "index": 4, "name": "Sarien", "summary": "Fourth month; northern solstice falls in Sarien.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-thelen", "index": 5, "name": "Thelen", "summary": "Fifth month.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-iridan", "index": 6, "name": "Iridan", "summary": "Sixth month.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-aumar", "index": 7, "name": "Aumar", "summary": "Seventh month; southward equinox.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-calenth", "index": 8, "name": "Calenth", "summary": "Eighth month; contains the Bible's reference date.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-nerith", "index": 9, "name": "Nerith", "summary": "Ninth month.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-tavric", "index": 10, "name": "Tavric", "summary": "Tenth month; northern winter solstice.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-solmis", "index": 11, "name": "Solmis", "summary": "Eleventh month.", "sources": ["hist.calendar"] },
+    { "id": "cal.month-yvenne", "index": 12, "name": "Yvenne", "summary": "Twelfth month; the year closes.", "sources": ["hist.calendar"] }
+  ],
+  "weekdays": [
+    { "id": "cal.day-heldan", "index": 1, "name": "Heldan", "summary": "Named for Helia, the star.", "sources": ["hist.calendar"], "rest": false },
+    { "id": "cal.day-kaldan", "index": 2, "name": "Kaldan", "summary": "Named for Kalyra, the major moon.", "sources": ["hist.calendar"], "rest": false },
+    { "id": "cal.day-vesdan", "index": 3, "name": "Vesdan", "summary": "Named for Vesper, the minor moon.", "sources": ["hist.calendar"], "rest": false },
+    { "id": "cal.day-mardan", "index": 4, "name": "Mardan", "summary": "Named for the sea.", "sources": ["hist.calendar"], "rest": false },
+    { "id": "cal.day-tordan", "index": 5, "name": "Tordan", "summary": "Named for the mountain.", "sources": ["hist.calendar"], "rest": false },
+    { "id": "cal.day-irdan", "index": 6, "name": "Irdan", "summary": "Named for the field.", "sources": ["hist.calendar"], "rest": false },
+    { "id": "cal.day-seldan", "index": 7, "name": "Seldan", "summary": "Named for the hearth; first customary rest day.", "sources": ["hist.calendar"], "rest": true },
+    { "id": "cal.day-ovdan", "index": 8, "name": "Ovdan", "summary": "Named for the open; second customary rest day.", "sources": ["hist.calendar"], "rest": true }
+  ],
+  "notation": {
+    "prose": "EY 412, Calenth 16",
+    "data": "EY-0412-M08-D16",
+    "intercalary": "EY-0412-TH",
+    "preFounding": "BE-0087-M03-D02",
+    "noYearZero": true
+  },
+  "referenceDate": {
+    "id": "cal.reference-date",
+    "name": "Bible reference date",
+    "summary": "All statistics in the Civilization Bible are as of this date unless explicitly historical.",
+    "sources": ["hist.calendar"],
+    "prose": "EY 412, Calenth 16",
+    "data": "EY-0412-M08-D16",
+    "year": 412,
+    "month": 8,
+    "day": 16
+  },
+  "heritageCalendars": [
+    { "id": "cal.alcyon-reckoning", "name": "Alcyon agricultural reckoning", "summary": "Flood-cycle calendar of the Alcyon basin; ancestor of the 8-day week.", "sources": ["hist.calendar"], "region": "region.river-alcyon" },
+    { "id": "cal.thalassari-tidal", "name": "Thalassari tidal calendar", "summary": "Kalyra-tide calendar still used for Thalassari maritime festivals.", "sources": ["hist.calendar"], "region": "region.thalassar" },
+    { "id": "cal.aurorian-dark-count", "name": "Aurorian dark-count", "summary": "Winter-darkness reckoning of boreal Auroria.", "sources": ["hist.calendar"], "region": "region.auroria" }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "1.0.0",
+  "id": "health.health-data",
+  "name": "Healthcare in the Elysian Concord",
+  "summary": "System structure and workforce, the named clinician, home-first care, prevention and its discontinued programmes, emergency response, geriatrics, mental health, substance policy, genetics, end of life, and epidemic capability.",
+  "sources": [
+    "health.system",
+    "health.practice"
+  ],
+  "asOf": "EY-0412-M08-D16",
+  "units": {
+    "age": "Elysian years",
+    "time": "civil minutes or Elysian years as stated"
+  },
+  "system": {
+    "spendingShareOfGcpPct": 11.2,
+    "spendingDram": 115300000000000,
+    "workforce": 290000000,
+    "workforceShareOfLabourForcePct": 8.0,
+    "costAtPointOfUse": 0,
+    "deliveredBy": "gov.tier-district",
+    "deliversRight": "gov.right-healthcare",
+    "privateEpisodeSharePct": 0.8,
+    "privateMayOfferQueuePriority": false,
+    "episodesInPatientFirstLanguagePct": 99.1
+  },
+  "facilities": [
+    {
+      "id": "health.commune-post",
+      "name": "Commune health post",
+      "summary": "First contact, prevention, home-care coordination, and the named clinician.",
+      "sources": [
+        "health.system"
+      ],
+      "count": 47900
+    },
+    {
+      "id": "health.district-clinic",
+      "name": "District clinic",
+      "summary": "Diagnostics, outpatient specialties, minor procedures.",
+      "sources": [
+        "health.system"
+      ],
+      "count": 22400
+    },
+    {
+      "id": "health.district-hospital",
+      "name": "District hospital",
+      "summary": "Inpatient, surgery, emergency, maternity.",
+      "sources": [
+        "health.system"
+      ],
+      "count": 3800
+    },
+    {
+      "id": "health.regional-centre",
+      "name": "Regional specialist centre",
+      "summary": "Complex surgery, transplantation, rare disease, major trauma.",
+      "sources": [
+        "health.system"
+      ],
+      "count": 340
+    },
+    {
+      "id": "health.concord-facility",
+      "name": "Concord facility",
+      "summary": "Biosecurity containment, orphan conditions, reference laboratories.",
+      "sources": [
+        "health.system"
+      ],
+      "count": 41
+    }
+  ],
+  "namedClinician": {
+    "id": "health.named-clinician",
+    "name": "The named clinician",
+    "summary": "Every resident has a named generalist accountable for their care across life, often following the same patient fifty years and three or four generations of one household.",
+    "sources": [
+      "health.system"
+    ],
+    "panelCap": 1400,
+    "handoverIsFormalEvent": true,
+    "handoverJointConsultationForComplexNeeds": true,
+    "continuityTreatedAsClinicalIntervention": true
+  },
+  "homeFirstCare": {
+    "episodesManagedOutsideHospitalPct": 71,
+    "enabledBy": "multi-generational households",
+    "homeCareIsNotTheCheapOption": true,
+    "auditNote": "District accounts showing home care cheaper than hospital care at equivalent acuity are audited on suspicion.",
+    "acknowledgedRisk": "A system that leans on households leans hardest on the people in them, and unpaid care is unevenly distributed."
+  },
+  "prevention": {
+    "universalProgrammes": [
+      "immunisation",
+      "cardiovascular and metabolic screening",
+      "sensory function",
+      "cognitive assessment from 70 EY",
+      "occupational exposure monitoring"
+    ],
+    "cognitiveAssessmentFromAgeEY": 70,
+    "programmesUnderStandingRedGrant": true,
+    "reviewQuestion": "Does the programme improve outcomes, not does it find disease.",
+    "programmesDiscontinuedSinceEY300": 3,
+    "discontinuationNote": "Discontinued for causing more harm through over-diagnosis, anxiety, and unnecessary intervention than they prevented. Politically difficult each time, because a screening programme has a visible constituency who believe it saved them and an invisible one it harmed.",
+    "shiftWorkRegulatedAsHazard": true
+  },
+  "emergency": {
+    "medianUrbanResponseCivilMinutes": 6,
+    "medianRuralResponseCivilMinutes": 19,
+    "worstRegionalMedianCivilMinutes": 74,
+    "worstRegion": "polity.northreach",
+    "majorTraumaCentres": 340,
+    "majorTraumaSurvivalToDischargePct": 81,
+    "frontDoorForCrisis": "law.commune-response-teams"
+  },
+  "geriatrics": {
+    "isCoreSpecialty": true,
+    "ageAssociatedDeathSharePct": 68,
+    "populationOver100": 710000000,
+    "organisingConcept": "frailty rather than disease",
+    "frailtyMeasuredFromAgeEY": 70,
+    "frailtyWeightedDependencyRatio": 0.31,
+    "cognitiveDecline": {
+      "id": "health.late-life-cognitive-decline",
+      "name": "Late-life cognitive decline",
+      "summary": "The single largest cause of disability in the Concord and its most conspicuous unsolved medical problem; a category of neurological attrition shorter-lived populations largely die before reaching.",
+      "sources": [
+        "health.practice"
+      ],
+      "prevalenceOver110Pct": 21,
+      "medianOnsetAtFoundingEY": 96,
+      "medianOnsetNowEY": 108,
+      "preventionExists": false,
+      "reversalExists": false,
+      "researchConstrainedBy": "res.moratorium-neural"
+    }
+  },
+  "mentalHealth": {
+    "integratedWithGeneralPractice": true,
+    "deliveredWithoutSpecialistReferralPct": 61,
+    "crisisResponseIsPolice": false,
+    "crisisRespondedBy": "law.commune-response-teams",
+    "involuntaryTreatment": {
+      "requiresJudicialOrder": true,
+      "renewalIntervalDays": 14,
+      "automaticRightToCounsel": true,
+      "counselProvidedBy": "law.public-legal-service",
+      "reviewedByIndependentBody": true,
+      "ordersPerYear": 41000,
+      "publishedAnonymised": true,
+      "governedByRight": "gov.right-freedom-from-torture"
+    },
+    "suicideRatePer100k": 2.1,
+    "suicideRateFlatForYears": 60,
+    "canonNote": "Access is excellent and stigma low, and the rate has not moved in sixty years despite substantial investment. The services describe the plateau in their own reviews as unexplained."
+  },
+  "substanceUse": {
+    "useIsCriminal": false,
+    "supplyLicensed": true,
+    "qualityControlled": true,
+    "potencyLabelled": true,
+    "advertisingPermitted": false,
+    "minimumAgeEY": 16,
+    "treatmentOnDemand": true,
+    "referralRequired": false,
+    "abstinenceRequiredBeforeTreatment": false,
+    "overdoseDeathsPer100k": 0.9,
+    "contaminatedSupplyDeaths": "effectively zero",
+    "dependencePrevalenceReduced": false,
+    "canonNote": "Regulated supply has near-eliminated the harms of dependence without reducing dependence, and canon states that rather than claiming otherwise."
+  },
+  "genetics": {
+    "somaticTherapyRoutine": true,
+    "somaticProceduresPerYear": 2100000,
+    "tractabilityReason": "Helicin's redundant codon families make targeted correction more tractable than Earth genetics would allow.",
+    "germlineModification": {
+      "prohibited": true,
+      "exception": "to prevent a specific severe disorder, under judicial licence",
+      "officeOfFutureGenerationsHeardAsOfRight": true,
+      "hearsFrom": "gov.office-future-generations",
+      "licencesGrantedSinceEY340": 14,
+      "rationale": "A modified descendant cannot agree to what was done to them."
+    },
+    "reproductiveDecisions": {
+      "entirelyPrivate": true,
+      "governedByRight": "gov.right-bodily-autonomy",
+      "carrierScreeningOffered": true,
+      "carrierScreeningRecommended": false,
+      "clinicianMayAdviseOnPopulationGrounds": false,
+      "reproductiveIntentionDataCollected": false,
+      "canonNote": "The Concord's demographic flatness is a consequence of freedom, not of policy, and the constitution keeps it that way deliberately."
+    }
+  },
+  "endOfLife": {
+    "palliativeIntegratedFromDiagnosis": true,
+    "deathsAtHomeOrCommuneFacilityPct": 84,
+    "assistedDying": {
+      "lawful": true,
+      "shareOfDeathsPct": 1.4,
+      "safeguards": [
+        "legal majority, decisional competence at every stage, and absence of coercion",
+        "a settled repeated request across a minimum of 90 days",
+        "a second independent clinical assessment and an independent non-clinical review",
+        "no eligibility on grounds of disability, age, dependence, or cost",
+        "frailty alone does not qualify; a specific condition causing suffering the person finds unbearable is required",
+        "any clinician may decline for any reason without stating one and without professional consequence",
+        "post-hoc review by a body independent of the treating service, published anonymised"
+      ],
+      "minimumRequestPeriodDays": 90,
+      "objection": "No safeguard can distinguish a free choice from one made by someone who has been made to feel like a burden, and in a society with 710 million very old people the pressure need never be spoken to be felt. Monitoring detects coercion only when it leaves evidence.",
+      "objectionHeldBy": [
+        "a substantial Assembly minority",
+        "several disability organisations",
+        "most theistic traditions"
+      ],
+      "repealReferendumsFailed": 2,
+      "repealMarginsNarrow": true,
+      "canonPosition": "A live and unresolved moral disagreement in which the Concord has chosen a side. Canon does not present the choice as settled."
+    }
+  },
+  "epidemicResponse": {
+    "isEnumeratedConcordPower": true,
+    "originEvent": "hist.event-kessander-plague",
+    "standingVulnerability": "demo.risk-pathogen",
+    "capabilities": [
+      {
+        "id": "health.capability-surveillance",
+        "name": "Genomic surveillance",
+        "summary": "Continuous wastewater and clinical surveillance.",
+        "sources": [
+          "health.practice"
+        ],
+        "sentinelSites": 4100
+      },
+      {
+        "id": "health.capability-vaccine",
+        "name": "Vaccine platform capacity",
+        "summary": "Full planetary course within 210 days of a sequence.",
+        "sources": [
+          "health.practice"
+        ],
+        "planetaryCourseDays": 210
+      },
+      {
+        "id": "health.capability-isolation",
+        "name": "Reserve isolation beds",
+        "summary": "Maintained empty against a novel pathogen.",
+        "sources": [
+          "health.practice"
+        ],
+        "beds": 14000000
+      },
+      {
+        "id": "health.capability-stockpile",
+        "name": "Antiviral and antimicrobial stockpile",
+        "summary": "Two Elysian years of projected need.",
+        "sources": [
+          "health.practice"
+        ],
+        "yearsOfNeed": 2
+      },
+      {
+        "id": "health.capability-containment",
+        "name": "Highest-tier containment facilities",
+        "summary": "",
+        "sources": [
+          "health.practice"
+        ],
+        "facilities": 41
+      },
+      {
+        "id": "health.capability-exercise",
+        "name": "Planetary exercise",
+        "summary": "Full unannounced exercise every four years within a stated quarter.",
+        "sources": [
+          "health.practice"
+        ],
+        "intervalYears": 4
+      }
+    ],
+    "emergencyPowersApply": true,
+    "indefiniteQuarantinePermitted": false,
+    "productionRequirementHasEpidemicException": false,
+    "researchRestraintIsPartOfStrategy": true,
+    "restraintMoratorium": "res.moratorium-pathogen",
+    "concordPower": "gov.power-biosecurity"
+  },
+  "knownWeaknesses": [
+    {
+      "id": "health.weakness-cost-curve",
+      "name": "The cost curve",
+      "summary": "An old population generates a spending trajectory rising faster than GCP for eighty years, with no proposed solution that survives contact with Charter right 9.",
+      "sources": [
+        "health.system"
+      ]
+    },
+    {
+      "id": "health.weakness-care-workforce",
+      "name": "Care workforce",
+      "summary": "6.4% vacancies and higher in frailty-intensive roles; the largest single labour shortage in the Concord.",
+      "sources": [
+        "health.system"
+      ],
+      "answeredBy": [
+        "phase-06"
+      ]
+    },
+    {
+      "id": "health.weakness-unpaid-care",
+      "name": "Unpaid household care",
+      "summary": "The home-first model rests on household capacity, unevenly distributed and falling disproportionately on women and the least wealthy households. Partially compensated, not solved.",
+      "sources": [
+        "health.system"
+      ]
+    },
+    {
+      "id": "health.weakness-rural-response",
+      "name": "Rural response times",
+      "summary": "A 74-minute median in Northreach against 6 in cities, narrowed only slightly in a century.",
+      "sources": [
+        "health.system"
+      ]
+    },
+    {
+      "id": "health.weakness-overdiagnosis",
+      "name": "Over-diagnosis",
+      "summary": "Three programmes discontinued, and the reviews consistently find the problem larger than the discontinuations address.",
+      "sources": [
+        "health.system"
+      ]
+    },
+    {
+      "id": "health.weakness-handover",
+      "name": "Handover quality",
+      "summary": "Continuity is protocolised and still degrades at transfer; outcomes worsen measurably in the two years after a named clinician changes.",
+      "sources": [
+        "health.system"
+      ]
+    },
+    {
+      "id": "health.weakness-cognitive-decline",
+      "name": "Late-life cognitive decline",
+      "summary": "21% of over-110s, no prevention and no reversal after two centuries, and the research that might help is foreclosed by a privacy prohibition its own practitioners support.",
+      "sources": [
+        "health.practice"
+      ]
+    },
+    {
+      "id": "health.weakness-suicide-plateau",
+      "name": "The suicide plateau",
+      "summary": "Flat for sixty years despite investment; described by the services themselves as unexplained.",
+      "sources": [
+        "health.practice"
+      ]
+    },
+    {
+      "id": "health.weakness-dependence",
+      "name": "Dependence unchanged",
+      "summary": "Regulated supply has near-eliminated the harms of dependence without reducing dependence.",
+      "sources": [
+        "health.practice"
+      ]
+    },
+    {
+      "id": "health.weakness-assisted-dying-coercion",
+      "name": "Assisted dying and coercion",
+      "summary": "Monitoring detects coercion only when it leaves evidence; the objection is unanswered and two repeal campaigns have failed narrowly.",
+      "sources": [
+        "health.practice"
+      ]
+    },
+    {
+      "id": "health.weakness-preparedness-bounded",
+      "name": "Pathogen preparedness is bounded by restraint",
+      "summary": "210 days to a planetary vaccine course is fast and not instant, and the Concord has chosen not to study the threats it fears most.",
+      "sources": [
+        "health.practice"
+      ]
+    },
+    {
+      "id": "health.weakness-germline-drift",
+      "name": "Germline licences drift",
+      "summary": "Fourteen licences in seventy years, each slightly widening what counts as a specific severe disorder.",
+      "sources": [
+        "health.practice"
+      ]
+    },
+    {
+      "id": "health.weakness-idle-reserve",
+      "name": "Reserve capacity is expensive and idle",
+      "summary": "14 million empty beds and a two-year stockpile cost real money continuously to answer a risk that arrives rarely.",
+      "sources": [
+        "health.practice"
+      ]
+    }
+  ]
+}
